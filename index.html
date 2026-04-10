@@ -10,79 +10,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 <style>
 /* =========================================
-   TOKENS
+   TOKENS — LIGHT MODE
 ========================================= */
 :root{
-  --o:#EE7203; --od:#c45c00; --og:rgba(238,114,3,.12);
-  --g:#575756; --g2:#3a3a3a;
-  --b:#0056A4; --bl:#1a78d8;
-  --dk:#0a0a0a; --dk2:#121212; --dk3:#1c1c1c;
-  --wh:#fff; --muted:rgba(255,255,255,.55);
-  --border:rgba(255,255,255,.08);
-  --glass:rgba(255,255,255,.03);
+  --o:#EE7203;  --od:#c45c00;  --og:rgba(238,114,3,.08);
+  --g:#575756;  --g2:#3a3a3a;
+  --b:#0056A4;  --bl:#1a78d8;
+  --bg:#ffffff;
+  --bg2:#f7f7f7;
+  --surface:#fff;
+  --border:#e5e5e5;
+  --border-o:rgba(238,114,3,.3);
+  --text:#1a1a1a;
+  --text2:#555;
+  --muted:#888;
+  --hero-dk:#0a0a0a;
   --r:14px; --font:'Montserrat',sans-serif;
   --ease:.32s cubic-bezier(.4,0,.2,1);
+  --shadow:0 2px 16px rgba(0,0,0,.07);
+  --shadow-ho:0 6px 28px rgba(0,0,0,.12);
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{font-family:var(--font);background:var(--dk);color:var(--wh);line-height:1.65;overflow-x:hidden}
+body{font-family:var(--font);background:var(--bg);color:var(--text);line-height:1.65;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 
-/* ===== HERO ===== */
+/* ===========================
+   HERO — stays dark/dramatic
+=========================== */
 .hero{
   position:relative;min-height:100dvh;overflow:hidden;
   display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:6rem 2rem 8rem;
+  background:var(--hero-dk);
 }
 .hero-bg{
   position:absolute;inset:0;
   background:url('assets/slides/image1.png') center/cover no-repeat;
-  filter:brightness(.28) saturate(1.2);
+  filter:brightness(.22) saturate(1.1);
   transform:scale(1.04);
   z-index:0;
 }
 .hero-overlay{
   position:absolute;inset:0;z-index:1;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 110%,rgba(238,114,3,.3),transparent 65%),
-    linear-gradient(to top,rgba(10,10,10,.95) 0%,transparent 55%);
+    radial-gradient(ellipse 80% 60% at 50% 110%,rgba(238,114,3,.28),transparent 65%),
+    linear-gradient(to top,rgba(10,10,10,.97) 0%,transparent 55%);
 }
-
-/* dot grid */
 .hero::before{
   content:'';position:absolute;inset:0;z-index:1;pointer-events:none;
   background:
-    linear-gradient(rgba(238,114,3,.08) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(238,114,3,.06) 1px,transparent 1px);
+    linear-gradient(rgba(238,114,3,.07) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(238,114,3,.05) 1px,transparent 1px);
   background-size:60px 60px;
   mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000 30%,transparent 100%);
 }
-
 .hero-inner{position:relative;z-index:2;max-width:820px;margin:0 auto}
-
-.hero-logo{
-  display:inline-block;margin:0 auto 2.5rem;
-  animation:fadeUp .5s ease both;
-}
-.hero-logo img{
-  height:56px;width:auto;
-  /* make bg transparent for dark bg */
-  filter:drop-shadow(0 0 20px rgba(238,114,3,.5));
-}
-
+.hero-logo{display:inline-block;margin:0 auto 2.5rem;animation:fadeUp .5s ease both}
+.hero-logo img{height:56px;width:auto;filter:drop-shadow(0 0 24px rgba(238,114,3,.55))}
 .hero-badge{
   display:inline-block;
-  background:rgba(238,114,3,.12);border:1px solid rgba(238,114,3,.35);
+  background:rgba(238,114,3,.15);border:1px solid rgba(238,114,3,.4);
   color:var(--o);border-radius:999px;
   font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
   padding:.4rem 1.25rem;margin-bottom:2rem;
   animation:fadeUp .5s .05s ease both;
 }
-
 .hero h1{
   font-size:clamp(2.8rem,7.5vw,6rem);
   font-weight:900;line-height:1.02;letter-spacing:-.04em;
+  color:#fff;
   background:linear-gradient(160deg,#fff 40%,var(--o) 100%);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;
   background-clip:text;
@@ -91,7 +90,7 @@ img{display:block;max-width:100%}
 }
 .hero p{
   font-size:clamp(.95rem,2.2vw,1.2rem);font-weight:300;
-  color:var(--muted);max-width:620px;margin:0 auto 2.5rem;
+  color:rgba(255,255,255,.6);max-width:620px;margin:0 auto 2.5rem;
   animation:fadeUp .5s .15s ease both;
 }
 .hero-cta{
@@ -101,24 +100,25 @@ img{display:block;max-width:100%}
   letter-spacing:.06em;text-transform:uppercase;
   padding:.9rem 2.2rem;border-radius:999px;border:none;cursor:pointer;
   box-shadow:0 10px 36px rgba(238,114,3,.45);
-  transition:var(--ease);
-  animation:fadeUp .5s .2s ease both;
+  transition:var(--ease);animation:fadeUp .5s .2s ease both;
 }
 .hero-cta:hover{background:var(--od);transform:translateY(-3px);box-shadow:0 16px 44px rgba(238,114,3,.55)}
-
 .hero-scroll{
   position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
   display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35);
+  font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);
   z-index:2;animation:bounce 2.5s 1.5s infinite;
 }
 .hero-scroll::after{content:'';width:1px;height:44px;background:linear-gradient(to bottom,var(--o),transparent)}
 
-/* ===== TABS ===== */
+/* ===========================
+   TABS — light strip
+=========================== */
 .tabs-wrapper{
   position:sticky;top:0;z-index:200;
-  background:rgba(10,10,10,.94);backdrop-filter:blur(20px);
+  background:rgba(255,255,255,.95);backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
+  box-shadow:0 1px 12px rgba(0,0,0,.06);
 }
 .tabs-nav{
   max-width:1280px;margin:0 auto;padding:0 1.5rem;
@@ -129,11 +129,11 @@ img{display:block;max-width:100%}
   flex-shrink:0;border:none;background:transparent;
   font-family:var(--font);font-size:.78rem;font-weight:700;
   text-transform:uppercase;letter-spacing:.09em;
-  color:rgba(255,255,255,.35);
+  color:var(--muted);
   padding:1.1rem 1.35rem;cursor:pointer;
   position:relative;transition:color var(--ease);white-space:nowrap;
 }
-.tab-btn:hover{color:rgba(255,255,255,.7)}
+.tab-btn:hover{color:var(--g)}
 .tab-btn.active{color:var(--o)}
 .tab-btn.active::after{
   content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
@@ -141,252 +141,270 @@ img{display:block;max-width:100%}
 }
 .dept-badge{
   display:inline-block;
-  background:rgba(238,114,3,.14);border:1px solid rgba(238,114,3,.25);
+  background:rgba(238,114,3,.1);border:1px solid rgba(238,114,3,.2);
   border-radius:999px;font-size:.58rem;padding:.1rem .42rem;
   color:var(--o);margin-left:.4rem;vertical-align:middle;font-weight:600;
 }
 
-/* ===== LAYOUT ===== */
+/* ===========================
+   LAYOUT
+=========================== */
 .container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
 .panels{padding:4rem 0 7rem}
 .panel{display:none}
 .panel.active{display:block;animation:fadeIn .35s ease}
 
-/* ===== SECTION HEADER ===== */
+/* ===========================
+   SECTION HEADER
+=========================== */
 .sec-head{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
-.sec-head h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;letter-spacing:-.025em;white-space:nowrap}
-.sec-icon{width:38px;height:38px;flex-shrink:0;background:rgba(238,114,3,.1);border:1px solid rgba(238,114,3,.25);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
-.sec-line{flex:1;height:1px;background:linear-gradient(to right,rgba(238,114,3,.3),transparent)}
+.sec-head h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;letter-spacing:-.025em;white-space:nowrap;color:var(--text)}
+.sec-icon{width:38px;height:38px;flex-shrink:0;background:rgba(238,114,3,.08);border:1px solid rgba(238,114,3,.2);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+.sec-line{flex:1;height:1px;background:linear-gradient(to right,rgba(238,114,3,.25),transparent)}
 .divider{height:1px;background:var(--border);margin:3.5rem 0}
 
-/* ===== STATS ===== */
+/* ===========================
+   STATS ROW
+=========================== */
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:3rem}
-.stat{background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1rem;text-align:center;transition:var(--ease)}
-.stat:hover{border-color:rgba(238,114,3,.28);transform:translateY(-2px)}
+.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1rem;text-align:center;box-shadow:var(--shadow);transition:var(--ease)}
+.stat:hover{border-color:var(--border-o);box-shadow:var(--shadow-ho);transform:translateY(-2px)}
 .stat-num{display:block;font-size:2rem;font-weight:900;color:var(--o);line-height:1}
 .stat-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.4rem}
 
-/* ===== BRAND EQUATION (Slide 3 style) ===== */
+/* ===========================
+   BRAND EQUATION
+=========================== */
 .brand-eq{
   display:flex;align-items:center;justify-content:center;flex-wrap:wrap;
   gap:0;
-  background:linear-gradient(135deg,rgba(238,114,3,.06),rgba(0,86,164,.04));
-  border:1px solid rgba(238,114,3,.18);
+  background:linear-gradient(135deg,rgba(238,114,3,.05),rgba(0,86,164,.03));
+  border:1px solid rgba(238,114,3,.15);
   border-radius:var(--r);padding:3rem 2rem;margin-bottom:3rem;
-  overflow:hidden;position:relative;
 }
-.brand-eq::before{
-  content:'';position:absolute;inset:0;
-  background:url('assets/slides/image17.png') center/cover no-repeat;
-  opacity:.04;
-}
-.eq-part{
-  display:flex;flex-direction:column;align-items:center;gap:.6rem;
-  padding:1rem 2rem;position:relative;z-index:1;
-}
+.eq-part{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1rem 2rem}
 .eq-img{width:100px;height:100px;object-fit:contain}
-.eq-label{font-size:.85rem;font-weight:600;color:rgba(255,255,255,.7);text-transform:lowercase;letter-spacing:.05em}
+.eq-label{font-size:.85rem;font-weight:600;color:var(--text2);text-transform:lowercase;letter-spacing:.05em}
 .eq-sublabel{font-size:.7rem;color:var(--o);font-weight:700;letter-spacing:.1em}
-.eq-op{font-size:3rem;font-weight:900;color:rgba(255,255,255,.18);padding:0 .5rem;align-self:center;line-height:1}
-.eq-result{
-  display:flex;flex-direction:column;align-items:center;gap:.4rem;
-  padding:1.2rem 2.5rem;border-left:1px solid rgba(255,255,255,.08);
-  position:relative;z-index:1;
-}
+.eq-op{font-size:3rem;font-weight:900;color:rgba(0,0,0,.12);padding:0 .5rem;align-self:center;line-height:1}
+.eq-result{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:1.2rem 2.5rem;border-left:1px solid var(--border)}
 .eq-result-label{font-size:1.5rem;font-weight:900;color:var(--o);letter-spacing:-.02em}
-.eq-result-sub{font-size:.78rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.1em}
-.logo-symbol-img{height:80px;width:auto;object-fit:contain;flex-shrink:0}
+.eq-result-sub{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+.logo-symbol-img{height:70px;width:auto;object-fit:contain}
 
-/* ===== CHAIN / INOTEC ===== */
-.chain-section{margin-bottom:3rem}
-.chain{
-  display:flex;flex-wrap:wrap;align-items:stretch;
+/* ===========================
+   INOTEC — ARCOS CONECTADOS
+=========================== */
+.inotec-section{margin-bottom:4rem}
+
+/* Row of overlapping arc rings */
+.inotec-arcs{
+  display:flex;flex-wrap:nowrap;overflow-x:auto;
+  padding-bottom:1rem;
+  /* overlapping: each ring shifts left */
   gap:0;
+  justify-content:center;
+  margin-bottom:2.5rem;
 }
-.chain-link{
-  position:relative;flex:1;min-width:160px;
-  display:flex;flex-direction:column;align-items:center;
-  text-align:center;
-  padding:2rem 1.2rem 1.8rem;
-  background:var(--glass);
-  border:1px solid var(--border);
-  transition:var(--ease);
-  overflow:hidden;
-}
+.inotec-arcs::-webkit-scrollbar{height:4px}
+.inotec-arcs::-webkit-scrollbar-thumb{background:var(--border-o);border-radius:2px}
 
-/* Overlapping link connectors */
-.chain-link:not(:last-child)::after{
-  content:'';
-  position:absolute;
-  right:-14px;top:50%;transform:translateY(-50%);
-  width:28px;height:28px;
-  background:var(--o);
-  border-radius:50%;
-  border:3px solid var(--dk);
-  display:flex;align-items:center;justify-content:center;
-  z-index:10;
-  box-shadow:0 0 0 2px rgba(238,114,3,.3);
-}
-/* Connecting bar */
-.chain-link:not(:first-child)::before{
-  content:'';
-  position:absolute;
-  left:-1px;top:50%;
-  width:2px;height:40%;
-  transform:translateY(-50%);
-  background:linear-gradient(to bottom,transparent,var(--o),transparent);
-}
-.chain-link:hover{
-  background:rgba(238,114,3,.06);
-  border-color:rgba(238,114,3,.35);
-  transform:translateY(-4px);
-  z-index:2;
-}
-.chain-link:hover .chain-letter{
-  background:var(--o);color:#fff;
-}
-
-/* First link of first-child in a row gets rounded left, last gets rounded right */
-.chain-link:first-child{border-radius:var(--r) 0 0 var(--r)}
-.chain-link:last-child{border-radius:0 var(--r) var(--r) 0}
-
-.chain-letter{
-  width:52px;height:52px;border-radius:50%;
-  background:rgba(238,114,3,.12);border:2px solid var(--o);
-  display:flex;align-items:center;justify-content:center;
-  font-size:1.6rem;font-weight:900;color:var(--o);
-  margin-bottom:1rem;
-  transition:var(--ease);flex-shrink:0;
-}
-.chain-name{
-  font-size:.82rem;font-weight:800;color:#fff;
-  text-transform:uppercase;letter-spacing:.1em;margin-bottom:.5rem;
-}
-.chain-desc{
-  font-size:.8rem;color:rgba(255,255,255,.6);line-height:1.55;
-}
-
-/* Mobile: stack chains in 2 rows */
-@media(max-width:720px){
-  .chain-link:first-child{border-radius:var(--r) var(--r) 0 0}
-  .chain-link:last-child{border-radius:0 0 var(--r) var(--r)}
-  .chain-link:not(:last-child)::after{right:50%;bottom:-14px;top:auto;transform:translateX(50%)}
-  .chain-link:not(:first-child)::before{top:-1px;left:50%;height:2px;width:40%;transform:translateX(-50%)}
-  .chain{flex-direction:column}
-}
-
-/* ===== SLIDE IMAGE FEATURE ===== */
-.slide-feature{
-  border-radius:var(--r);overflow:hidden;
-  border:1px solid var(--border);margin-bottom:3rem;
+.arc-ring{
+  flex-shrink:0;
   position:relative;
+  width:130px;height:130px;
+  border-radius:50%;
+  border:3px solid var(--o);
+  background:#fff;
+  display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  cursor:pointer;
+  transition:var(--ease);
+  box-shadow:var(--shadow);
+  /* overlap: pull each ring 24px into the previous */
+  margin-left:-24px;
+  z-index:1;
 }
-.slide-feature img{
-  width:100%;height:auto;display:block;
+.arc-ring:first-child{margin-left:0}
+.arc-ring:hover,.arc-ring.arc-active{
+  z-index:10;
+  background:var(--o);
+  box-shadow:0 8px 32px rgba(238,114,3,.4);
+  border-color:var(--od);
+  transform:translateY(-6px) scale(1.06);
 }
-.slide-feature-caption{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(to top,rgba(10,10,10,.95),transparent);
-  padding:1.5rem 2rem .8rem;
-  font-size:.78rem;color:rgba(255,255,255,.5);
-  letter-spacing:.06em;text-transform:uppercase;
+.arc-ring:hover .arc-letter,.arc-ring.arc-active .arc-letter{color:#fff}
+.arc-ring:hover .arc-name,.arc-ring.arc-active .arc-name{color:rgba(255,255,255,.8)}
+
+.arc-letter{
+  font-size:2.5rem;font-weight:900;
+  color:var(--o);line-height:1;
+  transition:var(--ease);
+}
+.arc-name{
+  font-size:.58rem;font-weight:700;
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--muted);margin-top:.25rem;
+  transition:var(--ease);
 }
 
-/* Inline slide image (float style) */
-.img-float-right{
-  float:right;margin:0 0 1.5rem 2rem;
-  max-width:340px;border-radius:var(--r);
+/* connector arc between rings (decorative outer arc) */
+.arc-ring::before{
+  content:'';
+  position:absolute;
+  top:-6px;left:-6px;right:-6px;bottom:-6px;
+  border-radius:50%;
+  border:2px solid transparent;
+  border-top-color:rgba(238,114,3,.2);
+  border-right-color:rgba(238,114,3,.2);
+  pointer-events:none;
+}
+.arc-ring:hover::before,.arc-ring.arc-active::before{
+  border-top-color:rgba(238,114,3,.6);
+  border-right-color:rgba(238,114,3,.6);
+}
+
+/* Detail cards (shown below arcs) */
+.inotec-details{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:1.25rem;
+}
+.inotec-card{
+  background:var(--surface);
   border:1px solid var(--border);
-  overflow:hidden;
+  border-top:3px solid var(--o);
+  border-radius:var(--r);
+  padding:1.6rem;
+  box-shadow:var(--shadow);
+  transition:var(--ease);
 }
-.img-float-right img{width:100%;height:auto}
-.clearfix::after{content:'';display:table;clear:both}
+.inotec-card:hover{box-shadow:var(--shadow-ho);transform:translateY(-2px)}
+.inotec-card-head{
+  display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;
+}
+.inotec-card-letter{
+  width:40px;height:40px;border-radius:50%;
+  background:var(--o);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;font-weight:900;color:#fff;flex-shrink:0;
+}
+.inotec-card-title{
+  font-size:1rem;font-weight:800;color:var(--text);letter-spacing:-.01em;
+}
+.inotec-card-bullets{
+  padding-left:0;list-style:none;
+}
+.inotec-card-bullets li{
+  font-size:.855rem;color:var(--text2);
+  display:flex;align-items:flex-start;gap:.6rem;
+  padding:.28rem 0;border-bottom:1px solid var(--border);
+}
+.inotec-card-bullets li:last-child{border-bottom:none}
+.inotec-card-bullets li::before{
+  content:'';flex-shrink:0;
+  width:6px;height:6px;border-radius:50%;
+  background:var(--o);margin-top:.46rem;
+}
 
-/* Two-col with image */
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:3rem}
-.two-col.reverse{direction:rtl}
-.two-col.reverse>*{direction:ltr}
-@media(max-width:900px){.two-col{grid-template-columns:1fr}}
-
-/* ===== CARDS ===== */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.25rem;margin-bottom:3rem}
+/* ===========================
+   CARDS GRID
+=========================== */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:3rem}
 .card{
-  background:var(--glass);border:1px solid var(--border);
+  background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r);padding:1.6rem;
+  box-shadow:var(--shadow);
   position:relative;overflow:hidden;transition:var(--ease);
 }
 .card::before{content:'';position:absolute;inset:0 0 auto;height:2px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:var(--ease)}
-.card:hover{border-color:rgba(238,114,3,.28);transform:translateY(-3px)}
+.card:hover{box-shadow:var(--shadow-ho);transform:translateY(-3px)}
 .card:hover::before{transform:scaleX(1)}
 .card-ico{font-size:1.8rem;margin-bottom:.9rem}
 .card h3{font-size:.95rem;font-weight:700;color:var(--o);margin-bottom:.6rem}
-.card p,.card ul{font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.6}
-.card ul{padding-left:1.1rem;list-style:disc}
+.card p,.card ul{font-size:.875rem;color:var(--text2);line-height:1.65}
+.card ul{padding-left:1.2rem;list-style:disc}
 .card ul li{margin:.3rem 0}
 .card ul li::marker{color:var(--o)}
 
-/* ===== ALERTS ===== */
+/* ===========================
+   ALERTS
+=========================== */
 .alert{border-radius:var(--r);padding:1.1rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.alert-o{background:rgba(238,114,3,.1);border:1px solid rgba(238,114,3,.3)}
-.alert-b{background:rgba(0,86,164,.1);border:1px solid rgba(0,86,164,.3)}
+.alert-o{background:rgba(238,114,3,.06);border:1px solid rgba(238,114,3,.25)}
+.alert-b{background:rgba(0,86,164,.05);border:1px solid rgba(0,86,164,.2)}
 .alert-ico{font-size:1.2rem;flex-shrink:0;margin-top:.1rem}
-.alert-body{font-size:.875rem;color:rgba(255,255,255,.8)}
-.alert-body strong{display:block;font-weight:700;margin-bottom:.25rem;color:#fff}
+.alert-body{font-size:.875rem;color:var(--text2)}
+.alert-body strong{display:block;font-weight:700;margin-bottom:.25rem;color:var(--text)}
 
-/* ===== NR TAGS ===== */
+/* ===========================
+   NR TAGS
+=========================== */
 .tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem}
-.tag{background:rgba(0,86,164,.15);border:1px solid rgba(0,86,164,.35);color:#5aadff;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.07em;padding:.28rem .85rem}
+.tag{background:rgba(0,86,164,.07);border:1px solid rgba(0,86,164,.2);color:var(--b);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.07em;padding:.28rem .85rem}
 
-/* ===== STEPS ===== */
+/* ===========================
+   STEPS
+=========================== */
 .steps{display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem}
-.step{display:flex;gap:1.25rem;align-items:flex-start;background:var(--glass);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;transition:var(--ease)}
-.step:hover{border-color:rgba(238,114,3,.22)}
+.step{display:flex;gap:1.25rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;box-shadow:var(--shadow);transition:var(--ease)}
+.step:hover{border-color:var(--border-o);box-shadow:var(--shadow-ho)}
 .step-n{width:36px;height:36px;flex-shrink:0;background:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:900;color:#fff}
-.step-body h4{font-weight:700;font-size:.95rem;margin-bottom:.3rem}
-.step-body p{font-size:.85rem;color:rgba(255,255,255,.68)}
+.step-body h4{font-weight:700;font-size:.95rem;margin-bottom:.3rem;color:var(--text)}
+.step-body p{font-size:.85rem;color:var(--text2)}
 
-/* ===== WELCOME QUOTE ===== */
-.welcome-hero{
-  position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:2rem;
-  min-height:280px;display:flex;align-items:flex-end;
-}
-.welcome-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.45}
-.welcome-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.95) 20%,rgba(10,10,10,.4) 100%)}
+/* ===========================
+   SLIDE FEATURES
+=========================== */
+.slide-feature{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);margin-bottom:3rem;position:relative;box-shadow:var(--shadow)}
+.slide-feature img{width:100%;height:auto;display:block}
+.slide-feature-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,10,10,.85),transparent);padding:1.5rem 2rem .8rem;font-size:.78rem;color:rgba(255,255,255,.65);letter-spacing:.06em;text-transform:uppercase}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:3rem}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}}
+
+.clients-img{width:100%;border-radius:var(--r);border:1px solid var(--border);margin-bottom:1rem;box-shadow:var(--shadow)}
+
+/* ===========================
+   WELCOME HERO (RH)
+=========================== */
+.welcome-hero{position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:2rem;min-height:280px;display:flex;align-items:flex-end;box-shadow:var(--shadow)}
+.welcome-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
+.welcome-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.92) 20%,rgba(10,10,10,.35) 100%)}
 .welcome-hero-body{position:relative;z-index:1;padding:2rem;max-width:720px}
-.welcome-hero-body blockquote{
-  font-size:clamp(1rem,1.8vw,1.2rem);font-weight:300;font-style:italic;
-  color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:1rem;
-}
-.welcome-hero-body .sig{font-size:.78rem;color:var(--muted);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.welcome-hero-body blockquote{font-size:clamp(1rem,1.8vw,1.15rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:1rem}
+.welcome-hero-body .sig{font-size:.78rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
 .welcome-hero-body .sig span{color:var(--o)}
 
-/* ===== CLIENTS MAP ===== */
-.clients-img{
-  width:100%;border-radius:var(--r);border:1px solid var(--border);
-  margin-bottom:1rem;
-}
+/* ===========================
+   FOOTER
+=========================== */
+footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);letter-spacing:.06em;background:var(--bg2)}
 
-/* ===== FOOTER ===== */
-footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:.75rem;color:rgba(255,255,255,.25);letter-spacing:.06em}
-
-/* ===== ANIMATIONS ===== */
+/* ===========================
+   ANIMATIONS
+=========================== */
 @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
 
+/* ===========================
+   RESPONSIVE
+=========================== */
 @media(max-width:720px){
   .grid{grid-template-columns:1fr}
   .stats-row{grid-template-columns:repeat(2,1fr)}
-  .tab-btn{padding:.9rem .9rem;font-size:.7rem}
+  .tab-btn{padding:.9rem .85rem;font-size:.7rem}
   .brand-eq{flex-direction:column;gap:1.5rem}
-  .eq-result{border-left:none;border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;width:100%}
-  .img-float-right{float:none;margin:0 0 1.5rem;max-width:100%}
+  .eq-result{border-left:none;border-top:1px solid var(--border);padding-top:1.5rem;width:100%}
+  .inotec-arcs{justify-content:flex-start;padding-left:.5rem}
+  .inotec-details{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
-<!-- ============================  HERO  ============================ -->
+<!-- ========== HERO ========== -->
 <header class="hero">
   <div class="hero-bg"></div>
   <div class="hero-overlay"></div>
@@ -404,7 +422,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
   <div class="hero-scroll">Rolar</div>
 </header>
 
-<!-- ============================  TABS  ============================ -->
+<!-- ========== TABS ========== -->
 <div id="tabs-anchor"></div>
 <nav class="tabs-wrapper" aria-label="Seções de onboarding">
   <div class="tabs-nav">
@@ -425,37 +443,32 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <!-- Quem Somos -->
   <div class="sec-head"><div class="sec-icon">✨</div><h2>Quem Somos</h2><div class="sec-line"></div></div>
-
   <div class="stats-row">
     <div class="stat"><span class="stat-num">2013</span><div class="stat-label">Fundação</div></div>
     <div class="stat"><span class="stat-num">R$100M</span><div class="stat-label">Faturamento &lt;10 anos</div></div>
     <div class="stat"><span class="stat-num">+400</span><div class="stat-label">Colaboradores</div></div>
     <div class="stat"><span class="stat-num">+50</span><div class="stat-label">Cidades atendidas</div></div>
-    <div class="stat"><span class="stat-num">4</span><div class="stat-label">Escritórios BR · HK · USA</div></div>
+    <div class="stat"><span class="stat-num">4</span><div class="stat-label">Escritórios BR·HK·USA</div></div>
     <div class="stat"><span class="stat-num">R$1bi</span><div class="stat-label">Meta 2033</div></div>
   </div>
 
   <div class="divider"></div>
 
-  <!-- Nossa Marca — cópia do Slide 3 -->
+  <!-- Nossa Marca -->
   <div class="sec-head"><div class="sec-icon">🔣</div><h2>Nossa Marca</h2><div class="sec-line"></div></div>
-
   <div class="brand-eq">
-    <!-- Pessoa laranja 3D (slide 3) -->
     <div class="eq-part">
       <img class="eq-img" src="assets/slides/image7.png" alt="Pessoas">
       <span class="eq-label">pessoas</span>
       <span class="eq-sublabel">(i)</span>
     </div>
     <span class="eq-op">+</span>
-    <!-- Globo azul 3D (slide 3) -->
     <div class="eq-part">
       <img class="eq-img" src="assets/slides/image9.png" alt="Tecnologia">
       <span class="eq-label">tecnologia</span>
       <span class="eq-sublabel">(t)</span>
     </div>
     <span class="eq-op">=</span>
-    <!-- Logo oficial (slide 3) -->
     <div class="eq-result">
       <img class="logo-symbol-img" src="assets/slides/image4.png" alt="Logo Tecno IT">
       <span class="eq-result-label">inteligência tecnológica</span>
@@ -463,7 +476,6 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     </div>
   </div>
 
-  <!-- Pilares exibidos em 3 cols -->
   <div class="grid">
     <div class="card"><div class="card-ico">🌍</div><h3>Propósito</h3><p>Mudar o mundo para melhor, através da tecnologia.</p></div>
     <div class="card"><div class="card-ico">🚀</div><h3>Missão</h3><p>Entregar tecnologias inovadoras com excelência.</p></div>
@@ -472,48 +484,122 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <div class="divider"></div>
 
-  <!-- INOTEC — ELO DE CORRENTES -->
+  <!-- ===== INOTEC — ARCOS ===== -->
   <div class="sec-head"><div class="sec-icon">⛓️</div><h2>Valores INOTEC</h2><div class="sec-line"></div></div>
-  <p style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;max-width:640px">
-    Cada valor é um elo que conecta os Tecnautas. Unidos, esses elos formam a corrente que sustenta toda a nossa cultura de alta performance.
+  <p style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;max-width:580px">
+    Seis elos que se unem formando a corrente cultural da Tecno IT. Cada arco representa um valor que conecta e fortalece toda a equipe.
   </p>
 
-  <div class="chain chain-section">
-    <div class="chain-link">
-      <div class="chain-letter">I</div>
-      <div class="chain-name">Inovação</div>
-      <div class="chain-desc">Transformar ideias em soluções simples. Melhorar a performance da empresa todos os dias.</div>
+  <!-- Arcos interligados -->
+  <div class="inotec-section">
+    <div class="inotec-arcs" role="list" aria-label="Valores INOTEC">
+      <div class="arc-ring arc-active" role="listitem" data-value="I" tabindex="0" aria-label="Inovação">
+        <span class="arc-letter">I</span>
+        <span class="arc-name">Inovação</span>
+      </div>
+      <div class="arc-ring" role="listitem" data-value="N" tabindex="0" aria-label="Networking">
+        <span class="arc-letter">N</span>
+        <span class="arc-name">Networking</span>
+      </div>
+      <div class="arc-ring" role="listitem" data-value="O" tabindex="0" aria-label="Objetividade">
+        <span class="arc-letter">O</span>
+        <span class="arc-name">Objetividade</span>
+      </div>
+      <div class="arc-ring" role="listitem" data-value="T" tabindex="0" aria-label="Transformação">
+        <span class="arc-letter">T</span>
+        <span class="arc-name">Transformação</span>
+      </div>
+      <div class="arc-ring" role="listitem" data-value="E" tabindex="0" aria-label="Empatia">
+        <span class="arc-letter">E</span>
+        <span class="arc-name">Empatia</span>
+      </div>
+      <div class="arc-ring" role="listitem" data-value="C" tabindex="0" aria-label="Comprometimento">
+        <span class="arc-letter">C</span>
+        <span class="arc-name">Comprometimento</span>
+      </div>
     </div>
-    <div class="chain-link">
-      <div class="chain-letter">N</div>
-      <div class="chain-name">Networking</div>
-      <div class="chain-desc">Construir relações de confiança. Fortalecer conexões com clareza e parceria genuína.</div>
+
+    <!-- Detail cards – always visible grid -->
+    <div class="inotec-details">
+
+      <div class="inotec-card">
+        <div class="inotec-card-head">
+          <div class="inotec-card-letter">I</div>
+          <div class="inotec-card-title">Inovação</div>
+        </div>
+        <ul class="inotec-card-bullets">
+          <li>Transformar ideias em soluções</li>
+          <li>Uma sugestão simples que ajuda a fazer melhor</li>
+          <li>Melhorar a performance da empresa todos os dias</li>
+        </ul>
+      </div>
+
+      <div class="inotec-card">
+        <div class="inotec-card-head">
+          <div class="inotec-card-letter">N</div>
+          <div class="inotec-card-title">Networking</div>
+        </div>
+        <ul class="inotec-card-bullets">
+          <li>Construir relações de confiança</li>
+          <li>Fortalecer conexões com clareza</li>
+          <li>Comunicar claramente com os parceiros e colegas</li>
+        </ul>
+      </div>
+
+      <div class="inotec-card">
+        <div class="inotec-card-head">
+          <div class="inotec-card-letter">O</div>
+          <div class="inotec-card-title">Objetividade</div>
+        </div>
+        <ul class="inotec-card-bullets">
+          <li>Decidir com assertividade e assumir a responsabilidade</li>
+          <li>Direto ao ponto sem rodeios</li>
+          <li>Admitir erros rapidamente e corrigir com o dobro de rapidez</li>
+        </ul>
+      </div>
+
+      <div class="inotec-card">
+        <div class="inotec-card-head">
+          <div class="inotec-card-letter">T</div>
+          <div class="inotec-card-title">Transformação</div>
+        </div>
+        <ul class="inotec-card-bullets">
+          <li>Agir com iniciativa e autogestão</li>
+          <li>Ser protagonista da própria jornada</li>
+          <li>Ver oportunidades de melhoria em cada desafio</li>
+        </ul>
+      </div>
+
+      <div class="inotec-card">
+        <div class="inotec-card-head">
+          <div class="inotec-card-letter">E</div>
+          <div class="inotec-card-title">Empatia</div>
+        </div>
+        <ul class="inotec-card-bullets">
+          <li>Tratar pessoas com respeito</li>
+          <li>Colaborar para construir resultados juntos</li>
+          <li>Pensar no coletivo antes do individual</li>
+        </ul>
+      </div>
+
+      <div class="inotec-card">
+        <div class="inotec-card-head">
+          <div class="inotec-card-letter">C</div>
+          <div class="inotec-card-title">Comprometimento</div>
+        </div>
+        <ul class="inotec-card-bullets">
+          <li>Pensar e agir como dono</li>
+          <li>Garantir resultados para o cliente</li>
+          <li>Ter compromisso com as entregas</li>
+        </ul>
+      </div>
+
     </div>
-    <div class="chain-link">
-      <div class="chain-letter">O</div>
-      <div class="chain-name">Objetividade</div>
-      <div class="chain-desc">Decidir com assertividade. Assumir responsabilidade. Corrigir erros com o dobro de rapidez.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">T</div>
-      <div class="chain-name">Transformação</div>
-      <div class="chain-desc">Agir com iniciativa e autogestão. Ser protagonista da própria jornada.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">E</div>
-      <div class="chain-name">Empatia</div>
-      <div class="chain-desc">Tratar pessoas com respeito. Pensar no coletivo antes do individual.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">C</div>
-      <div class="chain-name">Comprometimento</div>
-      <div class="chain-desc">Pensar e agir como dono. Garantir resultados com compromisso total.</div>
-    </div>
-  </div>
+  </div><!-- /inotec-section -->
 
   <div class="divider"></div>
 
-  <!-- Nossos Clientes — Slide 12 -->
+  <!-- Nossos Clientes -->
   <div class="sec-head"><div class="sec-icon">🤝</div><h2>Nossos Clientes</h2><div class="sec-line"></div></div>
   <div class="slide-feature">
     <img src="assets/slides/image29.png" alt="Nossos Clientes — Mapa do Brasil e logos">
@@ -524,55 +610,42 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <!-- SST / SESMT -->
   <div class="sec-head"><div class="sec-icon">🦺</div><h2>Saúde e Segurança — SESMT</h2><div class="sec-line"></div></div>
-
   <div class="alert alert-b">
     <div class="alert-ico">👷</div>
-    <div class="alert-body">
-      <strong>Responsável SESMT</strong>
-      Thiago Maulaz · Engenheiro Ambiental · Eng. de Segurança do Trabalho · Técnico de Segurança do Trabalho
-    </div>
+    <div class="alert-body"><strong>Responsável SESMT</strong>Thiago Maulaz · Engenheiro Ambiental · Eng. de Segurança do Trabalho · Técnico de Segurança do Trabalho</div>
   </div>
   <div class="alert alert-o">
     <div class="alert-ico">⚠️</div>
-    <div class="alert-body">
-      <strong>Política de SST</strong>
-      Todo Tecnauta deve conhecer e assinar a Política de Saúde e Segurança do Trabalho. O uso do crachá, uniforme e EPIs é <strong>obrigatório</strong> em campo.
-    </div>
+    <div class="alert-body"><strong>Política de SST</strong>Todo Tecnauta deve conhecer e assinar a Política de SST. O uso do crachá, uniforme e EPIs é <strong>obrigatório</strong> em campo.</div>
   </div>
-
   <div class="tags">
     <span class="tag">NR-10 · Instalações Elétricas</span>
     <span class="tag">NR-17 · Ergonomia</span>
     <span class="tag">NR-33 · Espaços Confinados</span>
     <span class="tag">NR-35 · Trabalho em Altura</span>
   </div>
-
   <div class="grid">
     <div class="card"><div class="card-ico">⚠️</div><h3>Riscos da Atividade</h3><ul><li>Choque elétrico</li><li>Quedas — nível e altura</li><li>Esforço físico / repetitivo</li><li>Corte e perfuração</li><li>Incêndios em áreas técnicas</li></ul></div>
     <div class="card"><div class="card-ico">🦺</div><h3>EPIs Obrigatórios</h3><ul><li>Capacete, luvas e óculos de proteção</li><li>Cinto de segurança (altura)</li><li>Protetores auriculares</li><li>Calçado de segurança</li></ul></div>
     <div class="card"><div class="card-ico">⚡</div><h3>NR-10 · Elétrica</h3><ul><li>Somente autorizados e capacitados</li><li>Identificação e desenergização de circuitos</li><li>Ferramentas isoladas</li><li>Distâncias mínimas de segurança</li></ul></div>
-    <div class="card"><div class="card-ico">🧗</div><h3>NR-35 · Altura</h3><ul><li>Aplicável acima de 2 m</li><li>Treinamento obrigatório</li><li>Análise de risco + Permissão de Trabalho</li><li>Inspeção dos equipamentos</li></ul></div>
+    <div class="card"><div class="card-ico">🧗</div><h3>NR-35 · Altura</h3><ul><li>Aplicável acima de 2 m</li><li>Treinamento obrigatório antes de qualquer atividade</li><li>Análise de risco + Permissão de Trabalho</li></ul></div>
     <div class="card"><div class="card-ico">🪑</div><h3>NR-17 · Ergonomia</h3><ul><li>Técnicas de levantamento de cargas</li><li>Cuidados com postura</li><li>Intervalos e pausas regulares</li></ul></div>
     <div class="card"><div class="card-ico">🕳️</div><h3>NR-33 · Espaços Confinados</h3><ul><li>Shafts, dutos, subterrâneos</li><li>Entrada segura com autorização</li><li>Monitoramento da atmosfera</li><li>Equipe de resgate em standby</li></ul></div>
-    <div class="card"><div class="card-ico">🚨</div><h3>Comunicação de Incidentes</h3><p>Qualquer incidente deve ser comunicado <strong>imediatamente</strong> ao responsável de SST. Nunca improvise após um ocorrido.</p></div>
+    <div class="card"><div class="card-ico">🚨</div><h3>Incidentes</h3><p>Qualquer incidente deve ser comunicado <strong>imediatamente</strong> ao responsável de SST. Nunca improvise após um ocorrido.</p></div>
     <div class="card"><div class="card-ico">📋</div><h3>Documentações Obrigatórias</h3><ul><li>Ficha de EPI e ferramentas</li><li>Certificados NR-10 e NR-35</li><li>Checklists diários de segurança</li></ul></div>
-    <div class="card"><div class="card-ico">🤝</div><h3>Conduta e Responsabilidade</h3><ul><li>Relacionamento respeitoso com o cliente</li><li>Zelar pelas instalações</li><li>Nunca improvisar — seguir projetos e normas</li></ul></div>
+    <div class="card"><div class="card-ico">🤝</div><h3>Conduta em Campo</h3><ul><li>Relacionamento respeitoso com o cliente</li><li>Zelar pelas instalações</li><li>Nunca improvisar — seguir projetos e normas</li></ul></div>
   </div>
 
 </section>
 
 <!-- =================== ENGENHARIA =================== -->
 <section class="panel" id="panel-engenharia">
-
   <div class="sec-head"><div class="sec-icon">⚙️</div><h2>Onboarding · Engenharia</h2><div class="sec-line"></div></div>
-
-  <!-- Tecnauta foto (slide 1) -->
   <div class="two-col">
     <div>
       <div class="alert alert-b" style="margin-bottom:1.25rem">
         <div class="alert-ico">ℹ️</div>
-        <div class="alert-body"><strong>Bem-vindo à Engenharia Tecno IT</strong>
-          Desenvolvemos e entregamos soluções de inteligência tecnológica em mais de 50 cidades. Qualidade técnica, segurança e documentação são inegociáveis.</div>
+        <div class="alert-body"><strong>Bem-vindo à Engenharia Tecno IT</strong>Desenvolvemos e entregamos soluções de inteligência tecnológica em mais de 50 cidades. Qualidade técnica, segurança e documentação são inegociáveis.</div>
       </div>
       <div class="grid" style="grid-template-columns:1fr;gap:1rem;margin-bottom:0">
         <div class="card"><div class="card-ico">🏗️</div><h3>Projetos e Metodologia</h3><ul><li>Leitura do escopo técnico antes do início</li><li>Registro de atividades no sistema interno</li><li>Comunicação diária com líder técnico</li><li>Documentação As-Built obrigatória</li></ul></div>
@@ -580,20 +653,18 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
       </div>
     </div>
     <div>
-      <div class="slide-feature" style="margin-bottom:1rem">
+      <div class="slide-feature" style="margin-bottom:0">
         <img src="assets/slides/image14.png" alt="Tecnauta com tablet">
         <div class="slide-feature-caption">Universo IT — Tecnauta em ação</div>
       </div>
     </div>
   </div>
-
   <div class="grid">
     <div class="card"><div class="card-ico">🔐</div><h3>Acesso e Credenciais</h3><ul><li>Credenciais no D+1 via equipe de TI</li><li>VPN obrigatória em produção</li><li>2FA ativado em todas as contas</li></ul></div>
     <div class="card"><div class="card-ico">🦺</div><h3>SST em Campo</h3><ul><li>EPIs conforme NR-10 e NR-35</li><li>Checklist diário de segurança</li><li>Incidentes reportados ao SESMT imediatamente</li></ul></div>
     <div class="card"><div class="card-ico">📊</div><h3>Qualidade e Indicadores</h3><ul><li>SLAs de entrega por contrato</li><li>Relatório semanal de progresso</li><li>Revisão técnica com pares antes do fechamento</li></ul></div>
     <div class="card"><div class="card-ico">🤝</div><h3>Cultura de Equipe</h3><ul><li>Stand-up diário às 9h com o time</li><li>Retrospectiva quinzenal</li><li>Mentoria para novos Tecnautas (D+30)</li></ul></div>
   </div>
-
   <div class="divider"></div>
   <div class="sec-head"><div class="sec-icon">📅</div><h2>Primeiros 30 Dias</h2><div class="sec-line"></div></div>
   <div class="steps">
@@ -601,27 +672,19 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="step"><div class="step-n">2</div><div class="step-body"><h4>Semana 2 — Shadowing</h4><p>Acompanhar um sênior em campo ou projeto ativo. Entender padrões de qualidade e comunicação com cliente.</p></div></div>
     <div class="step"><div class="step-n">3</div><div class="step-body"><h4>Semana 3–4 — Contribuição Guiada</h4><p>Assumir tarefas com supervisão. Primeiro entregável técnico validado pelo líder no D+30.</p></div></div>
   </div>
-
 </section>
 
 <!-- =================== COMERCIAL =================== -->
 <section class="panel" id="panel-comercial">
-
   <div class="sec-head"><div class="sec-icon">💼</div><h2>Onboarding · Comercial</h2><div class="sec-line"></div></div>
-
   <div class="alert alert-o">
     <div class="alert-ico">🎯</div>
-    <div class="alert-body"><strong>Missão do Time Comercial</strong>
-      Ampliar a atuação da Tecno IT no mercado com excelência em relacionamento, proposta de valor e gestão de contratos.
-    </div>
+    <div class="alert-body"><strong>Missão do Time Comercial</strong>Ampliar a atuação da Tecno IT no mercado com excelência em relacionamento, proposta de valor e gestão de contratos.</div>
   </div>
-
-  <!-- Imagem "Você + Tecno IT + Grandes Marcas" (slide 11) -->
   <div class="slide-feature" style="margin-bottom:2rem">
     <img src="assets/slides/image28.png" alt="Você + Tecno IT + Grandes Marcas = Solução Inteligente">
     <div class="slide-feature-caption">Nossa proposta de valor — Projeto personalizado à realidade do cliente</div>
   </div>
-
   <div class="grid">
     <div class="card"><div class="card-ico">🏛️</div><h3>Cartela de Clientes</h3><ul><li>Governo Federal: Ministérios, BNDES, Banco do Brasil</li><li>Judiciário: TJ, TRF, TRT em múltiplos estados</li><li>Privado: Enel, Coca-Cola, Unimed, Anglo American</li></ul></div>
     <div class="card"><div class="card-ico">🤝</div><h3>Parceiros Estratégicos</h3><ul><li>Lightera — Software/Plataforma</li><li>SDC — Smart Data Computing</li><li>ISS — Videomonitoramento</li><li>HID — Controle de Acesso</li><li>TP-Link — Redes e Infraestrutura</li></ul></div>
@@ -630,11 +693,9 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><div class="card-ico">📜</div><h3>Compliance Comercial</h3><ul><li>Anti-suborno e LGPD em contratos</li><li>Aprovação jurídica obrigatória</li><li>Registro de toda tratativa no CRM</li></ul></div>
     <div class="card"><div class="card-ico">💬</div><h3>Argumentário de Marca</h3><ul><li>pessoas (i) + tecnologia (t) = inteligência tecnológica (it)</li><li>+R$100M · 50+ cidades · 400+ colaboradores</li><li>Líder na América Latina até 2033</li></ul></div>
   </div>
-
   <div class="divider"></div>
   <div class="sec-head"><div class="sec-icon">🗺️</div><h2>Mapa de Presença</h2><div class="sec-line"></div></div>
   <img class="clients-img" src="assets/slides/image29.png" alt="Projetos Tecno IT no Brasil">
-
   <div class="divider"></div>
   <div class="sec-head"><div class="sec-icon">📅</div><h2>Primeiros 30 Dias</h2><div class="sec-line"></div></div>
   <div class="steps">
@@ -642,21 +703,15 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="step"><div class="step-n">2</div><div class="step-body"><h4>Semana 2 — Processo e Ferramentas</h4><p>Treinamento no CRM, metodologia de proposta e acompanhamento de pipeline com sênior.</p></div></div>
     <div class="step"><div class="step-n">3</div><div class="step-body"><h4>Semana 3–4 — Primeira Oportunidade</h4><p>Identificar e qualificar a primeira oportunidade com suporte do time. Apresentar ao gestor no D+30.</p></div></div>
   </div>
-
 </section>
 
 <!-- =================== ADM FINANCEIRO =================== -->
 <section class="panel" id="panel-financeiro">
-
   <div class="sec-head"><div class="sec-icon">💰</div><h2>Onboarding · Administrativo Financeiro</h2><div class="sec-line"></div></div>
-
   <div class="alert alert-b">
     <div class="alert-ico">🏛️</div>
-    <div class="alert-body"><strong>Estrutura Societária</strong>
-      Tecno IT opera como Sociedade Anônima (capital fechado) com balanço auditado anualmente e compliance estruturado.
-    </div>
+    <div class="alert-body"><strong>Estrutura Societária</strong>Tecno IT opera como Sociedade Anônima (capital fechado) com balanço auditado anualmente e compliance estruturado.</div>
   </div>
-
   <div class="grid">
     <div class="card"><div class="card-ico">📊</div><h3>Governança Financeira</h3><ul><li>Balanço auditado anualmente</li><li>Foco em rentabilidade sobre receita bruta</li><li>DRE e cash flow monitorados mensalmente</li><li>Reportes à diretoria no fechamento</li></ul></div>
     <div class="card"><div class="card-ico">📋</div><h3>Processos Administrativos</h3><ul><li>Emissão e controle de NFs</li><li>Gestão de contratos e aditivos</li><li>Controle de despesas e reembolsos</li><li>Fluxo de aprovação de compras</li></ul></div>
@@ -665,33 +720,23 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><div class="card-ico">📅</div><h3>Calendário Financeiro</h3><ul><li>Fechamento contábil: dia 5 do mês seguinte</li><li>Aprovação de despesas: toda sexta-feira</li><li>Reunião de budget: trimestral</li></ul></div>
     <div class="card"><div class="card-ico">📂</div><h3>Documentação Obrigatória</h3><ul><li>Leitura das políticas financeiras internas</li><li>Assinatura de termo de confidencialidade</li><li>Cadastro no sistema de reembolso</li></ul></div>
   </div>
-
 </section>
 
 <!-- =================== RH =================== -->
 <section class="panel" id="panel-rh">
-
   <div class="sec-head"><div class="sec-icon">🧑‍🤝‍🧑</div><h2>Onboarding · Recursos Humanos</h2><div class="sec-line"></div></div>
-
-  <!-- Welcome hero com imagem do cockpit espacial (slide 14) -->
   <div class="welcome-hero">
     <img class="welcome-hero-img" src="assets/slides/image44.jpeg" alt="Universo IT — Cockpit">
     <div class="welcome-hero-overlay"></div>
     <div class="welcome-hero-body">
-      <blockquote>
-        "Você foi admitido por reunir condições e características adequadas às necessidades da Tecno it. Sua missão começa agora. Seu esforço, somado ao de todos, contribuirá para tornar maior o sucesso do nosso empreendimento e o seu em particular."
-      </blockquote>
+      <blockquote>"Você foi admitido por reunir condições e características adequadas às necessidades da Tecno it. Sua missão começa agora. Seu esforço, somado ao de todos, contribuirá para tornar maior o sucesso do nosso empreendimento e o seu em particular."</blockquote>
       <p class="sig">— Departamento de Recursos Humanos · <span>tecno it</span></p>
     </div>
   </div>
-
   <div class="alert alert-b" style="margin-top:2rem">
     <div class="alert-ico">💙</div>
-    <div class="alert-body"><strong>O RH é o guardião da Cultura Tecnauta</strong>
-      Garantimos que cada colaborador viva os valores INOTEC e contribua para um ambiente de alta performance e pertencimento.
-    </div>
+    <div class="alert-body"><strong>O RH é o guardião da Cultura Tecnauta</strong>Garantimos que cada colaborador viva os valores INOTEC e contribua para um ambiente de alta performance e pertencimento.</div>
   </div>
-
   <div class="grid">
     <div class="card"><div class="card-ico">📝</div><h3>Admissão e Contratos</h3><ul><li>Assinatura digital do contrato de trabalho</li><li>Entrega de documentos admissionais</li><li>Cadastro no sistema de ponto</li><li>Benefícios: VT, VR, plano de saúde</li></ul></div>
     <div class="card"><div class="card-ico">🎓</div><h3>Treinamentos Obrigatórios</h3><ul><li>Treinamento SST (NR-10, NR-35 conforme função)</li><li>LGPD e Segurança da Informação</li><li>Código de Conduta e Ética</li><li>Plataforma: itCast</li></ul></div>
@@ -700,43 +745,26 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><div class="card-ico">💬</div><h3>Canais de Comunicação</h3><ul><li>Ouvidoria interna (anonimato garantido)</li><li>Canal de sugestões via itCast</li><li>Reuniões All-hands mensais</li></ul></div>
     <div class="card"><div class="card-ico">🌟</div><h3>Reconhecimento</h3><ul><li>Programa Tecnauta Destaque</li><li>Reconhecimento por metas atingidas</li><li>Comemoração de aniversários</li><li>Incentivos por certificações</li></ul></div>
   </div>
-
   <div class="divider"></div>
   <div class="sec-head"><div class="sec-icon">⛓️</div><h2>Os 6 Elos da nossa Cultura</h2><div class="sec-line"></div></div>
-
-  <div class="chain chain-section">
-    <div class="chain-link">
-      <div class="chain-letter">I</div>
-      <div class="chain-name">Inovação</div>
-      <div class="chain-desc">Transformar ideias em soluções simples que ajudam a fazer melhor.</div>
+  <div class="inotec-section">
+    <div class="inotec-arcs">
+      <div class="arc-ring arc-active" data-value="I"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
+      <div class="arc-ring" data-value="N"><span class="arc-letter">N</span><span class="arc-name">Networking</span></div>
+      <div class="arc-ring" data-value="O"><span class="arc-letter">O</span><span class="arc-name">Objetividade</span></div>
+      <div class="arc-ring" data-value="T"><span class="arc-letter">T</span><span class="arc-name">Transformação</span></div>
+      <div class="arc-ring" data-value="E"><span class="arc-letter">E</span><span class="arc-name">Empatia</span></div>
+      <div class="arc-ring" data-value="C"><span class="arc-letter">C</span><span class="arc-name">Comprometimento</span></div>
     </div>
-    <div class="chain-link">
-      <div class="chain-letter">N</div>
-      <div class="chain-name">Networking</div>
-      <div class="chain-desc">Construir relações de confiança e fortalecer conexões com clareza.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">O</div>
-      <div class="chain-name">Objetividade</div>
-      <div class="chain-desc">Decidir com assertividade e assumir a responsabilidade pelos resultados.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">T</div>
-      <div class="chain-name">Transformação</div>
-      <div class="chain-desc">Agir com iniciativa e ser protagonista da própria jornada.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">E</div>
-      <div class="chain-name">Empatia</div>
-      <div class="chain-desc">Tratar pessoas com respeito, pensando no coletivo.</div>
-    </div>
-    <div class="chain-link">
-      <div class="chain-letter">C</div>
-      <div class="chain-name">Comprometimento</div>
-      <div class="chain-desc">Pensar e agir como dono. Garantir resultados para o cliente.</div>
+    <div class="inotec-details">
+      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">I</div><div class="inotec-card-title">Inovação</div></div><ul class="inotec-card-bullets"><li>Transformar ideias em soluções</li><li>Uma sugestão simples que ajuda a fazer melhor</li><li>Melhorar a performance da empresa todos os dias</li></ul></div>
+      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">N</div><div class="inotec-card-title">Networking</div></div><ul class="inotec-card-bullets"><li>Construir relações de confiança</li><li>Fortalecer conexões com clareza</li><li>Comunicar claramente com os parceiros e colegas</li></ul></div>
+      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">O</div><div class="inotec-card-title">Objetividade</div></div><ul class="inotec-card-bullets"><li>Decidir com assertividade e assumir a responsabilidade</li><li>Direto ao ponto sem rodeios</li><li>Admitir erros rapidamente e corrigir com o dobro de rapidez</li></ul></div>
+      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">T</div><div class="inotec-card-title">Transformação</div></div><ul class="inotec-card-bullets"><li>Agir com iniciativa e autogestão</li><li>Ser protagonista da própria jornada</li><li>Ver oportunidades de melhoria em cada desafio</li></ul></div>
+      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">E</div><div class="inotec-card-title">Empatia</div></div><ul class="inotec-card-bullets"><li>Tratar pessoas com respeito</li><li>Colaborar para construir resultados juntos</li><li>Pensar no coletivo antes do individual</li></ul></div>
+      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">C</div><div class="inotec-card-title">Comprometimento</div></div><ul class="inotec-card-bullets"><li>Pensar e agir como dono</li><li>Garantir resultados para o cliente</li><li>Ter compromisso com as entregas</li></ul></div>
     </div>
   </div>
-
 </section>
 
 </div><!-- /panels -->
@@ -749,6 +777,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
 <script>
 (function () {
+  /* ---- Tab switching ---- */
   const btns   = document.querySelectorAll('.tab-btn');
   const panels = document.querySelectorAll('.panel');
   btns.forEach(btn => {
@@ -756,10 +785,27 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
       const t = btn.dataset.tab;
       btns.forEach(b  => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
       panels.forEach(p => p.classList.remove('active'));
-      btn.classList.add('active');
-      btn.setAttribute('aria-selected','true');
+      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
       document.getElementById('panel-' + t).classList.add('active');
       document.getElementById('tabs-anchor').scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  });
+
+  /* ---- Arc rings hover/click highlight ---- */
+  document.querySelectorAll('.arc-ring').forEach(ring => {
+    ring.addEventListener('mouseenter', () => {
+      ring.classList.add('arc-active');
+    });
+    ring.addEventListener('mouseleave', () => {
+      ring.classList.remove('arc-active');
+    });
+    ring.addEventListener('click', () => {
+      const parent = ring.closest('.inotec-arcs');
+      parent.querySelectorAll('.arc-ring').forEach(r => r.classList.remove('arc-active'));
+      ring.classList.add('arc-active');
+    });
+    ring.addEventListener('keydown', e => {
+      if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); ring.click(); }
     });
   });
 })();
