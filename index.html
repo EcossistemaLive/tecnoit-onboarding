@@ -120,7 +120,7 @@ img{display:block;max-width:100%}
 .hero-logo img{height:56px;width:auto;filter:drop-shadow(0 0 24px rgba(238,114,3,.55))}
 .hero h1{font-size:clamp(2.8rem,7.5vw,6rem);font-weight:900;line-height:1.02;letter-spacing:-.04em;background:linear-gradient(160deg,#fff 40%,var(--o) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.5rem;animation:fadeUp .5s .1s ease both; text-align: center;}
 .hero p{font-size:clamp(.95rem,2.2vw,1.2rem);font-weight:300;color:rgba(255,255,255,.6);max-width:620px;margin:0 auto 2.5rem;animation:fadeUp .5s .15s ease both; text-align: center;}
-.hero-badge{display:table;background:rgba(238,114,3,.15);border:1px solid rgba(238,114,3,.4);color:#000;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.25rem;margin:0 auto 2rem;animation:fadeUp .5s .05s ease both}
+.hero-badge{display:table;background:var(--o);border:1px solid var(--od);color:#fff;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.25rem;margin:0 auto 2rem;animation:fadeUp .5s .05s ease both}
 .hero-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--o);color:#fff;font-family:var(--font);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.9rem 2.2rem;border-radius:999px;border:none;cursor:pointer;box-shadow:0 10px 36px rgba(238,114,3,.45);transition:var(--ease);animation:fadeUp .5s .2s ease both}
 .hero-cta:hover{background:var(--od);transform:translateY(-3px);box-shadow:0 16px 44px rgba(238,114,3,.55)}
 .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);z-index:2;animation:bounce 2.5s 1.5s infinite}
@@ -150,10 +150,10 @@ img{display:block;max-width:100%}
 .universe-overline{
   display:inline-block;
   font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:#000;margin-bottom:1rem;
+  color:var(--text);margin-bottom:1rem;
 }
 /* Black highlight on key letters as requested */
-.universe-headline .hl{color:#000}
+.universe-headline .hl{color:var(--text)}
 
 .universe-lead{
   font-size:clamp(1rem,1.8vw,1.2rem);
@@ -161,7 +161,7 @@ img{display:block;max-width:100%}
   color:var(--text2);
   text-align:justify;
 }
-.universe-lead .hl{color:#000;font-weight:700}
+.universe-lead .hl{color:var(--text);font-weight:700}
 
 /* Orbit cards — each slide becomes an orbit point */
 .orbit-cards{
@@ -205,7 +205,7 @@ img{display:block;max-width:100%}
   color:var(--text);margin-bottom:.6rem;
   line-height:1.3;
 }
-.hl{color:#000 !important; font-weight:700;}
+.hl{color:var(--text) !important; font-weight:700;}
 .sec-icon{display:none}
 .sec-head{gap:0}
 
@@ -227,9 +227,9 @@ img{display:block;max-width:100%}
 .orbit-narrative .big-quote::before{
   content:'"';
   position:absolute;top:-1.2rem;left:1.5rem;
-  font-size:4rem;color:#000;font-family:Georgia,serif;line-height:1;
+  font-size:4rem;color:var(--text);font-family:Georgia,serif;line-height:1;
 }
-.orbit-narrative .big-quote strong{color:#000;font-weight:700;font-style:normal}
+.orbit-narrative .big-quote strong{color:var(--text);font-weight:700;font-style:normal}
 
 /* VIDEO EMBED */
 .video-section{
@@ -250,9 +250,9 @@ img{display:block;max-width:100%}
 .tabs-nav::-webkit-scrollbar{display:none}
 .tab-btn{flex-shrink:0;border:none;background:transparent;font-family:var(--font);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);padding:1.1rem 1.35rem;cursor:pointer;position:relative;transition:color var(--ease);white-space:nowrap}
 .tab-btn:hover{color:var(--g)}
-.tab-btn.active{color:#000}
+.tab-btn.active{color:var(--text)}
 .tab-btn.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--o);border-radius:2px 2px 0 0}
-.dept-badge{display:inline-block;background:rgba(238,114,3,.1);border:1px solid rgba(238,114,3,.2);border-radius:999px;font-size:.58rem;padding:.1rem .42rem;color:#000;margin-left:.4rem;vertical-align:middle;font-weight:600}
+.dept-badge{display:inline-block;background:rgba(238,114,3,.1);border:1px solid rgba(238,114,3,.2);border-radius:999px;font-size:.58rem;padding:.1rem .42rem;color:var(--text);margin-left:.4rem;vertical-align:middle;font-weight:600}
 
 /* =============================================
    LAYOUT
@@ -280,7 +280,7 @@ img{display:block;max-width:100%}
 .stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:3rem}
 .stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1rem;text-align:center;box-shadow:var(--shadow);transition:var(--ease)}
 .stat:hover{border-color:var(--border-o);box-shadow:var(--shadow-h);transform:translateY(-2px)}
-.stat-num{display:block;font-size:2rem;font-weight:900;color:#000;line-height:1}
+.stat-num{display:block;font-size:2rem;font-weight:900;color:var(--text);line-height:1}
 .stat-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.4rem}
 
 /* Brand equation */
@@ -288,10 +288,10 @@ img{display:block;max-width:100%}
 .eq-part{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1rem 2rem}
 .eq-img{width:100px;height:100px;object-fit:contain}
 .eq-label{font-size:.85rem;font-weight:600;color:var(--text2);text-transform:lowercase;letter-spacing:.05em}
-.eq-sublabel{font-size:.7rem;color:#000;font-weight:700;letter-spacing:.1em}
+.eq-sublabel{font-size:.7rem;color:var(--text);font-weight:700;letter-spacing:.1em}
 .eq-op{font-size:3rem;font-weight:900;color:rgba(0,0,0,.1);padding:0 .5rem;align-self:center;line-height:1}
 .eq-result{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:1.2rem 2.5rem;border-left:1px solid var(--border)}
-.eq-result-label{font-size:1.5rem;font-weight:900;color:#000;letter-spacing:-.02em}
+.eq-result-label{font-size:1.5rem;font-weight:900;color:var(--text);letter-spacing:-.02em}
 .eq-result-sub{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .logo-symbol-img{height:70px;width:auto;object-fit:contain}
 
@@ -303,15 +303,11 @@ img{display:block;max-width:100%}
 .inotec-arcs::-webkit-scrollbar{height:4px}
 .inotec-arcs::-webkit-scrollbar-thumb{background:var(--border-o);border-radius:2px}
 
-.arc-ring{flex-shrink:0;position:relative;width:130px;height:130px;border-radius:50%;border:3px solid var(--o);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:var(--ease);box-shadow:var(--shadow);margin-left:-24px;z-index:1}
+.arc-ring{flex-shrink:0;position:relative;width:130px;height:130px;border-radius:50%;border:3px solid var(--o);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:default;box-shadow:var(--shadow);margin-left:-24px;z-index:1}
 .arc-ring:first-child{margin-left:0}
-.arc-ring:hover,.arc-ring.arc-active{z-index:10;background:var(--o);box-shadow:0 8px 32px rgba(238,114,3,.4);border-color:var(--od);transform:translateY(-6px) scale(1.06)}
-.arc-ring:hover .arc-letter,.arc-ring.arc-active .arc-letter{color:#fff}
-.arc-ring:hover .arc-name,.arc-ring.arc-active .arc-name{color:rgba(255,255,255,.8)}
-.arc-ring::before{content:'';position:absolute;top:-6px;left:-6px;right:-6px;bottom:-6px;border-radius:50%;border:2px solid transparent;border-top-color:rgba(238,114,3,.2);border-right-color:rgba(238,114,3,.2);pointer-events:none}
-.arc-ring:hover::before,.arc-ring.arc-active::before{border-top-color:rgba(238,114,3,.6);border-right-color:rgba(238,114,3,.6)}
-.arc-letter{font-size:2.5rem;font-weight:900;color:#000;line-height:1;transition:var(--ease)}
-.arc-name{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:.25rem;transition:var(--ease)}
+[data-theme="dark"] .arc-ring{background:#1a1a1a}
+.arc-letter{font-size:2.5rem;font-weight:900;color:var(--text);line-height:1}
+.arc-name{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:.25rem}
 
 .inotec-details{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
 .inotec-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--o);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shadow);transition:var(--ease)}
@@ -333,11 +329,11 @@ img{display:block;max-width:100%}
 .card:hover{box-shadow:var(--shadow-h);transform:translateY(-3px)}
 .card:hover::before{transform:scaleX(1)}
 .card-ico{font-size:1.8rem;margin-bottom:.9rem}
-.card h3{font-size:.95rem;font-weight:700;color:#000;margin-bottom:.6rem}
+.card h3{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.6rem}
 .card p,.card ul{font-size:.875rem;color:var(--text2);line-height:1.65;text-align:justify}
 .card ul{padding-left:1.2rem;list-style:disc}
 .card ul li{margin:.3rem 0}
-.card ul li::marker{color:#000}
+.card ul li::marker{color:var(--text)}
 
 /* =============================================
    ALERTS / TAGS
@@ -386,7 +382,7 @@ img{display:block;max-width:100%}
   list-style:none;
 }
 .faq-q::-webkit-details-marker{display:none}
-.faq-chevron{width:24px;height:24px;flex-shrink:0;background:var(--og);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:transform var(--ease);color:#000;font-weight:900}
+.faq-chevron{width:24px;height:24px;flex-shrink:0;background:var(--og);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:transform var(--ease);color:var(--text);font-weight:900}
 .faq-item.open .faq-chevron{transform:rotate(180deg);background:var(--o);color:#fff}
 .faq-a{
   max-height:0;overflow:hidden;
@@ -412,7 +408,7 @@ img{display:block;max-width:100%}
 .welcome-hero-body{position:relative;z-index:1;padding:2rem;max-width:720px}
 .welcome-hero-body blockquote{font-size:clamp(1rem,1.8vw,1.15rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:1rem}
 .welcome-hero-body .sig{font-size:.78rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.welcome-hero-body .sig span{color:#000}
+.welcome-hero-body .sig span{color:var(--text)}
 
 /* =============================================
    FOOTER
@@ -775,12 +771,12 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <div class="grid" style="padding:0 1.5rem; max-width:1280px; margin:0 auto 6rem; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
     
-    <div class="card" style="border-top: 4px solid #000;">
+    <div class="card" style="border-top: 4px solid var(--text);">
       <div style="font-size:1.8rem; margin-bottom:1rem;">👨‍🚀</div>
       <h3>Estação de Comando — CEO</h3>
       <p>Onde se define a rota e se tomam decisões críticas. Esta estação enxerga o todo, antecipa riscos e direciona o futuro da nave.</p>
       <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
-        Foco: <span style="color:#000;">Visão, Estratégia e Decisões de Alto Impacto</span>
+        Foco: <span style="color:var(--text);">Visão, Estratégia e Decisões de Alto Impacto</span>
       </div>
     </div>
 
@@ -889,13 +885,13 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
   </p>
 
   <div class="inotec-section">
-    <div class="inotec-arcs" role="list">
-      <div class="arc-ring arc-active" role="listitem" tabindex="0"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
-      <div class="arc-ring" role="listitem" tabindex="0"><span class="arc-letter">N</span><span class="arc-name">Networking</span></div>
-      <div class="arc-ring" role="listitem" tabindex="0"><span class="arc-letter">O</span><span class="arc-name">Objetividade</span></div>
-      <div class="arc-ring" role="listitem" tabindex="0"><span class="arc-letter">T</span><span class="arc-name">Transformação</span></div>
-      <div class="arc-ring" role="listitem" tabindex="0"><span class="arc-letter">E</span><span class="arc-name">Empatia</span></div>
-      <div class="arc-ring" role="listitem" tabindex="0"><span class="arc-letter">C</span><span class="arc-name">Comprometimento</span></div>
+    <div class="inotec-arcs">
+      <div class="arc-ring"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
+      <div class="arc-ring"><span class="arc-letter">N</span><span class="arc-name">Networking</span></div>
+      <div class="arc-ring"><span class="arc-letter">O</span><span class="arc-name">Objetividade</span></div>
+      <div class="arc-ring"><span class="arc-letter">T</span><span class="arc-name">Transformação</span></div>
+      <div class="arc-ring"><span class="arc-letter">E</span><span class="arc-name">Empatia</span></div>
+      <div class="arc-ring"><span class="arc-letter">C</span><span class="arc-name">Comprometimento</span></div>
     </div>
     <div class="inotec-details">
       <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">I</div><div class="inotec-card-title">Inovação</div></div><ul class="inotec-card-bullets"><li>Transformar ideias em soluções</li><li>Uma sugestão simples que ajuda a fazer melhor</li><li>Melhorar a performance da empresa todos os dias</li></ul></div>
@@ -1402,7 +1398,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
   <div class="sec-head"><h2>Os 6 Elos da nossa Cultura</h2><div class="sec-line"></div></div>
   <div class="inotec-section">
     <div class="inotec-arcs">
-      <div class="arc-ring arc-active"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
+      <div class="arc-ring"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
       <div class="arc-ring"><span class="arc-letter">N</span><span class="arc-name">Networking</span></div>
       <div class="arc-ring"><span class="arc-letter">O</span><span class="arc-name">Objetividade</span></div>
       <div class="arc-ring"><span class="arc-letter">T</span><span class="arc-name">Transformação</span></div>
@@ -1582,17 +1578,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     });
   });
 
-  /* ---- Arc rings hover/click ---- */
-  document.querySelectorAll('.arc-ring').forEach(ring => {
-    ring.addEventListener('click', () => {
-      const parent = ring.closest('.inotec-section');
-      parent.querySelectorAll('.arc-ring').forEach(r => r.classList.remove('arc-active'));
-      ring.classList.add('arc-active');
-      
-      // Auto-scroll to details for accessibility on mobile
-      ring.closest('.inotec-section').querySelector('.inotec-details').scrollIntoView({ behavior:'smooth', block:'nearest' });
-    });
-  });
+
 
   /* ---- FAQ accordion ---- */
   document.querySelectorAll('.faq-item').forEach(item => {
