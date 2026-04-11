@@ -328,7 +328,7 @@ img{display:block;max-width:100%}
   font-size:.875rem;color:var(--text2);line-height:1.7;
   transition:max-height .4s ease, padding .3s ease;
 }
-.faq-item.open .faq-a{max-height:300px;padding:.2rem 1.4rem 1.2rem}
+.faq-item.open .faq-a{max-height:500px;padding:.2rem 1.4rem 1.2rem}
 
 .faq-note{
   background:rgba(238,114,3,.05);border:1px dashed rgba(238,114,3,.3);
@@ -352,6 +352,188 @@ img{display:block;max-width:100%}
    FOOTER
 ============================================= */
 footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);letter-spacing:.06em;background:var(--bg2)}
+
+/* =============================================
+   VISUAL REFINEMENTS — v2
+============================================= */
+/* Section lead paragraph under titles */
+.section-lead{
+  max-width:720px;margin:-1.5rem auto 2.5rem;
+  font-size:clamp(.95rem,1.4vw,1.05rem);
+  font-weight:300;line-height:1.8;
+  color:var(--text2);text-align:center;
+  padding:0 1rem;
+}
+.section-lead strong{color:var(--text);font-weight:700}
+
+/* Eyebrow overline for sections */
+.eyebrow{
+  display:inline-block;
+  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--o);margin-bottom:.8rem;
+}
+
+/* Presença Nacional feature — lighter framing */
+.presenca-feature{background:var(--bg3);border-color:var(--border-o)}
+.presenca-feature img{object-fit:cover}
+
+/* Improve card breathing: more padding, clearer hierarchy, generous lists */
+.card{padding:1.75rem 1.6rem !important}
+.card h3{font-size:1.1rem !important;margin-bottom:1rem !important;letter-spacing:-.01em}
+.card ul{margin:0;padding-left:1.1rem}
+.card ul li{margin-bottom:.55rem;line-height:1.65;font-size:.92rem}
+.card ul li:last-child{margin-bottom:0}
+.card p{font-size:.92rem;line-height:1.75}
+
+/* Grid gaps slightly more generous */
+.grid{gap:1.5rem !important}
+
+/* Alternate section rhythm — panels get a subtle divider background on odd blocks */
+.panel .divider{
+  height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);
+  border:none;margin:4rem auto;max-width:900px;
+}
+
+/* Sec-head refresh — slightly larger title and calmer line */
+.sec-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem) !important;letter-spacing:-.02em}
+.sec-head-center h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.02em;margin-bottom:.75rem}
+
+/* Alerts — more padding, calmer background */
+.alert{padding:1.3rem 1.5rem !important;line-height:1.7}
+.alert strong{display:block;margin-bottom:.3rem;font-size:.95rem}
+
+/* =============================================
+   POLICY LINKS — Download cards for policies
+============================================= */
+.policy-links{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1rem;margin:2rem auto 1rem;max-width:1200px;
+}
+.policy-link{
+  display:flex;align-items:center;gap:1rem;
+  padding:1.1rem 1.3rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:var(--r);
+  box-shadow:var(--shadow);
+  text-decoration:none;color:var(--text);
+  transition:var(--ease);
+}
+.policy-link:hover{
+  border-color:var(--o);transform:translateY(-2px);
+  box-shadow:var(--shadow-h);background:var(--og);
+}
+.policy-ico{
+  font-size:1.6rem;width:48px;height:48px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--og);border-radius:12px;flex-shrink:0;
+}
+.policy-txt{display:flex;flex-direction:column;gap:.2rem;min-width:0}
+.policy-txt strong{font-size:.92rem;font-weight:700;color:var(--text);line-height:1.3}
+.policy-txt small{font-size:.72rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
+
+/* =============================================
+   CANAIS DE COMUNICAÇÃO — Support section
+============================================= */
+.channels-section{
+  padding:5rem 0 4rem;
+  background:linear-gradient(180deg,var(--bg3) 0%,var(--bg) 100%);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.channels-lead{margin-bottom:3rem}
+.channels-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:1.5rem;max-width:1200px;margin:0 auto 3rem;
+  padding:0 1.5rem;
+}
+.channel-card{
+  background:var(--surface);border:1px solid var(--border);
+  border-radius:var(--r);padding:1.75rem;
+  box-shadow:var(--shadow);transition:var(--ease);
+  position:relative;overflow:hidden;
+}
+.channel-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,var(--o),var(--od));
+}
+.channel-card:hover{
+  transform:translateY(-4px);box-shadow:var(--shadow-h);
+  border-color:var(--border-o);
+}
+.channel-head{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding-bottom:1.25rem;margin-bottom:1.25rem;
+  border-bottom:1px solid var(--border);
+}
+.channel-ico{
+  font-size:1.6rem;width:52px;height:52px;
+  display:flex;align-items:center;justify-content:center;
+  background:var(--og);border-radius:14px;flex-shrink:0;
+}
+.channel-head h3{
+  font-size:1.05rem;font-weight:800;color:var(--text);
+  margin:0 0 .3rem;letter-spacing:-.01em;
+}
+.channel-tag{
+  display:inline-block;font-size:.68rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--o);
+}
+.channel-body{display:flex;flex-direction:column;gap:.5rem}
+.channel-name{
+  font-size:1rem;color:var(--text);font-weight:700;
+}
+.channel-phone{
+  font-size:.95rem;color:var(--text2);font-weight:500;
+  text-decoration:none;transition:var(--ease);
+}
+.channel-phone:hover{color:var(--o)}
+
+.channels-official{
+  max-width:1200px;margin:0 auto 3rem;padding:0 1.5rem;
+}
+.channels-subhead{
+  font-size:.75rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--muted);
+  text-align:center;margin-bottom:1.25rem;
+}
+.official-links{
+  display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;
+}
+.official-link{
+  display:flex;align-items:center;gap:.85rem;
+  padding:1rem 1.5rem;background:var(--surface);
+  border:1px solid var(--border);border-radius:999px;
+  text-decoration:none;color:var(--text);
+  transition:var(--ease);box-shadow:var(--shadow);
+}
+.official-link:hover{
+  border-color:var(--o);background:var(--og);
+  transform:translateY(-2px);box-shadow:var(--shadow-h);
+}
+.official-ico{font-size:1.3rem}
+.official-txt{display:flex;flex-direction:column;text-align:left}
+.official-txt strong{font-size:.88rem;font-weight:700;color:var(--text)}
+.official-txt small{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+
+.channels-directive{
+  max-width:720px;margin:0 auto;padding:1.75rem 2rem;
+  background:var(--surface);border:1px solid var(--border);
+  border-left:4px solid var(--o);
+  border-radius:0 var(--r) var(--r) 0;
+  box-shadow:var(--shadow);
+}
+.channels-directive h4{
+  font-size:.8rem;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--o);margin:0 0 .6rem;
+}
+.channels-directive p{
+  font-size:.95rem;color:var(--text);font-weight:600;
+  margin-bottom:.6rem;
+}
+.channels-directive ul{
+  margin:0;padding-left:1.2rem;
+  font-size:.9rem;color:var(--text2);line-height:1.85;
+}
+.channels-directive ul li{margin-bottom:.2rem}
 
 /* =============================================
    ANIMATIONS
@@ -585,8 +767,6 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
 </section>
 
-</section>
-
 <!-- ========== TABS ========== -->
 <div id="tabs-anchor"></div>
 <nav class="tabs-wrapper" aria-label="Seções de onboarding">
@@ -663,11 +843,12 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <div class="divider"></div>
 
-  <!-- CLIENTES -->
-  <div class="sec-head"><h2>Nossos Clientes</h2><div class="sec-line"></div></div>
-  <div class="slide-feature">
-    <img src="assets/slides/image29.png" alt="Nossos Clientes — Mapa do Brasil e logos">
-    <div class="slide-feature-caption">+50 cidades atendidas · Setor Público e Privado</div>
+  <!-- PRESENÇA NACIONAL -->
+  <div class="sec-head-center"><h2>Presença Nacional</h2></div>
+  <p class="section-lead">Mais de <strong>50 cidades atendidas</strong> · Setor Público e Privado em todas as regiões do Brasil.</p>
+  <div class="slide-feature presenca-feature">
+    <img src="assets/slides/presenca_nacional.jpeg" alt="Presença Nacional — Mapa da atuação da Tecno it no Brasil">
+    <div class="slide-feature-caption">Tecnautas em missão por todo o território nacional</div>
   </div>
 
   <div class="divider"></div>
@@ -684,6 +865,13 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><h3>NR-35 · Altura</h3><ul><li>Aplicável acima de 2 m</li><li>Treinamento obrigatório</li><li>Análise de risco + Permissão de Trabalho</li></ul></div>
     <div class="card"><h3>NR-17 · Ergonomia</h3><ul><li>Técnicas de levantamento de cargas</li><li>Cuidados com postura</li><li>Intervalos e pausas regulares</li></ul></div>
     <div class="card"><h3>Incidentes</h3><p>Qualquer incidente deve ser comunicado <strong>imediatamente</strong> ao SESMT. Nunca improvise após um ocorrido.</p></div>
+  </div>
+
+  <div class="policy-links">
+    <a class="policy-link" href="docs/politica-seguranca-informacao.docx" download>
+      <span class="policy-ico">🛡️</span>
+      <span class="policy-txt"><strong>Normas de SST &amp; Segurança</strong><small>Documento oficial</small></span>
+    </a>
   </div>
 
 </section>
@@ -709,6 +897,73 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><h3>Qualidade e Indicadores</h3><ul><li>SLAs de entrega por contrato</li><li>Relatório semanal de progresso</li><li>Revisão técnica com pares antes do fechamento</li></ul></div>
     <div class="card"><h3>Cultura de Equipe</h3><ul><li>Stand-up diário às 9h com o time</li><li>Retrospectiva quinzenal</li><li>Mentoria para novos Tecnautas (D+30)</li></ul></div>
   </div>
+  <div class="divider"></div>
+
+  <!-- SEGURANÇA DA INFORMAÇÃO -->
+  <div class="sec-head"><h2>Segurança da Informação (PSI)</h2><div class="sec-line"></div></div>
+  <div class="alert alert-o"><div class="alert-body"><strong>Base normativa</strong>A PSI da Tecno it segue a norma <strong>ABNT NBR ISO/IEC 27002:2013</strong> e a LGPD. Toda violação deve ser comunicada imediatamente à Gerência de Service Desk (GSD).</div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Princípios Fundamentais</h3>
+      <ul>
+        <li><strong>Confidencialidade</strong> — acesso apenas por autorizados</li>
+        <li><strong>Integridade</strong> — informação preservada e íntegra</li>
+        <li><strong>Disponibilidade</strong> — acesso quando necessário</li>
+        <li>Uso ético dos recursos tecnológicos</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Responsabilidades do Usuário</h3>
+      <ul>
+        <li>Uso de senha segura com troca periódica</li>
+        <li>Cumprimento das normas de segurança</li>
+        <li>Comunicação imediata de incidentes à GSD</li>
+        <li>Zelo pelos ativos de informação da empresa</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Softwares &amp; Licenciamento</h3>
+      <ul>
+        <li>Somente softwares com <strong>licença válida</strong></li>
+        <li>Proibido: cracks, keygens, piratas</li>
+        <li>Instalação não autorizada é <strong>infração grave</strong></li>
+        <li>Base legal: Lei 9.610/98 e Lei 9.609/98</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Proteção de Dados (LGPD)</h3>
+      <ul>
+        <li>Tratamento conforme LGPD (Lei 13.709/2018)</li>
+        <li>Classificação da informação obrigatória</li>
+        <li>Ativos críticos em áreas controladas</li>
+        <li>Ambientes de produção e dev segregados</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Monitoramento</h3>
+      <ul>
+        <li>A empresa monitora estações, e-mail e navegação</li>
+        <li>Auditorias periódicas de conformidade</li>
+        <li>Plano de contingência testado anualmente</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Classificação da Informação</h3>
+      <ul>
+        <li>Definição clara de propriedade e custódia</li>
+        <li>Controles especiais para dados sensíveis</li>
+        <li>Regras específicas para dispositivos móveis</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-links">
+    <a class="policy-link" href="docs/politica-seguranca-informacao.docx" download>
+      <span class="policy-ico">🔒</span>
+      <span class="policy-txt"><strong>Política de Segurança da Informação</strong><small>DOCX · V.3 — 17/09/2025</small></span>
+    </a>
+  </div>
+
   <div class="divider"></div>
   <div class="sec-head"><h2>Primeiros 30 Dias</h2><div class="sec-line"></div></div>
   <div class="steps">
@@ -752,9 +1007,139 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><h3>Governança Financeira</h3><ul><li>Balanço auditado anualmente</li><li>Foco em rentabilidade sobre receita bruta</li><li>DRE e cash flow monitorados mensalmente</li></ul></div>
     <div class="card"><h3>Processos Administrativos</h3><ul><li>Emissão e controle de NFs</li><li>Gestão de contratos e aditivos</li><li>Controle de despesas e reembolsos</li></ul></div>
     <div class="card"><h3>Compliance e LGPD</h3><ul><li>Conformidade com LGPD em dados financeiros</li><li>Políticas de controle interno</li><li>Relatórios de integridade para auditoria</li></ul></div>
-    <div class="card"><h3>Sistemas e Ferramentas</h3><ul><li>ERP interno (acesso via ti)</li><li>Conciliação bancária diária</li><li>Planilhas controladas e versionadas</li></ul></div>
+    <div class="card"><h3>Sistemas e Ferramentas</h3><ul><li>ERP interno (acesso via ti)</li><li>Plataforma <strong>Caju</strong> — reembolsos e despesas</li><li>Conciliação bancária diária</li></ul></div>
     <div class="card"><h3>Calendário Financeiro</h3><ul><li>Fechamento contábil: dia 5 do mês seguinte</li><li>Aprovação de despesas: toda sexta-feira</li><li>Reunião de budget: trimestral</li></ul></div>
     <div class="card"><h3>Documentação Obrigatória</h3><ul><li>Leitura das políticas financeiras internas</li><li>Assinatura de termo de confidencialidade</li><li>Cadastro no sistema de reembolso</li></ul></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- POLÍTICA DE VIAGENS -->
+  <div class="sec-head"><h2>Política de Viagens Corporativas</h2><div class="sec-line"></div></div>
+  <div class="alert alert-o"><div class="alert-body"><strong>Fluxo único: Plataforma Caju</strong>Toda solicitação de adiantamento, reembolso e prestação de contas é feita <strong>exclusivamente</strong> pelo aplicativo Caju. Não são aceitas solicitações por e-mail ou forma física.</div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Diárias de Alimentação</h3>
+      <ul>
+        <li><strong>Gerentes:</strong> R$ 120,00 / dia</li>
+        <li><strong>Coordenadores e Supervisores:</strong> R$ 100,00 / dia</li>
+        <li><strong>Demais cargos:</strong> R$ 80,00 / dia</li>
+        <li>Café da manhã é fornecido pelo hotel</li>
+        <li>Airbnb: até R$ 25,00 com comprovante fiscal</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Hospedagem</h3>
+      <ul>
+        <li>Reserva feita pelo time de Suprimentos</li>
+        <li>Pode haver acomodação compartilhada</li>
+        <li>Emergencial: reembolso máximo de R$ 200,00/diária</li>
+        <li>Multas por atraso de check-out não são reembolsadas</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Transporte</h3>
+      <ul>
+        <li>Uber / 99 digitalizados no Caju</li>
+        <li>Limite de <strong>4 deslocamentos</strong> por dia</li>
+        <li>Corridas fora do roteiro não são reembolsadas</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Quilometragem — Veículo Próprio</h3>
+      <ul>
+        <li><strong>Diretores:</strong> R$ 1,75 / km</li>
+        <li><strong>Demais cargos:</strong> R$ 1,50 / km</li>
+        <li><strong>Motos:</strong> R$ 0,85 / km</li>
+        <li>Até 200 km (ida + volta). Acima disso: locação obrigatória</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Retorno ao Domicílio</h3>
+      <ul>
+        <li>Distância &lt; 500 km: retorno a cada 15 dias</li>
+        <li>Distância ≥ 500 km: retorno a cada 30 dias</li>
+        <li>Limite de 30 dias fora do domicílio (art. 469 §3º CLT)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Prazos de Pagamento</h3>
+      <ul>
+        <li>Prestações até dia <strong>08</strong> → pagamento dia <strong>15</strong></li>
+        <li>Prestações até dia <strong>24</strong> → pagamento dia <strong>30</strong></li>
+        <li>Se cair em fim de semana: último dia útil anterior</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- POLÍTICA DE MOBILIDADE -->
+  <div class="sec-head"><h2>Mobilidade Corporativa &amp; Combustível</h2><div class="sec-line"></div></div>
+  <div class="alert alert-b"><div class="alert-body"><strong>Prestação de Contas Mensal</strong>Período de apuração do dia 1º ao último dia útil. Prestação entregue até o dia <strong>05</strong> do mês seguinte, via Caju. A liberação do próximo adiantamento depende da entrega anterior.</div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Adiantamento de Combustível</h3>
+      <ul>
+        <li>Limite: <strong>R$ 1.500,00 / mês</strong></li>
+        <li>Creditado no 1º dia útil do mês</li>
+        <li>Complemento possível: até R$ 500,00 (após usar 80%)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Veículos da Frota</h3>
+      <ul>
+        <li>Uso exclusivo corporativo — vedado uso pessoal</li>
+        <li>CNH enviada previamente ao Dep. Logística</li>
+        <li>Checklist obrigatório antes da retirada</li>
+        <li>Proibida transferência da condução sem autorização</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Veículos Locados</h3>
+      <ul>
+        <li>Fundo fixo de <strong>R$ 1.500</strong> por cartão</li>
+        <li>Carro passeio: R$ 70,00 / diária</li>
+        <li>Autorização da Gerência de Engenharia para ajustes</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Multas e Responsabilização</h3>
+      <ul>
+        <li>Condutor responde integralmente por multas</li>
+        <li>Danos por negligência: desconto em folha (art. 462 §1º CLT)</li>
+        <li>Franquia de seguro por culpa: não reembolsável</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Fluxo de Aprovação</h3>
+      <ul>
+        <li>1º Colaborador → preenchimento no Caju</li>
+        <li>2º Coordenador → validação</li>
+        <li>3º Analista de Projetos → conferência</li>
+        <li>4º Gerência → aprovação</li>
+        <li>5º Financeiro → aprovação final e pagamento</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Documentos Obrigatórios</h3>
+      <ul>
+        <li>Cupom fiscal <strong>com CPF</strong> do colaborador</li>
+        <li>Planilha de Controle de Rotas assinada</li>
+        <li>Odômetro inicial e final registrados</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-links">
+    <a class="policy-link" href="docs/politica-viagens.docx" download>
+      <span class="policy-ico">📄</span>
+      <span class="policy-txt"><strong>Política de Viagens</strong><small>Documento oficial · DOCX</small></span>
+    </a>
+    <a class="policy-link" href="docs/politica-mobilidade-corporativa.docx" download>
+      <span class="policy-ico">🚗</span>
+      <span class="policy-txt"><strong>Política de Mobilidade Corporativa</strong><small>Documento oficial · DOCX</small></span>
+    </a>
   </div>
 </section>
 
@@ -778,6 +1163,175 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <div class="card"><h3>Canais de Comunicação</h3><ul><li>Ouvidoria interna (anonimato garantido)</li><li>Canal de sugestões via itCast</li><li>Reuniões All-hands mensais</li></ul></div>
     <div class="card"><h3>Reconhecimento</h3><ul><li>Programa Tecnauta Destaque</li><li>Reconhecimento por metas atingidas</li><li>Incentivos por certificações</li></ul></div>
   </div>
+
+  <div class="divider"></div>
+
+  <!-- POLÍTICA DE JORNADA -->
+  <div class="sec-head"><h2>Política de Jornada de Trabalho</h2><div class="sec-line"></div></div>
+  <div class="alert alert-o"><div class="alert-body"><strong>Base legal</strong>CLT (Arts. 58, 59, 66, 71 e 74) · Lei 13.467/2017 · Convenção Coletiva 2025–2026 · LGPD</div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Jornada &amp; Ponto Eletrônico</h3>
+      <ul>
+        <li>Jornada legal: até <strong>44h semanais</strong> / 8h diárias</li>
+        <li>Marcação obrigatória de entrada, saída e intervalos</li>
+        <li>Aplicativo oficial da empresa com <strong>geolocalização</strong></li>
+        <li>Coleta apenas no momento do registro (não há monitoramento contínuo)</li>
+        <li>Marcação pessoal — não pode ser delegada</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Intervalos Legais</h3>
+      <ul>
+        <li><strong>Interjornada:</strong> mínimo 11h consecutivas (art. 66 CLT)</li>
+        <li><strong>Intrajornada:</strong> mínimo 1h para jornadas &gt; 6h (art. 71 CLT)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Horas Extras</h3>
+      <ul>
+        <li>Apenas com autorização prévia do CEO, por e-mail</li>
+        <li><strong>+50%</strong> nas duas primeiras horas diárias</li>
+        <li><strong>+100%</strong> em domingos e feriados</li>
+        <li><strong>+20%</strong> adicional noturno (22h–5h)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Banco de Horas</h3>
+      <ul>
+        <li>Acordo Individual de Compensação (CCT — Cláusula 33ª)</li>
+        <li>Compensação em até <strong>1 ano</strong>, proporção 1x1</li>
+        <li>Fechamento mensal no dia <strong>25</strong></li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Atestados &amp; Declarações</h3>
+      <ul>
+        <li>Entrega em até <strong>48 horas</strong> do retorno</li>
+        <li>Deve conter nome, data, horário e CRM do profissional</li>
+        <li>Declarações abonam só o período do atendimento</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Deslocamentos &amp; Viagens</h3>
+      <ul>
+        <li>Tempo em espera (aeroporto/rodoviária) não é jornada</li>
+        <li>Dirigindo a serviço <strong>é jornada</strong></li>
+        <li>Sempre respeitando intervalos legais de 11h</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- POLÍTICA DE GESTÃO DE PESSOAS -->
+  <div class="sec-head"><h2>Gestão de Pessoas &amp; Benefícios</h2><div class="sec-line"></div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Recrutamento &amp; Seleção</h3>
+      <ul>
+        <li>Condução pelo RH junto à liderança da área</li>
+        <li>Prioridade para recrutamento <strong>interno</strong></li>
+        <li>Vedada contratação com parentesco no mesmo departamento</li>
+        <li>Avaliação técnica e comportamental</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>PCCR — Plano de Cargos e Carreira</h3>
+      <ul>
+        <li>Estrutura baseada em responsabilidade, complexidade e impacto</li>
+        <li>Movimentação vertical (promoção) ou horizontal</li>
+        <li>Remuneração fixa + variável (bonificações e gratificações)</li>
+        <li>Evolução não é automática</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Benefícios Flexíveis (Caju)</h3>
+      <ul>
+        <li>Plataforma <strong>Caju</strong> — gestão unificada de benefícios</li>
+        <li>Descontos em farmácias da rede credenciada</li>
+        <li>Voucher de aniversário</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Saúde &amp; Bem-estar</h3>
+      <ul>
+        <li><strong>Wellhub</strong> — academias e atividades físicas</li>
+        <li><strong>Conexa Saúde</strong> — telemedicina</li>
+        <li>Plano de saúde (conforme regras da operadora)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Canal de Denúncias</h3>
+      <ul>
+        <li>Manifestação identificada ou <strong>anônima</strong></li>
+        <li>Confidencialidade garantida</li>
+        <li>Não admitida retaliação ao denunciante de boa-fé</li>
+        <li>Conformidade com Lei 14.457/2022</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Princípios de Gestão</h3>
+      <ul>
+        <li>Alinhamento ao negócio</li>
+        <li>Valorização da contribuição</li>
+        <li>Meritocracia aplicada</li>
+        <li>Transparência e responsabilidade</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- POLÍTICA AMBIENTAL -->
+  <div class="sec-head"><h2>Compromisso Ambiental</h2><div class="sec-line"></div></div>
+  <div class="alert alert-b"><div class="alert-body"><strong>Meta 2030</strong>Reduzir em <strong>5% a emissão de carbono</strong> da operação até 2030, por meio de parcerias com ONGs, eficiência operacional e adoção da política <em>paperless</em>.</div></div>
+  <div class="grid">
+    <div class="card">
+      <h3>Sustentabilidade</h3>
+      <ul>
+        <li>Política <strong>paperless</strong> — redução de impressões</li>
+        <li>Uso racional de água, energia, papel e equipamentos</li>
+        <li>Priorização de fornecedores com compromisso ambiental</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Gerenciamento de Resíduos</h3>
+      <ul>
+        <li>Separação e parceria com cooperativas de reciclagem</li>
+        <li>Descarte correto de resíduos técnicos (cabos, equipamentos)</li>
+        <li>Redução de descartáveis nas operações internas</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Biodiversidade</h3>
+      <ul>
+        <li>Minimizar impactos nas regiões atendidas</li>
+        <li>Ações de conservação e recuperação</li>
+        <li>Sensibilização de colaboradores e parceiros</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="policy-links">
+    <a class="policy-link" href="docs/politica-jornada-trabalho.docx" download>
+      <span class="policy-ico">⏱️</span>
+      <span class="policy-txt"><strong>Política de Jornada</strong><small>DOCX · V01 2026</small></span>
+    </a>
+    <a class="policy-link" href="docs/politica-gestao-pessoas.docx" download>
+      <span class="policy-ico">👥</span>
+      <span class="policy-txt"><strong>Política de Gestão de Pessoas</strong><small>DOCX · 2026</small></span>
+    </a>
+    <a class="policy-link" href="docs/politica-ambiental.docx" download>
+      <span class="policy-ico">🌱</span>
+      <span class="policy-txt"><strong>Política Ambiental</strong><small>DOCX · V.1 2025</small></span>
+    </a>
+    <a class="policy-link" href="docs/politica-privacidade.pdf" download>
+      <span class="policy-ico">🔐</span>
+      <span class="policy-txt"><strong>Política de Privacidade</strong><small>PDF</small></span>
+    </a>
+  </div>
+
   <div class="divider"></div>
   <div class="sec-head"><h2>Os 6 Elos da nossa Cultura</h2><div class="sec-line"></div></div>
   <div class="inotec-section">
@@ -800,10 +1354,89 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
   </div>
 </section>
 
-</section>
-
 </div><!-- /panels -->
 </div><!-- /container -->
+
+<!-- =============================================
+     CANAIS DE COMUNICAÇÃO — SEMPRE VISÍVEL
+============================================= -->
+<section class="channels-section" id="canais">
+  <div class="container">
+    <div class="sec-head-center">
+      <span class="eyebrow">Canais de Comunicação e Suporte</span>
+      <h2>Precisa de ajuda? Fale com a gente.</h2>
+    </div>
+    <p class="section-lead channels-lead">Para facilitar a comunicação, esclarecer dúvidas e apoiar o início das suas atividades, você pode acessar os principais canais institucionais da Tecno it.</p>
+
+    <div class="channels-grid">
+      <div class="channel-card">
+        <div class="channel-head">
+          <div class="channel-ico">🛡️</div>
+          <div>
+            <h3>Segurança do Trabalho</h3>
+            <span class="channel-tag">SESMT</span>
+          </div>
+        </div>
+        <div class="channel-body">
+          <strong class="channel-name">Thiago Maulaz</strong>
+          <a class="channel-phone" href="tel:+5562981630048">📞 +55 62 98163-0048</a>
+        </div>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-head">
+          <div class="channel-ico">👥</div>
+          <div>
+            <h3>Departamento Pessoal</h3>
+            <span class="channel-tag">RH</span>
+          </div>
+        </div>
+        <div class="channel-body">
+          <strong class="channel-name">Camila Peleja</strong>
+          <a class="channel-phone" href="tel:+5562995131458">📞 +55 62 99513-1458</a>
+        </div>
+      </div>
+
+      <div class="channel-card">
+        <div class="channel-head">
+          <div class="channel-ico">✉️</div>
+          <div>
+            <h3>Assinatura de E-mail</h3>
+            <span class="channel-tag">Suporte Corporativo</span>
+          </div>
+        </div>
+        <div class="channel-body">
+          <strong class="channel-name">Ana Dias</strong>
+          <a class="channel-phone" href="tel:+5562994604902">📞 +55 62 99460-4902</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="channels-official">
+      <h3 class="channels-subhead">Canais Oficiais da Empresa</h3>
+      <div class="official-links">
+        <a class="official-link" href="https://tecnoit.com.br/" target="_blank" rel="noopener">
+          <span class="official-ico">🌐</span>
+          <span class="official-txt"><strong>Site institucional</strong><small>tecnoit.com.br</small></span>
+        </a>
+        <a class="official-link" href="https://www.instagram.com/tecnoitbr/" target="_blank" rel="noopener">
+          <span class="official-ico">📱</span>
+          <span class="official-txt"><strong>Instagram</strong><small>@tecnoitbr</small></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="channels-directive">
+      <h4>Diretriz de utilização</h4>
+      <p>Os canais institucionais devem ser utilizados para:</p>
+      <ul>
+        <li>Esclarecimento de dúvidas</li>
+        <li>Solicitação de suporte</li>
+        <li>Acompanhamento de demandas relacionadas às atividades profissionais</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
 <!-- =============================================
      FAQ — SEMPRE VISÍVEL
@@ -822,23 +1455,31 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q">Quando recebo meu crachá e uniforme? (RH)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">⏳ <em>A ser preenchido pelo departamento de RH.</em></div>
+      <div class="faq-a">No primeiro dia de integração o RH entrega crachá de identificação e orienta a retirada do uniforme. Em caso de perda, dano ou extravio, fale imediatamente com Camila Peleja (RH) para reposição.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Como solicito meu acesso aos sistemas? (ti)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">⏳ <em>A ser preenchido pelo departamento de ti.</em></div>
+      <div class="faq-a">Seu gestor formaliza a solicitação à área de ti assim que a admissão é concluída. Cada colaborador recebe credenciais pessoais e intransferíveis, conforme a Política de Segurança da Informação. Nunca compartilhe senha — ela é sua responsabilidade.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Como configurar a VPN para trabalho externo? (ti)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">⏳ <em>A ser preenchido pelo departamento de ti.</em></div>
+      <div class="faq-a">O acesso remoto é concedido mediante justificativa e aprovação do gestor. A ti configura a VPN no seu equipamento corporativo. Uso em redes públicas exige cuidado extra — siga as diretrizes da Política de Segurança da Informação.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Como posso dar sugestões ou feedbacks?<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">Você pode usar a ouvidoria interna (anonimato garantido), o canal de sugestões na plataforma itCast, ou falar diretamente com seu gestor nas reuniões de 1:1. A Tecno it valoriza toda contribuição que nos ajuda a melhorar.</div>
+      <div class="faq-a">Fale diretamente com seu gestor em reuniões de 1:1 ou utilize o Canal de Denúncias (anônimo, garantido pela Lei 14.457/2022) para reportar assédio, discriminação ou violação de políticas. A Tecno it valoriza cada contribuição.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q">Como é a política de home office? (RH)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">⏳ <em>A ser preenchido pelo departamento de RH — varia por área e função.</em></div>
+      <div class="faq-a">A jornada padrão é de 44h semanais com registro eletrônico de ponto (inclusive por geolocalização). Modalidades presencial, híbrida ou remota variam por área e função — combine com seu gestor. Consulte a Política de Jornada de Trabalho para detalhes.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Como funcionam as diárias e reembolsos de viagem? (Adm. Financeiro)<div class="faq-chevron">▾</div></div>
+      <div class="faq-a">Diárias variam por cargo (R$ 120 / R$ 100 / R$ 80). Prestação de contas via plataforma Caju em até 2 dias úteis após o retorno. Prazos: até dia 08 → pgto dia 15 · até dia 24 → pgto dia 30. Guarde sempre os comprovantes originais.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Quais benefícios a Tecno it oferece? (RH)<div class="faq-chevron">▾</div></div>
+      <div class="faq-a">Vale-refeição e vale-alimentação via Caju, Wellhub (atividade física), Conexa Saúde (telemedicina 24/7), plano de saúde e odontológico, além de PCCR (Plano de Cargos, Carreira e Remuneração) com crescimento por mérito.</div>
     </div>
   </div>
 </div>
@@ -847,7 +1488,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 <footer class="footer" style="background:#000; color:#fff; padding:4rem 1rem; text-align:center;">
   <div class="container">
     <img src="assets/slides/image4.png" alt="Tecno it logo" style="height:32px; filter:brightness(0) invert(1); opacity:.5; margin-bottom:1.5rem">
-    <p style="color:rgba(255,255,255,.4); font-size:.75rem; letter-spacing:.05em;">&copy; 2024 Tecno it · Universo it · Portal de Onboarding · Todos os direitos reservados</p>
+    <p style="color:rgba(255,255,255,.4); font-size:.75rem; letter-spacing:.05em;">&copy; 2026 Tecno it · Universo it · Portal de Onboarding · Todos os direitos reservados</p>
   </div>
 </footer>
 
