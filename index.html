@@ -602,6 +602,10 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 }
 .channels-directive ul li{margin-bottom:.2rem}
 
+/* Station cards — flex para alinhar Foco na base */
+.card-station{display:flex;flex-direction:column}
+.card-foco{margin-top:auto;padding-top:1rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+
 /* =============================================
    ANIMATIONS
 ============================================= */
@@ -771,62 +775,62 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
     <span class="universe-overline" style="letter-spacing:.25em; color:var(--muted)">O Mapa da Missão</span>
     <h3 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:var(--text);letter-spacing:-.03em;margin-top:.8rem">As Estações da Nave Tecno it</h3>
     <p style="max-width:800px;margin:1.8rem auto;font-size:1.1rem;color:var(--text2);line-height:1.8; text-align:center;">
-      Dentro do Universo it, a **Tecno it** opera como uma nave em constante movimento, conduzida por uma tripulação de Tecnautas conectados. Cada área representa uma estação estratégica, garantindo que a missão seja cumprida com inteligência e precisão.
+      Dentro do Universo it, a Tecno it opera como uma nave em constante movimento, conduzida por uma tripulação de Tecnautas conectados. Cada área representa uma estação estratégica, garantindo que a missão seja cumprida com inteligência e precisão.
     </p>
   </div>
 
-  <div class="grid" style="padding:0 1.5rem; max-width:1280px; margin:0 auto 6rem; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
+  <div class="grid card-station-grid" style="padding:0 1.5rem; max-width:1280px; margin:0 auto 6rem; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
     
-    <div class="card" style="border-top: 4px solid var(--text);">
+    <div class="card card-station" style="border-top: 4px solid var(--text);">
       <div style="font-size:1.8rem; margin-bottom:1rem;">👨‍🚀</div>
       <h3>Estação de Comando — CEO</h3>
       <p>Onde se define a rota e se tomam decisões críticas. Esta estação enxerga o todo, antecipa riscos e direciona o futuro da nave.</p>
-      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
+      <div class="card-foco">
         Foco: <span style="color:var(--text);">Visão, Estratégia e Decisões de Alto Impacto</span>
       </div>
     </div>
 
-    <div class="card" style="border-top: 4px solid var(--o);">
+    <div class="card card-station" style="border-top: 4px solid var(--o);">
       <div style="font-size:1.8rem; margin-bottom:1rem;">📡</div>
       <h3>Estação Comercial — Exploração do Universo</h3>
       <p>Capta sinais, identifica oportunidades e conecta a nave a novas missões. Sem esta estação, a nave não avança — ela apenas existe.</p>
-      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
+      <div class="card-foco">
         Foco: <span style="color:var(--o);">Crescimento, Novos Negócios e Mercado</span>
       </div>
     </div>
 
-    <div class="card" style="border-top: 4px solid var(--b);">
+    <div class="card card-station" style="border-top: 4px solid var(--b);">
       <div style="font-size:1.8rem; margin-bottom:1rem;">⚙️</div>
       <h3>Estação de Engenharia — Execução e Inovação</h3>
       <p>O coração técnico da nave. Onde a inteligência ganha forma e os projetos são construídos, testados e entregues com excelência.</p>
-      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
+      <div class="card-foco">
         Foco: <span style="color:var(--b);">Execução, Tecnologia e Qualidade</span>
       </div>
     </div>
 
-    <div class="card" style="border-top: 4px solid var(--g);">
+    <div class="card card-station" style="border-top: 4px solid var(--g);">
       <div style="font-size:1.8rem; margin-bottom:1rem;">🧭</div>
       <h3>Estação Administrativa — Estrutura e Navegação</h3>
       <p>Garante fluidez e controle. Gerencia Compras, Suprimentos e Logística para que todos os recursos estejam prontos no tempo certo.</p>
-      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
+      <div class="card-foco">
         Foco: <span style="color:var(--g);">Processos, Organização e Suporte</span>
       </div>
     </div>
 
-    <div class="card" style="border-top: 4px solid #27ae60;">
+    <div class="card card-station" style="border-top: 4px solid #27ae60;">
       <div style="font-size:1.8rem; margin-bottom:1rem;">💰</div>
       <h3>Estação Financeira — Sustentação da Missão</h3>
       <p>A energia para a jornada. Controla, analisa e protege a sustentabilidade financeira, garantindo os recursos necessários para o avanço.</p>
-      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
+      <div class="card-foco">
         Foco: <span style="color:#27ae60;">Gestão de Recursos e Segurança</span>
       </div>
     </div>
 
-    <div class="card" style="border-top: 4px solid #e74c3c;">
+    <div class="card card-station" style="border-top: 4px solid #e74c3c;">
       <div style="font-size:1.8rem; margin-bottom:1rem;">❤️</div>
       <h3>Estação Gente & Gestão — Vida da Nave</h3>
       <p>Representa a tripulação. Cuida da energia humana, da cultura e do desenvolvimento. Sem esta estação, a nave não evolui.</p>
-      <div style="margin-top:1.5rem; padding-top:1rem; border-top:1px solid var(--border); font-size:.78rem; color:var(--muted); font-weight:700; text-transform:uppercase; letter-spacing:.08em;">
+      <div class="card-foco">
         Foco: <span style="color:#e74c3c;">Cultura, Engajamento e Bem-estar</span>
       </div>
     </div>
@@ -1084,7 +1088,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <!-- POLÍTICA DE VIAGENS -->
   <div class="sec-head"><h2>Política de Viagens Corporativas</h2><div class="sec-line"></div></div>
-  <div class="alert alert-o"><div class="alert-body"><strong>Fluxo único: Plataforma Caju</strong>Toda solicitação de adiantamento, reembolso e prestação de contas é feita <strong>exclusivamente</strong> pelo aplicativo Caju. Não são aceitas solicitações por e-mail ou forma física.</div></div>
+  <div class="alert alert-o"><div class="alert-body"><strong>Fluxo único: Plataforma Caju</strong>Toda solicitação de adiantamento, reembolso e prestação de contas é feita <strong>exclusivamente</strong> pelo aplicativo Caju.<br>Não são aceitas solicitações por e-mail ou forma física.</div></div>
   <div class="grid">
     <div class="card">
       <h3>Diárias de Alimentação</h3>
@@ -1144,7 +1148,7 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 
   <!-- POLÍTICA DE MOBILIDADE -->
   <div class="sec-head"><h2>Mobilidade Corporativa &amp; Combustível</h2><div class="sec-line"></div></div>
-  <div class="alert alert-b"><div class="alert-body"><strong>Prestação de Contas Mensal</strong>Período de apuração do dia 1º ao último dia útil. Prestação entregue até o dia <strong>05</strong> do mês seguinte, via Caju. A liberação do próximo adiantamento depende da entrega anterior.</div></div>
+  <div class="alert alert-b"><div class="alert-body"><strong>Prestação de Contas Mensal</strong>Período de apuração do dia 1º ao último dia útil. Prestação entregue até o dia <strong>05</strong> do mês seguinte, via Caju.<br>A liberação do próximo adiantamento depende da entrega anterior.</div></div>
   <div class="grid">
     <div class="card">
       <h3>Adiantamento de Combustível</h3>
