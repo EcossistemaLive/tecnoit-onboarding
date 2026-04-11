@@ -26,6 +26,69 @@
   --shadow:0 2px 16px rgba(0,0,0,.06);
   --shadow-h:0 8px 32px rgba(0,0,0,.1);
 }
+/* =============================================
+   DARK MODE TOKENS
+============================================= */
+[data-theme="dark"]{
+  --bg:#0f0f0f; --bg2:#161616; --bg3:#1a1a1a;
+  --surface:#1e1e1e;
+  --border:rgba(255,255,255,.09); --border-o:rgba(238,114,3,.35);
+  --text:#e8e8e8; --text2:#aaa; --muted:#666;
+  --shadow:0 2px 16px rgba(0,0,0,.45);
+  --shadow-h:0 8px 32px rgba(0,0,0,.6);
+  --og:rgba(238,114,3,.12);
+}
+[data-theme="dark"] body{
+  background:
+    linear-gradient(rgba(15,15,15,0.94), rgba(15,15,15,0.94)),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23EE7203' stroke-width='2.5'/%3E%3Ctext x='50' y='59' font-family='Montserrat%2CArial%2Csans-serif' font-size='25' font-weight='700' fill='%23EE7203' text-anchor='middle'%3Eit%3C/text%3E%3C/svg%3E")
+    center/90px 90px repeat fixed;
+}
+[data-theme="dark"] .tabs-wrapper{background:rgba(15,15,15,.97);border-bottom-color:rgba(255,255,255,.07)}
+[data-theme="dark"] .tab-btn{color:var(--text2)}
+[data-theme="dark"] .tab-btn.active{color:var(--o);border-bottom-color:var(--o)}
+[data-theme="dark"] .card{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .card:hover{border-color:var(--border-o)}
+[data-theme="dark"] .orbit-card{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .orbit-card-body{background:var(--surface)}
+[data-theme="dark"] .alert{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .alert-b{border-left-color:var(--b)}
+[data-theme="dark"] .alert-o{border-left-color:var(--o)}
+[data-theme="dark"] .faq-item{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .faq-q{color:var(--text);background:var(--surface)}
+[data-theme="dark"] .faq-a{color:var(--text2);background:var(--surface)}
+[data-theme="dark"] .faq-chevron{background:rgba(238,114,3,.2)}
+[data-theme="dark"] .slide-feature{background:var(--bg2);border-color:var(--border)}
+[data-theme="dark"] .presenca-feature{background:var(--bg2)}
+[data-theme="dark"] .slide-feature-caption{background:var(--bg3);color:var(--text2)}
+[data-theme="dark"] .stats-row .stat{background:var(--surface)}
+[data-theme="dark"] .channels-section{background:linear-gradient(135deg,#0f0f0f 0%,#1a1009 100%)}
+[data-theme="dark"] .channel-card{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .official-link{background:var(--bg2);border-color:var(--border);color:var(--text)}
+[data-theme="dark"] .official-link:hover{background:var(--o);border-color:var(--o);color:#fff}
+[data-theme="dark"] .channels-directive{background:rgba(238,114,3,.07);border-color:var(--o)}
+[data-theme="dark"] .policy-link-card{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .policy-link-card:hover{border-color:var(--o)}
+[data-theme="dark"] .inotec-card{background:var(--surface);border-color:var(--border)}
+[data-theme="dark"] .universe-section::before{color:rgba(238,114,3,.06)}
+[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:var(--text)}
+[data-theme="dark"] .sec-head h2{color:var(--text)}
+[data-theme="dark"] .sec-head-center h2{color:var(--text)}
+
+/* ---- Dark Mode Toggle Button ---- */
+.dm-toggle{
+  position:fixed;bottom:1.75rem;right:1.75rem;z-index:9999;
+  width:48px;height:48px;border-radius:50%;
+  background:var(--surface);border:1px solid var(--border);
+  box-shadow:0 4px 20px rgba(0,0,0,.18);
+  cursor:pointer;display:flex;align-items:center;justify-content:center;
+  font-size:1.25rem;transition:var(--ease);
+  color:var(--text);
+}
+.dm-toggle:hover{background:var(--o);border-color:var(--o);color:#fff;transform:scale(1.1)}
+[data-theme="dark"] .dm-toggle{background:#1e1e1e;border-color:rgba(255,255,255,.15);color:#ffd166}
+[data-theme="dark"] .dm-toggle:hover{background:var(--o);border-color:var(--o);color:#fff}
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
 body{
@@ -1488,6 +1551,9 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
 </div>
 </main>
 
+<!-- Dark Mode Toggle -->
+<button class="dm-toggle" id="dm-toggle" aria-label="Alternar modo escuro" title="Modo escuro">🌙</button>
+
 <footer class="footer" style="background:#000; color:#fff; padding:4rem 1rem; text-align:center;">
   <div class="container">
     <img src="assets/slides/image4.png" alt="Tecno it logo" style="height:32px; filter:brightness(0) invert(1); opacity:.5; margin-bottom:1.5rem">
@@ -1536,6 +1602,28 @@ footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-si
       item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
       if (!isOpen) item.classList.add('open');
     });
+  });
+
+  /* ---- Dark Mode Toggle ---- */
+  const dmBtn = document.getElementById('dm-toggle');
+  const root  = document.documentElement;
+
+  function applyTheme(dark) {
+    root.setAttribute('data-theme', dark ? 'dark' : 'light');
+    dmBtn.textContent = dark ? '☀️' : '🌙';
+    dmBtn.setAttribute('title', dark ? 'Modo claro' : 'Modo escuro');
+    dmBtn.setAttribute('aria-label', dark ? 'Ativar modo claro' : 'Ativar modo escuro');
+    try { localStorage.setItem('it-theme', dark ? 'dark' : 'light'); } catch(e){}
+  }
+
+  // Load saved preference or system preference
+  let saved;
+  try { saved = localStorage.getItem('it-theme'); } catch(e){}
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved ? saved === 'dark' : prefersDark);
+
+  dmBtn.addEventListener('click', () => {
+    applyTheme(root.getAttribute('data-theme') !== 'dark');
   });
 })();
 </script>
