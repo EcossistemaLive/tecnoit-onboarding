@@ -1,1649 +1,1232 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Onboarding Tecno it — Bem-vindo, Tecnauta!</title>
-<meta name="description" content="Portal oficial de integração da Tecno it. Tudo o que novos Tecnautas precisam saber para embarcar no Universo it.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-<style>
-/* =============================================
-   DESIGN TOKENS — Light Mode
-============================================= */
-:root{
-  --o:#EE7203; --od:#c45c00; --og:rgba(238,114,3,.08);
-  --g:#575756;  --g2:#3a3a3a;
-  --b:#0056A4;
-  --bg:#ffffff; --bg2:#f7f7f7; --bg3:#fafafa;
-  --surface:#fff;
-  --border:#e8e8e8; --border-o:rgba(238,114,3,.28);
-  --text:#1a1a1a; --text2:#555; --muted:#888;
-  --hero-dk:#0a0a0a;
-  --r:14px; --font:'Montserrat',sans-serif;
-  --ease:.32s cubic-bezier(.4,0,.2,1);
-  --shadow:0 2px 16px rgba(0,0,0,.06);
-  --shadow-h:0 8px 32px rgba(0,0,0,.1);
-}
-/* =============================================
-   DARK MODE TOKENS
-============================================= */
-[data-theme="dark"]{
-  --bg:#0f0f0f; --bg2:#161616; --bg3:#1a1a1a;
-  --surface:#1e1e1e;
-  --border:rgba(255,255,255,.09); --border-o:rgba(238,114,3,.35);
-  --text:#e8e8e8; --text2:#aaa; --muted:#666;
-  --shadow:0 2px 16px rgba(0,0,0,.45);
-  --shadow-h:0 8px 32px rgba(0,0,0,.6);
-  --og:rgba(238,114,3,.12);
-}
-[data-theme="dark"] body{
-  background:
-    linear-gradient(rgba(15,15,15,0.94), rgba(15,15,15,0.94)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23EE7203' stroke-width='2.5'/%3E%3Ctext x='50' y='59' font-family='Montserrat%2CArial%2Csans-serif' font-size='25' font-weight='700' fill='%23EE7203' text-anchor='middle'%3Eit%3C/text%3E%3C/svg%3E")
-    center/90px 90px repeat fixed;
-}
-[data-theme="dark"] .tabs-wrapper{background:rgba(15,15,15,.97);border-bottom-color:rgba(255,255,255,.07)}
-[data-theme="dark"] .tab-btn{color:var(--text2)}
-[data-theme="dark"] .tab-btn.active{color:var(--o);border-bottom-color:var(--o)}
-[data-theme="dark"] .card{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .card:hover{border-color:var(--border-o)}
-[data-theme="dark"] .orbit-card{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .orbit-card-body{background:var(--surface)}
-[data-theme="dark"] .alert{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .alert-b{border-left-color:var(--b)}
-[data-theme="dark"] .alert-o{border-left-color:var(--o)}
-[data-theme="dark"] .faq-item{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .faq-q{color:var(--text);background:var(--surface)}
-[data-theme="dark"] .faq-a{color:var(--text2);background:var(--surface)}
-[data-theme="dark"] .faq-chevron{background:rgba(238,114,3,.2)}
-[data-theme="dark"] .slide-feature{background:var(--bg2);border-color:var(--border)}
-[data-theme="dark"] .presenca-feature{background:var(--bg2)}
-[data-theme="dark"] .slide-feature-caption{background:var(--bg3);color:var(--text2)}
-[data-theme="dark"] .stats-row .stat{background:var(--surface)}
-[data-theme="dark"] .channels-section{background:linear-gradient(135deg,#0f0f0f 0%,#1a1009 100%)}
-[data-theme="dark"] .channel-card{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .official-link{background:var(--bg2);border-color:var(--border);color:var(--text)}
-[data-theme="dark"] .official-link:hover{background:var(--o);border-color:var(--o);color:#fff}
-[data-theme="dark"] .channels-directive{background:rgba(238,114,3,.07);border-color:var(--o)}
-[data-theme="dark"] .policy-link-card{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .policy-link-card:hover{border-color:var(--o)}
-[data-theme="dark"] .inotec-card{background:var(--surface);border-color:var(--border)}
-[data-theme="dark"] .universe-section::before{color:rgba(238,114,3,.06)}
-[data-theme="dark"] h1,[data-theme="dark"] h2,[data-theme="dark"] h3{color:var(--text)}
-[data-theme="dark"] .sec-head h2{color:var(--text)}
-[data-theme="dark"] .sec-head-center h2{color:var(--text)}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playbook Comercial · ViDi</title>
+  <meta name="description" content="Onboarding do Time Comercial — ViDi / Ecossistema Live. Guia completo para novos membros do time de vendas." />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --bg:           #0A0A0A;
+      --bg-card:      rgba(61, 61, 61, 0.3);
+      --bg-card-2:    rgba(61, 61, 61, 0.2);
+      --gold:         #C9A84C;
+      --gold-light:   #E8D08A;
+      --gold-dim:     rgba(201,168,76,0.12);
+      --gold-border:  rgba(201,168,76,0.30);
+      --green:        #00e800;
+      --green-dim:    rgba(0,232,0,0.08);
+      --red-dim:      rgba(229,72,77,0.12);
+      --red:          #e5484d;
+      --blue:         #3D3D3D;
+      --text:         #F5F0E8;
+      --muted:        #EBEBEB;
+      --border:       rgba(201,168,76,0.10);
+      --ease:         cubic-bezier(.4,0,.2,1);
+      --spring:       cubic-bezier(.34,1.56,.64,1);
+    }
 
-/* ---- Dark Mode Toggle Button ---- */
-.dm-toggle{
-  position:fixed;bottom:1.75rem;right:1.75rem;z-index:9999;
-  width:48px;height:48px;border-radius:50%;
-  background:var(--surface);border:1px solid var(--border);
-  box-shadow:0 4px 20px rgba(0,0,0,.18);
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:1.25rem;transition:var(--ease);
-  color:var(--text);
-}
-.dm-toggle:hover{background:var(--o);border-color:var(--o);color:#fff;transform:scale(1.1)}
-[data-theme="dark"] .dm-toggle{background:#1e1e1e;border-color:rgba(255,255,255,.15);color:#ffd166}
-[data-theme="dark"] .dm-toggle:hover{background:var(--o);border-color:var(--o);color:#fff}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
-body{
-  font-family:var(--font);
-  background:
-    linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='40' fill='none' stroke='%23EE7203' stroke-width='2.5'/%3E%3Ctext x='50' y='59' font-family='Montserrat%2CArial%2Csans-serif' font-size='25' font-weight='700' fill='%23EE7203' text-anchor='middle'%3Eit%3C/text%3E%3C/svg%3E")
-    center/90px 90px repeat fixed;
-  color:var(--text);
-  line-height:1.65;
-  overflow-x:hidden;
-}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%}
+    body {
+      background-color: var(--bg);
+      background-image:
+        radial-gradient(ellipse 120% 80% at 50% 0%, rgba(61,61,61,0.5) 0%, transparent 60%),
+        url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C9A84C' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      color: var(--text);
+      font-family: 'Roboto', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-/* =============================================
-   HERO — dark cinematic
-============================================= */
-.hero{
-  position:relative;min-height:100dvh;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:6rem 2rem 8rem;background:var(--hero-dk);
-}
-.hero-bg{position:absolute;inset:0;background:url('assets/slides/image1.png') center/cover no-repeat;filter:brightness(.55) saturate(1.1) contrast(1.05);transform:scale(1.04);z-index:0}
-.hero-overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(ellipse 80% 60% at 50% 110%,rgba(238,114,3,.28),transparent 65%),linear-gradient(to top,rgba(10,10,10,.97) 0%,transparent 55%)}
-.hero::before{content:'';position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(rgba(238,114,3,.07) 1px,transparent 1px),linear-gradient(90deg,rgba(238,114,3,.05) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse 80% 70% at 50% 50%,#000 30%,transparent 100%)}
-.hero-inner{position:relative;z-index:2;max-width:820px;margin:0 auto}
-.hero-logo{display:inline-block;margin:0 auto 2.5rem;animation:fadeUp .5s ease both}
-.hero-logo img{height:56px;width:auto;filter:drop-shadow(0 0 24px rgba(238,114,3,.55))}
-.hero h1{font-size:clamp(2.8rem,7.5vw,6rem);font-weight:900;line-height:1.02;letter-spacing:-.04em;background:linear-gradient(160deg,#fff 40%,var(--o) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.5rem;animation:fadeUp .5s .1s ease both; text-align: center;}
-.hero p{font-size:clamp(.95rem,2.2vw,1.2rem);font-weight:300;color:rgba(255,255,255,.6);max-width:620px;margin:0 auto 2.5rem;animation:fadeUp .5s .15s ease both; text-align: center;}
-.hero-badge{display:table;background:var(--o);border:1px solid var(--od);color:#fff;border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.4rem 1.25rem;margin:0 auto 2rem;animation:fadeUp .5s .05s ease both}
-.hero-cta{display:inline-flex;align-items:center;gap:.6rem;background:var(--o);color:#fff;font-family:var(--font);font-size:.9rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:.9rem 2.2rem;border-radius:999px;border:none;cursor:pointer;box-shadow:0 10px 36px rgba(238,114,3,.45);transition:var(--ease);animation:fadeUp .5s .2s ease both}
-.hero-cta:hover{background:var(--od);transform:translateY(-3px);box-shadow:0 16px 44px rgba(238,114,3,.55)}
-.hero-scroll{position:absolute;bottom:2.2rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.6rem;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.55);z-index:2;animation:bounce 2.5s 1.5s infinite;user-select:none}
-.hero-scroll:hover{color:rgba(255,255,255,.85)}
-/* Mouse scroll illustration */
-.scroll-mouse{width:26px;height:42px;border:2px solid rgba(255,255,255,.5);border-radius:13px;display:flex;justify-content:center;padding-top:6px;position:relative;flex-shrink:0}
-.scroll-mouse::before{content:'';position:absolute;left:50%;top:3px;transform:translateX(-50%);width:2px;height:6px;background:rgba(255,255,255,.25);border-radius:1px}
-.scroll-wheel{width:4px;height:8px;background:var(--o);border-radius:2px;animation:scrollDot 1.6s cubic-bezier(.45,0,.55,1) infinite}
-@keyframes scrollDot{0%{opacity:1;transform:translateY(0)}60%{opacity:.3;transform:translateY(12px)}100%{opacity:0;transform:translateY(16px)}}
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 40px; height: 64px;
+      background: rgba(10,10,10,0.9);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.15rem; font-weight: 700;
+      color: var(--gold-light); letter-spacing: 1px;
+    }
+    .nav-links {
+      display: flex; gap: 4px; list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.68rem; text-transform: uppercase;
+      letter-spacing: 2px; font-weight: 600;
+      padding: 6px 14px; border-radius: 30px;
+      transition: all 0.25s var(--ease);
+      border: 1px solid transparent;
+    }
+    .nav-links a:hover { color: var(--gold); border-color: var(--gold-border); background: var(--gold-dim); }
+    .nav-badge {
+      font-size: 0.65rem; color: var(--gold); letter-spacing: 3px;
+      text-transform: uppercase; font-weight: 700;
+      border: 1px solid var(--gold-border);
+      padding: 4px 14px; border-radius: 30px;
+    }
 
-/* =============================================
-   Universe it — Narrative section
-============================================= */
-.universe-section{
-  padding:6rem 0 4rem;
-  position:relative;overflow:hidden;
-}
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      text-align: center; padding: 100px 20px 60px;
+      position: relative;
+      background: radial-gradient(ellipse 80% 70% at 50% 40%, rgba(61,61,61,0.6) 0%, transparent 70%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+      background: linear-gradient(to bottom, transparent, var(--bg));
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 6px 20px; border-radius: 50px;
+      background: var(--gold-dim); border: 1px solid var(--gold-border);
+      font-size: 0.65rem; letter-spacing: 4px;
+      text-transform: uppercase; font-weight: 700; color: var(--gold);
+      margin-bottom: 32px;
+      animation: fadeUp .8s var(--ease) both;
+    }
+    .hero-eyebrow-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 8px var(--green);
+      animation: pulse 2s infinite;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      font-weight: 900; line-height: 1.05; letter-spacing: -2px;
+      background: linear-gradient(135deg, #fff 0%, var(--gold) 55%, var(--gold-light) 100%);
+      -webkit-background-clip: text; background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 24px;
+      animation: fadeUp .8s .15s var(--ease) both;
+    }
+    .hero-sub {
+      font-size: clamp(.9rem, 1.5vw, 1.1rem);
+      color: var(--muted); max-width: 620px;
+      letter-spacing: .5px; line-height: 1.8;
+      animation: fadeUp .8s .3s var(--ease) both;
+    }
+    .hero-meta {
+      display: flex; gap: 40px; margin-top: 48px; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp .8s .45s var(--ease) both;
+    }
+    .hero-meta-item { text-align: center; }
+    .hero-meta-label { font-size: .6rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+    .hero-meta-value { font-size: 1rem; font-weight: 700; color: var(--gold-light); }
+    .hero-scroll {
+      position: absolute; bottom: 60px;
+      width: 24px; height: 40px;
+      border: 2px solid var(--gold-border); border-radius: 12px;
+      animation: fadeUp .8s .6s var(--ease) both;
+    }
+    .hero-scroll::after {
+      content: ''; width: 4px; height: 8px;
+      background: var(--gold); border-radius: 2px;
+      position: absolute; top: 6px; left: 50%; transform: translateX(-50%);
+      animation: scrollDot 2s infinite;
+    }
 
-/* Decorative background quote-mark */
-.universe-section::before{
-  content:'"';
-  position:absolute;top:-2rem;left:-1rem;
-  font-size:24rem;font-weight:900;
-  color:rgba(238,114,3,.04);line-height:1;
-  pointer-events:none;
-  font-family:Georgia,serif;
-}
+    /* ─── SIDEBAR + LAYOUT ─── */
+    .page-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      max-width: 1300px; margin: 0 auto;
+      padding: 0 40px 100px;
+      gap: 60px; align-items: start;
+    }
+    .sidebar {
+      position: sticky; top: 84px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 28px;
+    }
+    .sidebar-title {
+      font-size: .6rem; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 20px;
+    }
+    .sidebar-nav { list-style: none; }
+    .sidebar-nav li { margin-bottom: 2px; }
+    .sidebar-nav a {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 12px; border-radius: 10px;
+      text-decoration: none; color: var(--muted);
+      font-size: .8rem; font-weight: 500;
+      transition: all .2s var(--ease);
+    }
+    .sidebar-nav a:hover, .sidebar-nav a.active {
+      background: var(--gold-dim); color: var(--gold-light);
+    }
+    .sidebar-num {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: var(--gold-dim); border: 1px solid var(--gold-border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .6rem; font-weight: 700; color: var(--gold); flex-shrink: 0;
+    }
+    .sidebar-progress {
+      margin-top: 28px; padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .progress-label {
+      font-size: .6rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); margin-bottom: 10px;
+    }
+    .progress-bar {
+      height: 4px; border-radius: 4px;
+      background: rgba(255,255,255,.06);
+    }
+    .progress-fill {
+      height: 100%; border-radius: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--green));
+      width: 0%; transition: width .6s var(--ease);
+    }
+    .progress-text {
+      font-size: .7rem; color: var(--gold); font-weight: 600; margin-top: 6px;
+    }
 
-.universe-intro{
-  max-width:860px;margin:0 auto 4rem;text-align:center;padding:0 1.5rem;
-}
-.universe-overline{
-  display:inline-block;
-  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--text);margin-bottom:1rem;
-}
-/* Black highlight on key letters as requested */
-.universe-headline .hl{color:var(--text)}
+    /* ─── CONTENT ─── */
+    .content { padding-top: 80px; }
+    .chapter {
+      margin-bottom: 100px; scroll-margin-top: 84px;
+    }
+    .chapter-eyebrow {
+      font-size: .6rem; letter-spacing: 4px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 10px;
+    }
+    .chapter-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: #fff; line-height: 1.15; margin-bottom: 16px;
+    }
+    .chapter-desc {
+      color: var(--muted); font-size: 1rem;
+      max-width: 680px; line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .divider {
+      width: 50px; height: 2px; margin: 60px 0;
+      background: linear-gradient(90deg, var(--gold), transparent);
+    }
 
-.universe-lead{
-  font-size:clamp(1rem,1.8vw,1.2rem);
-  font-weight:300;line-height:1.8;
-  color:var(--text2);
-  text-align:justify;
-}
-.universe-lead .hl{color:var(--text);font-weight:700}
+    /* ─── CARDS ─── */
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px;
+      transition: all .3s var(--ease); position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      opacity: 0; transition: opacity .3s;
+    }
+    .card:hover { border-color: var(--gold-border); transform: translateY(-2px); }
+    .card:hover::before { opacity: 1; }
+    .card-icon {
+      font-size: 1.8rem; margin-bottom: 16px; display: block;
+    }
+    .card-title {
+      font-weight: 700; color: var(--gold-light);
+      font-size: .95rem; margin-bottom: 8px;
+    }
+    .card-text { color: var(--muted); font-size: .88rem; line-height: 1.7; }
 
-/* Orbit cards — each slide becomes an orbit point */
-.orbit-cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
-  gap:2rem;
-  max-width:1280px;margin:0 auto 5rem;
-  padding:0 1.5rem;
-}
-.orbit-card{
-  position:relative;border-radius:var(--r);overflow:hidden;
-  border:1px solid var(--border);
-  box-shadow:var(--shadow);
-  display:flex;flex-direction:column;
-  transition:var(--ease);
-}
-.orbit-card:hover{box-shadow:var(--shadow-h);transform:translateY(-4px)}
-.orbit-card-img{
-  position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;
-  background:var(--bg2);
-}
-.orbit-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.orbit-card:hover .orbit-card-img img{transform:scale(1.05)}
-.orbit-card-img::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,transparent 40%,rgba(10,10,10,.5) 100%);
-}
-.orbit-card-body{
-  padding:1.5rem;
-  background:var(--surface);flex:1;
-}
-.orbit-num{
-  display:inline-flex;align-items:center;justify-content:center;
-  width:32px;height:32px;border-radius:50%;
-  background:var(--o);color:#fff;
-  font-size:.72rem;font-weight:900;
-  margin-bottom:1rem;flex-shrink:0;
-}
-.orbit-card h3{
-  font-size:1.05rem;font-weight:800;letter-spacing:-.01em;
-  color:var(--text);margin-bottom:.6rem;
-  line-height:1.3;
-}
-.hl{color:var(--text) !important; font-weight:700;}
-.sec-icon{display:none}
-.sec-head{gap:0}
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
 
-/* Full-width narrative text between card rows */
-.orbit-narrative{
-  max-width:860px;margin:0 auto 3rem;padding:0 1.5rem;
-  text-align:center;
-}
-.orbit-narrative .big-quote{
-  font-size:clamp(1.1rem,2.5vw,1.5rem);
-  font-weight:300;font-style:italic;
-  line-height:1.8;color:var(--text);
-  padding:2.5rem;
-  border:1px solid var(--border-o);
-  border-radius:var(--r);
-  background:linear-gradient(135deg,rgba(238,114,3,.04),transparent);
-  position:relative;
-}
-.orbit-narrative .big-quote::before{
-  content:'"';
-  position:absolute;top:-1.2rem;left:1.5rem;
-  font-size:4rem;color:var(--text);font-family:Georgia,serif;line-height:1;
-}
-.orbit-narrative .big-quote strong{color:var(--text);font-weight:700;font-style:normal}
+    /* ─── TABLE ─── */
+    .table-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; }
+    thead tr { background: var(--gold-dim); }
+    thead th {
+      padding: 14px 18px; text-align: left;
+      font-size: .65rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700;
+    }
+    tbody tr { border-top: 1px solid var(--border); transition: background .2s; }
+    tbody tr:hover { background: rgba(197,160,89,.04); }
+    tbody td { padding: 14px 18px; font-size: .88rem; color: var(--text); }
+    tbody td:first-child { color: var(--gold-light); font-weight: 600; }
 
-/* VIDEO EMBED */
-.video-section{
-  max-width:900px;margin:0 auto 2rem;padding:0 1.5rem;
-}
-.video-wrapper{
-  position:relative;padding-bottom:56.25%;height:0;overflow:hidden;
-  border-radius:var(--r);box-shadow:0 16px 56px rgba(0,0,0,.15);
-  border:1px solid var(--border);
-}
-.video-wrapper iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    /* ─── BADGE ─── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 20px; font-size: .7rem; font-weight: 700;
+    }
+    .badge-gold { background: var(--gold-dim); color: var(--gold); border: 1px solid var(--gold-border); }
+    .badge-green { background: var(--green-dim); color: var(--green); border: 1px solid rgba(0,232,0,.25); }
+    .badge-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(229,72,77,.25); }
 
-/* =============================================
-   TABS
-============================================= */
-.tabs-wrapper{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 1px 12px rgba(0,0,0,.06)}
-.tabs-nav{max-width:1280px;margin:0 auto;padding:0 1.5rem;display:flex;overflow-x:auto;scrollbar-width:none}
-.tabs-nav::-webkit-scrollbar{display:none}
-.tab-btn{flex-shrink:0;border:none;background:transparent;font-family:var(--font);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.09em;color:var(--muted);padding:1.1rem 1.35rem;cursor:pointer;position:relative;transition:color var(--ease);white-space:nowrap}
-.tab-btn:hover{color:var(--g)}
-.tab-btn.active{color:var(--text)}
-.tab-btn.active::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--o);border-radius:2px 2px 0 0}
-.dept-badge{display:inline-block;background:rgba(238,114,3,.1);border:1px solid rgba(238,114,3,.2);border-radius:999px;font-size:.58rem;padding:.1rem .42rem;color:var(--text);margin-left:.4rem;vertical-align:middle;font-weight:600}
+    /* ─── CALLOUT ─── */
+    .callout {
+      border-radius: 14px; padding: 24px 28px;
+      border-left: 3px solid; margin: 28px 0;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .callout-warn {
+      background: rgba(229,72,77,.07); border-color: var(--red);
+    }
+    .callout-info {
+      background: var(--gold-dim); border-color: var(--gold);
+    }
+    .callout-green {
+      background: var(--green-dim); border-color: var(--green);
+    }
+    .callout-icon { font-size: 1.3rem; flex-shrink: 0; margin-top: 2px; }
+    .callout-body { font-size: .9rem; color: var(--text); line-height: 1.7; }
+    .callout-body strong { color: var(--gold-light); }
 
-/* =============================================
-   LAYOUT
-============================================= */
-.container{max-width:1280px;margin:0 auto;padding:0 1.5rem}
-.panels{padding:4rem 0 7rem}
-.panel{display:none}
-.panel.active{
-  display:block;
-  animation:fadeIn .35s ease;
-  border-radius: var(--r);
-  padding: 2rem;
-  margin-top: 1rem;
-}
+    /* ─── CHECKLIST ─── */
+    .checklist { list-style: none; }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 12px 0; border-bottom: 1px solid var(--border);
+      font-size: .9rem; color: var(--text);
+    }
+    .checklist li:last-child { border-bottom: none; }
+    .check-box {
+      width: 22px; height: 22px; border-radius: 6px;
+      border: 2px solid var(--gold-border);
+      background: var(--gold-dim); flex-shrink: 0; margin-top: 1px;
+      cursor: pointer; transition: all .2s var(--ease);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .75rem; color: var(--gold);
+    }
+    .check-box:hover { border-color: var(--gold); background: rgba(197,160,89,.2); }
+    .check-box.checked { background: var(--gold); border-color: var(--gold); color: #000; }
 
-/* Section header */
-.sec-head{display:flex;align-items:center;gap:1rem;margin-bottom:2.5rem}
-.sec-head-center{display:flex;flex-direction:column;align-items:center;text-align:center;gap:.5rem;margin-bottom:2.5rem}
-.sec-head h2{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:900;letter-spacing:-.025em;white-space:nowrap;color:var(--text)}
-.sec-icon{width:38px;height:38px;flex-shrink:0;background:rgba(238,114,3,.08);border:1px solid rgba(238,114,3,.18);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1rem}
-.sec-line{flex:1;height:1px;background:linear-gradient(to right,rgba(238,114,3,.2),transparent)}
-.divider{height:1px;background:var(--border);margin:3.5rem 0}
+    /* ─── TIMELINE ─── */
+    .timeline { position: relative; padding-left: 36px; }
+    .timeline::before {
+      content: '';
+      position: absolute; left: 10px; top: 6px; bottom: 6px; width: 2px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+    }
+    .timeline-item {
+      position: relative; margin-bottom: 32px;
+    }
+    .timeline-dot {
+      position: absolute; left: -30px; top: 4px;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold); border: 2px solid var(--bg);
+      box-shadow: 0 0 12px rgba(197,160,89,.4);
+    }
+    .timeline-label {
+      font-size: .65rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 4px;
+    }
+    .timeline-title { font-weight: 700; color: var(--gold-light); margin-bottom: 6px; }
+    .timeline-body { color: var(--muted); font-size: .88rem; line-height: 1.7; }
 
-/* Stats */
-.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1rem;margin-bottom:3rem}
-.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1rem;text-align:center;box-shadow:var(--shadow);transition:var(--ease)}
-.stat:hover{border-color:var(--border-o);box-shadow:var(--shadow-h);transform:translateY(-2px)}
-.stat-num{display:block;font-size:2rem;font-weight:900;color:var(--text);line-height:1}
-.stat-label{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-top:.4rem}
+    /* ─── SCRIPT BOX ─── */
+    .script-box {
+      background: rgba(0,0,0,.4); border: 1px solid var(--gold-border);
+      border-radius: 14px; padding: 28px; position: relative;
+    }
+    .script-box::before {
+      content: '"';
+      position: absolute; top: 10px; left: 22px;
+      font-size: 4rem; font-family: 'Playfair Display', serif;
+      color: rgba(197,160,89,.2); line-height: 1;
+    }
+    .script-box-label {
+      font-size: .6rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold); font-weight: 700; margin-bottom: 16px;
+    }
+    .script-box pre {
+      font-family: 'Roboto', sans-serif; font-size: .88rem;
+      color: var(--text); white-space: pre-wrap; line-height: 1.8;
+    }
 
-/* Brand equation */
-.brand-eq{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:0;background:linear-gradient(135deg,rgba(238,114,3,.05),rgba(0,86,164,.02));border:1px solid rgba(238,114,3,.12);border-radius:var(--r);padding:3rem 2rem;margin-bottom:3rem}
-.eq-part{display:flex;flex-direction:column;align-items:center;gap:.6rem;padding:1rem 2rem}
-.eq-img{width:100px;height:100px;object-fit:contain}
-.eq-label{font-size:.85rem;font-weight:600;color:var(--text2);text-transform:lowercase;letter-spacing:.05em}
-.eq-sublabel{font-size:.7rem;color:var(--text);font-weight:700;letter-spacing:.1em}
-.eq-op{font-size:3rem;font-weight:900;color:rgba(0,0,0,.1);padding:0 .5rem;align-self:center;line-height:1}
-.eq-result{display:flex;flex-direction:column;align-items:center;gap:.4rem;padding:1.2rem 2.5rem;border-left:1px solid var(--border)}
-.eq-result-label{font-size:1.5rem;font-weight:900;color:var(--text);letter-spacing:-.02em}
-.eq-result-sub{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
-.logo-symbol-img{height:70px;width:auto;object-fit:contain}
+    /* ─── OBJECTION CARD ─── */
+    .obj-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 14px; overflow: hidden; margin-bottom: 16px;
+    }
+    .obj-head {
+      padding: 16px 24px; background: var(--gold-dim);
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 700; color: var(--gold-light); font-size: .9rem;
+    }
+    .obj-body {
+      padding: 20px 24px; color: var(--muted); font-size: .88rem; line-height: 1.7;
+    }
 
-/* =============================================
-   INOTEC — Arc Rings
-============================================= */
-.inotec-section{margin-bottom:4rem}
-.inotec-arcs{display:flex;flex-wrap:nowrap;overflow-x:auto;padding-bottom:1rem;gap:0;justify-content:center;margin-bottom:2.5rem}
-.inotec-arcs::-webkit-scrollbar{height:4px}
-.inotec-arcs::-webkit-scrollbar-thumb{background:var(--border-o);border-radius:2px}
+    /* ─── FUNNEL ─── */
+    .funnel { display: flex; flex-direction: column; gap: 0; }
+    .funnel-stage {
+      display: flex; align-items: center; gap: 20px;
+      padding: 18px 24px; position: relative;
+    }
+    .funnel-stage::after {
+      content: '';
+      position: absolute; bottom: -10px; left: 50%;
+      transform: translateX(-50%);
+      border-left: 14px solid transparent;
+      border-right: 14px solid transparent;
+      border-top: 10px solid; z-index: 1;
+    }
+    .funnel-topo { background: rgba(197,160,89,.08); border-radius: 14px 14px 0 0; }
+    .funnel-topo::after { border-top-color: rgba(197,160,89,.08); }
+    .funnel-meio { background: rgba(0,232,0,.06); margin: 0 16px; }
+    .funnel-meio::after { border-top-color: rgba(0,232,0,.06); }
+    .funnel-fundo { background: rgba(15,28,46,.9); margin: 0 32px; border-radius: 0 0 14px 14px; }
+    .funnel-fundo::after { display: none; }
+    .funnel-num {
+      width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .8rem;
+    }
+    .funnel-topo .funnel-num { background: var(--gold-dim); color: var(--gold); }
+    .funnel-meio .funnel-num { background: var(--green-dim); color: var(--green); }
+    .funnel-fundo .funnel-num { background: rgba(15,28,46,1); color: var(--gold-light); border: 1px solid var(--gold-border); }
+    .funnel-info { flex: 1; }
+    .funnel-label {
+      font-size: .65rem; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--muted); font-weight: 600; margin-bottom: 2px;
+    }
+    .funnel-title { font-weight: 700; color: var(--text); font-size: .95rem; }
+    .funnel-desc { color: var(--muted); font-size: .8rem; }
 
-.arc-ring{flex-shrink:0;position:relative;width:130px;height:130px;border-radius:50%;border:3px solid var(--o);background:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:default;box-shadow:var(--shadow);margin-left:-24px;z-index:1}
-.arc-ring:first-child{margin-left:0}
-[data-theme="dark"] .arc-ring{background:#1a1a1a}
-.arc-letter{font-size:2.5rem;font-weight:900;color:var(--text);line-height:1}
-.arc-name{font-size:.58rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:.25rem}
+    /* ─── SLA ─── */
+    .sla-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 16px; }
+    .sla-item {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 22px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .sla-time {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem; font-weight: 900; color: var(--gold);
+      white-space: nowrap;
+    }
+    .sla-desc { color: var(--muted); font-size: .82rem; line-height: 1.5; }
 
-.inotec-details{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem}
-.inotec-card{background:var(--surface);border:1px solid var(--border);border-top:3px solid var(--o);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shadow);transition:var(--ease)}
-.inotec-card:hover{box-shadow:var(--shadow-h);transform:translateY(-2px)}
-.inotec-card-head{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
-.inotec-card-letter{width:40px;height:40px;border-radius:50%;background:var(--o);display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;color:#fff;flex-shrink:0}
-.inotec-card-title{font-size:1rem;font-weight:800;color:var(--text);letter-spacing:-.01em}
-.inotec-card-bullets{padding-left:0;list-style:none}
-.inotec-card-bullets li{font-size:.855rem;color:var(--text2);display:flex;align-items:flex-start;gap:.6rem;padding:.28rem 0;border-bottom:1px solid var(--border)}
-.inotec-card-bullets li:last-child{border-bottom:none}
-.inotec-card-bullets li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--o);margin-top:.46rem}
+    /* ─── WEEK CARD ─── */
+    .week-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden; margin-bottom: 20px;
+    }
+    .week-head {
+      padding: 18px 24px; background: linear-gradient(135deg, rgba(197,160,89,.12), transparent);
+      display: flex; align-items: center; gap: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .week-num {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: var(--gold); color: #000; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; font-size: .85rem;
+    }
+    .week-title { font-weight: 700; color: var(--gold-light); }
+    .week-subtitle { color: var(--muted); font-size: .8rem; }
+    .week-body { padding: 20px 24px; }
+    .week-row {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 10px 0; border-bottom: 1px solid var(--border); font-size: .88rem;
+    }
+    .week-row:last-child { border-bottom: none; }
+    .week-day {
+      min-width: 50px; font-weight: 700; color: var(--gold); font-size: .75rem;
+      text-transform: uppercase; letter-spacing: 1px; padding-top: 2px;
+    }
+    .week-task { color: var(--text); flex: 1; }
+    .week-who {
+      color: var(--muted); font-size: .75rem;
+      white-space: nowrap; padding-top: 2px;
+    }
 
-/* =============================================
-   CARDS
-============================================= */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem;margin-bottom:3rem}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.6rem;box-shadow:var(--shadow);position:relative;overflow:hidden;transition:var(--ease)}
-.card::before{content:'';position:absolute;inset:0 0 auto;height:2px;background:var(--o);transform:scaleX(0);transform-origin:left;transition:var(--ease)}
-.card:hover{box-shadow:var(--shadow-h);transform:translateY(-3px)}
-.card:hover::before{transform:scaleX(1)}
-.card-ico{font-size:1.8rem;margin-bottom:.9rem}
-.card h3{font-size:.95rem;font-weight:700;color:var(--text);margin-bottom:.6rem}
-.card p,.card ul{font-size:.875rem;color:var(--text2);line-height:1.65;text-align:justify}
-.card ul{padding-left:1.2rem;list-style:disc}
-.card ul li{margin:.3rem 0}
-.card ul li::marker{color:var(--text)}
+    /* ─── FOOTER ─── */
+    footer {
+      text-align: center; padding: 60px 20px;
+      border-top: 1px solid var(--border);
+      color: var(--muted); font-size: .8rem;
+    }
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem; color: var(--gold); margin-bottom: 12px;
+    }
+    .footer-line { margin-top: 8px; }
 
-/* =============================================
-   ALERTS / TAGS
-============================================= */
-.alert{border-radius:var(--r);padding:1.1rem 1.4rem;display:flex;gap:1rem;align-items:flex-start;margin-bottom:1.5rem}
-.alert-o{background:rgba(238,114,3,.13);border:1px solid rgba(238,114,3,.38)}
-.alert-b{background:rgba(0,86,164,.11);border:1px solid rgba(0,86,164,.32)}
-.alert-ico{font-size:1.2rem;flex-shrink:0;margin-top:.1rem}
-.alert-body{font-size:.875rem;color:var(--text2)}
-.alert-body strong{display:block;font-weight:700;margin-bottom:.25rem;color:var(--text)}
-.tags{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem}
-.tag{background:rgba(0,86,164,.06);border:1px solid rgba(0,86,164,.18);color:var(--b);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.07em;padding:.28rem .85rem}
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity:0; transform:translateY(24px); }
+      to   { opacity:1; transform:translateY(0); }
+    }
+    @keyframes pulse {
+      0%,100% { opacity:1; box-shadow:0 0 8px var(--green); }
+      50%     { opacity:.5; box-shadow:0 0 16px var(--green); }
+    }
+    @keyframes scrollDot {
+      0%   { transform:translateX(-50%) translateY(0); opacity:1; }
+      100% { transform:translateX(-50%) translateY(14px); opacity:0; }
+    }
 
-/* =============================================
-   STEPS
-============================================= */
-.steps{display:flex;flex-direction:column;gap:1rem;margin-bottom:3rem}
-.step{display:flex;gap:1.25rem;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:1.25rem 1.5rem;box-shadow:var(--shadow);transition:var(--ease)}
-.step:hover{border-color:var(--border-o);box-shadow:var(--shadow-h)}
-.step-n{width:36px;height:36px;flex-shrink:0;background:var(--o);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:900;color:#fff}
-.step-body h4{font-weight:700;font-size:.95rem;margin-bottom:.3rem;color:var(--text)}
-.step-body p{font-size:.85rem;color:var(--text2)}
+    .reveal {
+      opacity: 0; transform: translateY(30px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.visible { opacity:1; transform:translateY(0); }
 
-/* =============================================
-   SLIDE FEATURES
-============================================= */
-.slide-feature{border-radius:var(--r);overflow:hidden;border:1px solid var(--border);margin-bottom:3rem;position:relative;box-shadow:var(--shadow)}
-.slide-feature img{width:100%;height:auto;display:block}
-.slide-feature-caption{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(10,10,10,.8),transparent);padding:1.5rem 2rem .8rem;font-size:.78rem;color:rgba(255,255,255,.7);letter-spacing:.06em;text-transform:uppercase}
-.two-col{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;margin-bottom:3rem}
-@media(max-width:900px){.two-col{grid-template-columns:1fr}}
-.clients-img{width:100%;border-radius:var(--r);border:1px solid var(--border);margin-bottom:1rem;box-shadow:var(--shadow)}
-
-/* =============================================
-   FAQ
-============================================= */
-.faq-list{display:flex;flex-direction:column;gap:.75rem;margin-bottom:3rem}
-.faq-item{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden;transition:var(--ease)}
-.faq-item:hover{border-color:var(--border-o)}
-.faq-item.open{border-color:rgba(238,114,3,.35)}
-.faq-q{
-  display:flex;align-items:center;justify-content:space-between;gap:1rem;
-  padding:1.1rem 1.4rem;cursor:pointer;
-  font-size:.9rem;font-weight:700;color:var(--text);
-  user-select:none;
-  list-style:none;
-}
-.faq-q::-webkit-details-marker{display:none}
-.faq-chevron{width:24px;height:24px;flex-shrink:0;background:var(--og);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;transition:transform var(--ease);color:var(--text);font-weight:900}
-.faq-item.open .faq-chevron{transform:rotate(180deg);background:var(--o);color:#fff}
-.faq-a{
-  max-height:0;overflow:hidden;
-  padding:0 1.4rem;
-  font-size:.875rem;color:var(--text2);line-height:1.7;
-  transition:max-height .4s ease, padding .3s ease;
-}
-.faq-item.open .faq-a{max-height:500px;padding:.2rem 1.4rem 1.2rem}
-
-.faq-note{
-  background:rgba(238,114,3,.05);border:1px dashed rgba(238,114,3,.3);
-  border-radius:var(--r);padding:1rem 1.4rem;margin-bottom:2rem;
-  font-size:.82rem;color:var(--text2);display:flex;gap:.75rem;align-items:center;
-}
-.faq-note-ico{font-size:1.2rem;flex-shrink:0}
-
-/* =============================================
-   WELCOME HERO (RH)
-============================================= */
-.welcome-hero{position:relative;border-radius:var(--r);overflow:hidden;margin-bottom:2rem;min-height:280px;display:flex;align-items:flex-end;box-shadow:var(--shadow)}
-.welcome-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.55}
-.welcome-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,.92) 20%,rgba(10,10,10,.35) 100%)}
-.welcome-hero-body{position:relative;z-index:1;padding:2rem;max-width:720px}
-.welcome-hero-body blockquote{font-size:clamp(1rem,1.8vw,1.15rem);font-weight:300;font-style:italic;color:rgba(255,255,255,.9);line-height:1.7;margin-bottom:1rem}
-.welcome-hero-body .sig{font-size:.78rem;color:rgba(255,255,255,.5);font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.welcome-hero-body .sig span{color:var(--text)}
-
-/* =============================================
-   FOOTER
-============================================= */
-footer{border-top:1px solid var(--border);text-align:center;padding:2rem;font-size:.75rem;color:var(--muted);letter-spacing:.06em;background:var(--bg2)}
-
-/* =============================================
-   VISUAL REFINEMENTS — v2
-============================================= */
-/* Section lead paragraph under titles */
-.section-lead{
-  max-width:720px;margin:-1.5rem auto 2.5rem;
-  font-size:clamp(.95rem,1.4vw,1.05rem);
-  font-weight:300;line-height:1.8;
-  color:var(--text2);text-align:center;
-  padding:0 1rem;
-}
-.section-lead strong{color:var(--text);font-weight:700}
-
-/* Eyebrow overline for sections */
-.eyebrow{
-  display:inline-block;
-  font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
-  color:var(--o);margin-bottom:.8rem;
-}
-
-/* Presença Nacional feature — lighter framing */
-.presenca-feature{background:var(--bg3);border-color:var(--border-o)}
-.presenca-feature img{object-fit:cover}
-
-/* Improve card breathing: more padding, clearer hierarchy, generous lists */
-.card{padding:1.75rem 1.6rem !important}
-.card h3{font-size:1.1rem !important;margin-bottom:1rem !important;letter-spacing:-.01em}
-.card ul{margin:0;padding-left:1.1rem}
-.card ul li{margin-bottom:.55rem;line-height:1.65;font-size:.92rem}
-.card ul li:last-child{margin-bottom:0}
-.card p{font-size:.92rem;line-height:1.75}
-
-/* Grid gaps slightly more generous */
-.grid{gap:1.5rem !important}
-
-/* Alternate section rhythm — panels get a subtle divider background on odd blocks */
-.panel .divider{
-  height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent);
-  border:none;margin:4rem auto;max-width:900px;
-}
-
-/* Sec-head refresh — slightly larger title and calmer line */
-.sec-head h2{font-size:clamp(1.4rem,2.6vw,1.9rem) !important;letter-spacing:-.02em}
-.sec-head-center h2{font-size:clamp(1.6rem,3vw,2.2rem);letter-spacing:-.02em;margin-bottom:.75rem}
-
-/* Alerts — more padding, calmer background */
-.alert{padding:1.3rem 1.5rem !important;line-height:1.7}
-.alert strong{display:block;margin-bottom:.3rem;font-size:.95rem}
-
-/* =============================================
-   POLICY LINKS — Download cards for policies
-============================================= */
-.policy-links{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1rem;margin:2rem auto 1rem;max-width:1200px;
-}
-.policy-link{
-  display:flex;align-items:center;gap:1rem;
-  padding:1.1rem 1.3rem;background:var(--surface);
-  border:1px solid var(--border);border-radius:var(--r);
-  box-shadow:var(--shadow);
-  text-decoration:none;color:var(--text);
-  transition:var(--ease);
-}
-.policy-link:hover{
-  border-color:var(--o);transform:translateY(-2px);
-  box-shadow:var(--shadow-h);background:var(--og);
-}
-.policy-ico{
-  font-size:1.6rem;width:48px;height:48px;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--og);border-radius:12px;flex-shrink:0;
-}
-.policy-txt{display:flex;flex-direction:column;gap:.2rem;min-width:0}
-.policy-txt strong{font-size:.92rem;font-weight:700;color:var(--text);line-height:1.3}
-.policy-txt small{font-size:.72rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase}
-
-/* =============================================
-   CANAIS DE COMUNICAÇÃO — Support section
-============================================= */
-.channels-section{
-  padding:5rem 0 4rem;
-  background:linear-gradient(180deg,var(--bg3) 0%,var(--bg) 100%);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-}
-.channels-lead{margin-bottom:3rem}
-.channels-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-  gap:1.5rem;max-width:1200px;margin:0 auto 3rem;
-  padding:0 1.5rem;
-}
-.channel-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r);padding:1.75rem;
-  box-shadow:var(--shadow);transition:var(--ease);
-  position:relative;overflow:hidden;
-}
-.channel-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:4px;
-  background:linear-gradient(90deg,var(--o),var(--od));
-}
-.channel-card:hover{
-  transform:translateY(-4px);box-shadow:var(--shadow-h);
-  border-color:var(--border-o);
-}
-.channel-head{
-  display:flex;align-items:flex-start;gap:1rem;
-  padding-bottom:1.25rem;margin-bottom:1.25rem;
-  border-bottom:1px solid var(--border);
-}
-.channel-ico{
-  font-size:1.6rem;width:52px;height:52px;
-  display:flex;align-items:center;justify-content:center;
-  background:var(--og);border-radius:14px;flex-shrink:0;
-}
-.channel-head h3{
-  font-size:1.05rem;font-weight:800;color:var(--text);
-  margin:0 0 .3rem;letter-spacing:-.01em;
-}
-.channel-tag{
-  display:inline-block;font-size:.68rem;font-weight:700;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--o);
-}
-.channel-body{display:flex;flex-direction:column;gap:.5rem}
-.channel-name{
-  font-size:1rem;color:var(--text);font-weight:700;
-}
-.channel-phone{
-  font-size:.95rem;color:var(--text2);font-weight:500;
-  text-decoration:none;transition:var(--ease);
-}
-.channel-phone:hover{color:var(--o)}
-
-.channels-official{
-  max-width:1200px;margin:0 auto 3rem;padding:0 1.5rem;
-}
-.channels-subhead{
-  font-size:.75rem;font-weight:700;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--muted);
-  text-align:center;margin-bottom:1.25rem;
-}
-.official-links{
-  display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;
-}
-.official-link{
-  display:flex;align-items:center;gap:.85rem;
-  padding:1rem 1.5rem;background:var(--surface);
-  border:1px solid var(--border);border-radius:999px;
-  text-decoration:none;color:var(--text);
-  transition:var(--ease);box-shadow:var(--shadow);
-}
-.official-link:hover{
-  border-color:var(--o);background:var(--og);
-  transform:translateY(-2px);box-shadow:var(--shadow-h);
-}
-.official-ico{font-size:1.3rem}
-.official-txt{display:flex;flex-direction:column;text-align:left}
-.official-txt strong{font-size:.88rem;font-weight:700;color:var(--text)}
-.official-txt small{font-size:.72rem;color:var(--muted);letter-spacing:.04em}
-
-.channels-directive{
-  max-width:720px;margin:0 auto;padding:1.75rem 2rem;
-  background:var(--surface);border:1px solid var(--border);
-  border-left:4px solid var(--o);
-  border-radius:0 var(--r) var(--r) 0;
-  box-shadow:var(--shadow);
-}
-.channels-directive h4{
-  font-size:.8rem;font-weight:700;letter-spacing:.15em;
-  text-transform:uppercase;color:var(--o);margin:0 0 .6rem;
-}
-.channels-directive p{
-  font-size:.95rem;color:var(--text);font-weight:600;
-  margin-bottom:.6rem;
-}
-.channels-directive ul{
-  margin:0;padding-left:1.2rem;
-  font-size:.9rem;color:var(--text2);line-height:1.85;
-}
-.channels-directive ul li{margin-bottom:.2rem}
-
-/* Station cards — flex para alinhar Foco na base */
-.card-station{display:flex;flex-direction:column}
-.card-foco{margin-top:auto;padding-top:1rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.08em}
-
-.card-emoji{font-size:1.4rem;margin-right:.55rem;vertical-align:middle;line-height:1;display:inline-block}
-.video-embed-block{margin:2rem 0 2.5rem}
-.video-embed-block .video-label{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--o);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
-.video-embed-block .video-label::before{content:'';display:inline-block;width:3px;height:1.1em;background:var(--o);border-radius:2px;flex-shrink:0}
-.video-embed-block{max-width:900px;margin-left:auto;margin-right:auto}
-.video-responsive{position:relative;padding-top:56.25%;border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow-h)}
-.video-responsive iframe{border:none;position:absolute;top:0;left:0;width:100%;height:100%}
-/* =============================================
-   ANIMATIONS
-============================================= */
-@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
-
-/* =============================================
-   RESPONSIVE
-============================================= */
-@media(max-width:720px){
-  .orbit-cards{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr}
-  .stats-row{grid-template-columns:repeat(2,1fr)}
-  .tab-btn{padding:.9rem .85rem;font-size:.7rem}
-  .brand-eq{flex-direction:column;gap:1.5rem}
-  .eq-result{border-left:none;border-top:1px solid var(--border);padding-top:1.5rem;width:100%}
-  .inotec-arcs{justify-content:flex-start;padding-left:.5rem}
-  .inotec-details{grid-template-columns:1fr}
-  .universe-section::before{display:none}
-}
-</style>
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .page-layout { grid-template-columns: 1fr; padding: 0 20px 60px; }
+      .sidebar { display: none; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+      .sla-grid { grid-template-columns: 1fr; }
+      nav { padding: 0 20px; }
+      .nav-links { display: none; }
+    }
+  </style>
 </head>
 <body>
 
-<!-- ========== HERO ========== -->
-<header class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-overlay"></div>
-  <div class="hero-inner">
-    <div class="hero-logo">
-      <img src="assets/slides/image4.png" alt="Tecno it logotipo">
-    </div>
-    <div class="hero-badge">Universo it · Portal de Onboarding</div>
-    <h1>Bem-vindo,<br>Tecnauta!</h1>
-    <p>Você acaba de ingressar em uma empresa que transforma o mundo através da tecnologia. Sua missão começa agora.</p>
-
-  </div>
-  <div class="hero-scroll" onclick="document.getElementById('universo-anchor').scrollIntoView({behavior:'smooth'})" style="cursor:pointer;">
-    <div class="scroll-mouse">
-      <div class="scroll-wheel"></div>
-    </div>
-    <span>Iniciar Jornada</span>
-  </div>
-</header>
-
-<!-- =============================================
-     NOSSA HISTÓRIA
-============================================= -->
-<section id="nossa-historia" class="container" style="padding:4rem 1rem">
-  <div class="sec-head-center">
-    <h2>Nossa História</h2>
-  </div>
-
-  <div style="max-width:800px; margin: 0 auto 3rem; text-align:justify; color:var(--text2); line-height:1.8;">
-    <p>
-      Fundada em dezembro de 2013 em uma sala de apenas 30m², a <strong>Tecno it</strong> nasceu da convicção de que tecnologia e pessoas, juntas, podem transformar qualquer realidade. O que começou como um sonho audacioso em Goiás, rapidamente rompeu fronteiras. 
-    </p>
-    <p style="margin-top:1rem">
-      Em menos de 10 anos, essa convicção se traduziu em resultados sólidos: alcançamos <strong>R$ 100 milhões em faturamento</strong>, expandimos para <strong>4 escritórios estratégicos</strong> (incluindo Hong Kong e USA) e hoje contamos com uma tripulação de <strong>mais de 400 Tecnautas</strong> impactando mais de 50 cidades. Nossa trajetória é marcada pela agilidade, pela entrega de valor e pelo compromisso inabalável com a inovação.
-    </p>
-  </div>
-
-  <div class="stats-row" style="margin-bottom:2rem">
-    <div class="stat"><span class="stat-num">2013</span><div class="stat-label">Fundação</div></div>
-    <div class="stat"><span class="stat-num">R$100M</span><div class="stat-label">Faturamento <10 anos</div></div>
-    <div class="stat"><span class="stat-num">+400</span><div class="stat-label">Colaboradores</div></div>
-    <div class="stat"><span class="stat-num">+50</span><div class="stat-label">Cidades atendidas</div></div>
-    <div class="stat"><span class="stat-num">4</span><div class="stat-label">Escritórios BR·HK·USA</div></div>
-    <div class="stat"><span class="stat-num">R$1bi</span><div class="stat-label">Meta 2033</div></div>
-  </div>
-</section>
-
-<!-- =============================================
-     UNIVERSO it — NARRATIVA IMERSIVA
-============================================= -->
-<!-- === NARRATIVA — ORBITAMOS... === -->
-<div style="max-width:780px;margin:3rem auto 4rem;text-align:center">
-  <span style="display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--o);margin-bottom:1rem">universo tecno it</span>
-  <h3 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;line-height:1.1;letter-spacing:-.03em;color:var(--text);margin-bottom:1.5rem">
-    Orbitamos em torno de estrelas<br>que emanam inteligência tecnológica
-  </h3>
-  <p style="font-size:clamp(.95rem,1.6vw,1.1rem);font-weight:400;line-height:1.85;color:var(--text2); text-align:center">
-    Cada <strong>Tecnauta</strong> é um explorador. Cada projeto, uma missão.
-    Não somos apenas uma empresa de tecnologia — somos construtores de um universo onde
-    <strong>pessoas</strong> e <strong>tecnologia</strong> gravitam juntas
-    para transformar o mundo. Aqui, você não veio trabalhar. Você veio <strong>orbitar</strong>.
-  </p>
-</div>
-
-<div id="universo-anchor"></div>
-<section class="universe-section">
-  <!-- === TECNAUTAS — A TRIPULAÇÃO (Slide 14) === -->
-  <div style="text-align:center;margin-bottom:3rem">
-    <span class="universe-overline" style="color:var(--o); font-weight:900; background:rgba(238,114,3,.1); padding:.4rem 2rem; border-radius:4px; border:1px solid var(--o);">Tecnautas</span>
-    <p style="max-width:850px;margin:2rem auto;font-size:1.05rem;color:var(--text2);line-height:1.8;text-align:center;">
-      Somos uma <strong>tripulação dedicada</strong> a missões transformadoras, que segue por <strong>rotas inteligentes</strong> e cumpre jornadas inéditas. Tecnautas são desbravadores do Universo it que utilizam e desenvolvem inteligência tecnológica.
-    </p>
-  </div>
-
-  <div class="orbit-cards" style="grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; margin-bottom:5rem">
-    <div class="orbit-card">
-      <div class="orbit-card-img"><img src="assets/slides/image45.jpeg" alt="Adaptabilidade"></div>
-      <div class="orbit-card-body" style="padding:1.5rem">
-        <p style="font-size:.875rem; text-align:justify;">Oferecemos o <strong>poder da adaptabilidade</strong> aos ambientes que encontramos, para que sobrevivam, se tornem sustentáveis e resilientes.</p>
-      </div>
-    </div>
-    <div class="orbit-card">
-      <div class="orbit-card-img"><img src="assets/slides/image46.jpeg" alt="Impulsionando Evolução"></div>
-      <div class="orbit-card-body" style="padding:1.5rem">
-        <p style="font-size:.875rem; text-align:justify;">Identificamos um novo projeto, ou recebemos o seu sinal, <strong>enviamos equipes</strong> para o reconhecimento, analisamos o seu potencial e <strong>impulsionamos a evolução</strong>.</p>
-      </div>
-    </div>
-    <div class="orbit-card">
-      <div class="orbit-card-img"><img src="assets/slides/image14.png" alt="Desbravadores"></div>
-      <div class="orbit-card-body" style="padding:1.5rem">
-        <p style="font-size:.875rem; text-align:justify;">Tecnautas são desbravadores que exploram o desconhecido para transformá-lo em soluções guiadas por inteligência tecnológica.</p>
-      </div>
-    </div>
-    <div class="orbit-card">
-      <div class="orbit-card-img"><img src="assets/slides/image44.jpeg" alt="Desbravar Possibilidades"></div>
-      <div class="orbit-card-body" style="padding:1.5rem">
-        <p style="font-size:.875rem; text-align:justify;">Quando aterrizamos em um novo projeto, nosso principal objetivo é <strong>desbravar as possibilidades</strong> a partir da inteligência tecnológica.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- === CITAÇÃO CENTRAL === -->
-  <div class="orbit-narrative">
-    <div class="big-quote">
-      Nossa marca não é apenas um logo. É a expressão de que <span class="hl">pessoas (i)</span> somadas 
-      à <span class="hl">tecnologia (t)</span> geram algo maior: a <span class="hl">inteligência tecnológica (it)</span> 
-      que transforma cidades, órgãos públicos e empresas — e que te trouxe até aqui.
-    </div>
-  </div>
-
-  <!-- === VIDEO O QUE FAZEMOS === -->
-  <div class="video-section">
-    <div style="text-align:center;margin-bottom:1.5rem">
-      <span class="universe-overline">o que fazemos</span>
-      <h3 style="font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:900;color:var(--text);letter-spacing:-.02em;margin-top:.5rem">
-        Conheça o <span style="color:inherit">Universo it</span> em movimento
-      </h3>
-    </div>
-    <div class="video-wrapper">
-      <iframe
-        src="https://www.youtube.com/embed/nDW9R042WLA?rel=0&modestbranding=1&color=orange"
-        title="Tecno it — O que fazemos"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-
-  <!-- === EXPANSÃO DA ÓRBITA === -->
-  <div style="text-align:center;margin:4rem auto 2rem;">
-    <span class="universe-overline" style="color:var(--o); font-weight:900; background:rgba(238,114,3,.1); padding:.4rem 2rem; border-radius:4px; border:1px solid var(--o);">Expansão da órbita</span>
-  </div>
-  <div class="slide-feature" style="max-width:900px; margin:0 auto 4rem;">
-    <img src="assets/slides/expansao_da_orbita.png" alt="Expansão da órbita — Novos horizontes">
-    <div class="slide-feature-caption">Acelerando as missões — Expansão para novos mercados e tecnologias</div>
-  </div>
-
-  <!-- === ESTAÇÕES DA NAVE === -->
-  <div style="text-align:center;margin:4rem auto 2.5rem;">
-    <span class="universe-overline" style="letter-spacing:.25em; color:var(--muted)">O Mapa da Missão</span>
-    <h3 style="font-size:clamp(1.6rem,4vw,2.4rem);font-weight:900;color:var(--text);letter-spacing:-.03em;margin-top:.8rem">As Estações da Nave Tecno it</h3>
-    <p style="max-width:800px;margin:1.8rem auto;font-size:1.1rem;color:var(--text2);line-height:1.8; text-align:center;">
-      Dentro do Universo it, a Tecno it opera como uma nave em constante movimento, conduzida por uma tripulação de Tecnautas conectados. Cada área representa uma estação estratégica, garantindo que a missão seja cumprida com inteligência e precisão.
-    </p>
-  </div>
-
-  <div class="grid card-station-grid" style="padding:0 1.5rem; max-width:1280px; margin:0 auto 6rem; grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));">
-    
-    <div class="card card-station" style="border-top: 4px solid var(--text);">
-      <h3><span class="card-emoji">👨‍🚀</span>Estação de Comando — CEO</h3>
-      <p>Onde se define a rota e se tomam decisões críticas. Esta estação enxerga o todo, antecipa riscos e direciona o futuro da nave.</p>
-      <div class="card-foco">
-        Foco: <span style="color:var(--text);">Visão, Estratégia e Decisões de Alto Impacto</span>
-      </div>
-    </div>
-
-    <div class="card card-station" style="border-top: 4px solid var(--o);">
-      <h3><span class="card-emoji">📡</span>Estação Comercial — Exploração do Universo</h3>
-      <p>Capta sinais, identifica oportunidades e conecta a nave a novas missões. Sem esta estação, a nave não avança — ela apenas existe.</p>
-      <div class="card-foco">
-        Foco: <span style="color:var(--o);">Crescimento, Novos Negócios e Mercado</span>
-      </div>
-    </div>
-
-    <div class="card card-station" style="border-top: 4px solid var(--b);">
-      <h3><span class="card-emoji">⚙️</span>Estação de Engenharia — Execução e Inovação</h3>
-      <p>O coração técnico da nave. Onde a inteligência ganha forma e os projetos são construídos, testados e entregues com excelência.</p>
-      <div class="card-foco">
-        Foco: <span style="color:var(--b);">Execução, Tecnologia e Qualidade</span>
-      </div>
-    </div>
-
-    <div class="card card-station" style="border-top: 4px solid var(--g);">
-      <h3><span class="card-emoji">🧭</span>Estação Administrativa — Estrutura e Navegação</h3>
-      <p>Garante fluidez e controle. Gerencia Compras, Suprimentos e Logística para que todos os recursos estejam prontos no tempo certo.</p>
-      <div class="card-foco">
-        Foco: <span style="color:var(--g);">Processos, Organização e Suporte</span>
-      </div>
-    </div>
-
-    <div class="card card-station" style="border-top: 4px solid #27ae60;">
-      <h3><span class="card-emoji">💰</span>Estação Financeira — Sustentação da Missão</h3>
-      <p>A energia para a jornada. Controla, analisa e protege a sustentabilidade financeira, garantindo os recursos necessários para o avanço.</p>
-      <div class="card-foco">
-        Foco: <span style="color:#27ae60;">Gestão de Recursos e Segurança</span>
-      </div>
-    </div>
-
-    <div class="card card-station" style="border-top: 4px solid #e74c3c;">
-      <h3><span class="card-emoji">❤️</span>Estação Gente & Gestão — Vida da Nave</h3>
-      <p>Representa a tripulação. Cuida da energia humana, da cultura e do desenvolvimento. Sem esta estação, a nave não evolui.</p>
-      <div class="card-foco">
-        Foco: <span style="color:#e74c3c;">Cultura, Engajamento e Bem-estar</span>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-
-<!-- ========== TABS ========== -->
-<div id="tabs-anchor"></div>
-<nav class="tabs-wrapper" aria-label="Seções de onboarding">
-  <div class="tabs-nav">
-    <button class="tab-btn active" data-tab="geral"      aria-selected="true" >Modelo Geral</button>
-    <button class="tab-btn"        data-tab="engenharia" aria-selected="false">Engenharia<span class="dept-badge">Depto</span></button>
-    <button class="tab-btn"        data-tab="comercial"  aria-selected="false">Comercial<span class="dept-badge">Depto</span></button>
-    <button class="tab-btn"        data-tab="financeiro" aria-selected="false">Adm. Financeiro<span class="dept-badge">Depto</span></button>
-    <button class="tab-btn"        data-tab="rh"         aria-selected="false">RH<span class="dept-badge">Depto</span></button>
-  </div>
+<!-- ─── NAV ─── -->
+<nav>
+  <span class="nav-brand">ViDi</span>
+  <ul class="nav-links">
+    <li><a href="#missao">Missão</a></li>
+    <li><a href="#produtos">Produtos</a></li>
+    <li><a href="#processo">Processo</a></li>
+    <li><a href="#scripts">Scripts</a></li>
+    <li><a href="#ferramentas">Ferramentas</a></li>
+    <li><a href="#treinamento">Treinamento</a></li>
+  </ul>
+  <span class="nav-badge">Confidencial</span>
 </nav>
 
-<main>
-<div class="container">
-<div class="panels">
-
-<!-- =================== CULTURA it =================== -->
-<section class="panel active" id="panel-geral">
-  
-  <!-- NOSSA MARCA -->
-  <div class="sec-head-center"><h2>Nossa Marca</h2></div>
-  <div class="brand-eq">
-    <div class="eq-part">
-      <img class="eq-img" src="assets/slides/image7.png" alt="Pessoas">
-      <span class="eq-label">pessoas</span>
-      <span class="eq-sublabel">(i)</span>
-    </div>
-    <span class="eq-op">+</span>
-    <div class="eq-part">
-      <img class="eq-img" src="assets/slides/image9.png" alt="Tecnologia">
-      <span class="eq-label">tecnologia</span>
-      <span class="eq-sublabel">(t)</span>
-    </div>
-    <span class="eq-op">=</span>
-    <div class="eq-result">
-      <img class="logo-symbol-img" src="assets/slides/image4.png" alt="Logo Tecno it">
-      <span class="eq-result-label">inteligência tecnológica</span>
-      <span class="eq-result-sub">(it)</span>
-    </div>
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <span class="hero-eyebrow-dot"></span>
+    Documento Interno · Time Comercial
   </div>
-
-  <div class="grid" style="max-width:1000px; margin:0 auto 3rem; justify-content:center;">
-    <div class="card"><h3 style="text-align:center">Missão</h3><p style="text-align:center">Desenvolver soluções tecnológicas de alto desempenho que atendam às necessidades do mercado e melhorem a qualidade de vida das pessoas.</p></div>
-    <div class="card"><h3 style="text-align:center">Visão</h3><p style="text-align:center">Ser líder em inovação tecnológica, simplificando a vida das pessoas e das empresas por meio de produtos inteligentes e eficazes.</p></div>
-    <div class="card"><h3 style="text-align:center">Valores</h3><p style="text-align:center">Sustentabilidade, inovação, responsabilidade social, colaboração.</p></div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- INOTEC -->
-  <div class="sec-head-center"><h2>Valores INOTEC</h2></div>
-  <p style="font-size:.9rem;color:var(--muted);margin-bottom:2rem;max-width:580px;margin-left:auto;margin-right:auto;text-align:center;">
-    Seis elos que se unem formando a corrente cultural da Tecno it. Cada arco representa um valor que conecta e fortalece toda a equipe.
+  <h1>Playbook Comercial<br/>ViDi</h1>
+  <p class="hero-sub">
+    Guia completo de onboarding para novos membros do time de vendas.<br/>
+    Da missão ao primeiro fechamento — tudo que você precisa saber.
   </p>
-
-  <div class="inotec-section">
-    <div class="inotec-arcs">
-      <div class="arc-ring"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
-      <div class="arc-ring"><span class="arc-letter">N</span><span class="arc-name">Networking</span></div>
-      <div class="arc-ring"><span class="arc-letter">O</span><span class="arc-name">Objetividade</span></div>
-      <div class="arc-ring"><span class="arc-letter">T</span><span class="arc-name">Transformação</span></div>
-      <div class="arc-ring"><span class="arc-letter">E</span><span class="arc-name">Empatia</span></div>
-      <div class="arc-ring"><span class="arc-letter">C</span><span class="arc-name">Comprometimento</span></div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Versão</div>
+      <div class="hero-meta-value">1.1</div>
     </div>
-    <div class="inotec-details">
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">I</div><div class="inotec-card-title">Inovação</div></div><ul class="inotec-card-bullets"><li>Transformar ideias em soluções</li><li>Uma sugestão simples que ajuda a fazer melhor</li><li>Melhorar a performance da empresa todos os dias</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">N</div><div class="inotec-card-title">Networking</div></div><ul class="inotec-card-bullets"><li>Construir relações de confiança</li><li>Fortalecer conexões com clareza</li><li>Comunicar claramente com os parceiros e colegas</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">O</div><div class="inotec-card-title">Objetividade</div></div><ul class="inotec-card-bullets"><li>Decidir com assertividade e assumir a responsabilidade</li><li>Direto ao ponto sem rodeios</li><li>Admitir erros rapidamente e corrigir com o dobro de rapidez</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">T</div><div class="inotec-card-title">Transformação</div></div><ul class="inotec-card-bullets"><li>Agir com iniciativa e autogestão</li><li>Ser protagonista da própria jornada</li><li>Ver oportunidades de melhoria em cada desafio</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">E</div><div class="inotec-card-title">Empatia</div></div><ul class="inotec-card-bullets"><li>Tratar pessoas com respeito</li><li>Colaborar para construir resultados juntos</li><li>Pensar no coletivo antes do individual</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">C</div><div class="inotec-card-title">Comprometimento</div></div><ul class="inotec-card-bullets"><li>Pensar e agir como dono</li><li>Garantir resultados para o cliente</li><li>Ter compromisso com as entregas</li></ul></div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Atualizado</div>
+      <div class="hero-meta-value">Mar 2026</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Responsável</div>
+      <div class="hero-meta-value">Luiz Portal</div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-label">Seções</div>
+      <div class="hero-meta-value">11</div>
     </div>
   </div>
-
-  <div class="divider"></div>
-
-  <!-- PRESENÇA GLOBAL -->
-  <div class="sec-head-center"><h2>Presença Global</h2></div>
-  <p class="section-lead"><strong>10 países</strong> · <strong>40 empresas</strong> · <strong>100 mil empregados</strong> — Tecnautas em missão por todo o mundo.</p>
-  <div class="slide-feature presenca-feature">
-    <img src="assets/slides/presenca_nacional.jpeg" alt="Presença Global — Mapa da atuação da Tecno it no mundo">
-    <div class="slide-feature-caption">Da América ao Sudeste Asiático — inteligência tecnológica sem fronteiras</div>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- SST/SESMT -->
-  <div class="sec-head"><h2>Saúde e Segurança — SESMT</h2><div class="sec-line"></div></div>
-  <div class="alert alert-b"><div class="alert-body"><strong>Responsável SESMT</strong>Thiago Maulaz · Engenheiro Ambiental · Eng. de Segurança do Trabalho · Técnico de Segurança do Trabalho</div></div>
-  <div class="alert alert-o"><div class="alert-body"><strong>Política de SST</strong>Todo Tecnauta deve conhecer e assinar a Política de SST.<br>O uso do crachá, uniforme e EPIs é <strong>obrigatório</strong> em campo.</div></div>
-  <div class="tags"><span class="tag">NR-10 · Instalações Elétricas</span><span class="tag">NR-17 · Ergonomia</span><span class="tag">NR-33 · Espaços Confinados</span><span class="tag">NR-35 · Trabalho em Altura</span></div>
-  <div class="grid">
-    <div class="card"><h3>Riscos da Atividade</h3><ul><li>Choque elétrico</li><li>Quedas — nível e altura</li><li>Esforço físico / repetitivo</li><li>Corte e perfuração</li><li>Incêndios em áreas técnicas</li></ul></div>
-    <div class="card"><h3>EPIs Obrigatórios</h3><ul><li>Capacete, luvas e óculos de proteção</li><li>Cinto de segurança (altura)</li><li>Protetores auriculares</li><li>Calçado de segurança</li></ul></div>
-    <div class="card"><h3>NR-10 · Elétrica</h3><ul><li>Somente autorizados e capacitados</li><li>Identificação e desenergização de circuitos</li><li>Ferramentas isoladas</li></ul></div>
-    <div class="card"><h3>NR-35 · Altura</h3><ul><li>Aplicável acima de 2 m</li><li>Treinamento obrigatório</li><li>Análise de risco + Permissão de Trabalho</li></ul></div>
-    <div class="card"><h3>NR-17 · Ergonomia</h3><ul><li>Técnicas de levantamento de cargas</li><li>Cuidados com postura</li><li>Intervalos e pausas regulares</li></ul></div>
-    <div class="card"><h3>Incidentes</h3><p>Qualquer incidente deve ser comunicado <strong>imediatamente</strong> ao SESMT. Nunca improvise após um ocorrido.</p></div>
-  </div>
-
-  <div class="policy-links">
-    <a class="policy-link" href="docs/politica-seguranca-informacao.docx" download>
-      <span class="policy-ico">🛡️</span>
-      <span class="policy-txt"><strong>Normas de SST &amp; Segurança</strong><small>Documento oficial</small></span>
-    </a>
-  </div>
-
+  <div class="hero-scroll"></div>
 </section>
 
-<!-- =================== ENGENHARIA =================== -->
-<section class="panel" id="panel-engenharia">
-  <div class="sec-head"><h2>Onboarding · Engenharia</h2><div class="sec-line"></div></div>
-  <div class="two-col">
-    <div>
-      <div class="alert alert-b" style="margin-bottom:1.25rem"><div class="alert-body"><strong>Bem-vindo à Engenharia Tecno it</strong>Desenvolvemos e entregamos soluções de inteligência tecnológica em mais de 50 cidades. Qualidade técnica, segurança e documentação são inegociáveis.</div></div>
-      <div class="grid" style="grid-template-columns:1fr;gap:1rem;margin-bottom:0">
-        <div class="card"><h3>Projetos e Metodologia</h3><ul><li>Leitura do escopo técnico antes do início</li><li>Registro de atividades no sistema interno</li><li>Comunicação diária com líder técnico</li><li>Documentação As-Built obrigatória</li></ul></div>
-        <div class="card"><h3>Ferramentas e Sistemas</h3><ul><li>Portal de projetos (credenciais via ti)</li><li>Git / GitLab para versionamento</li><li>Jira / Linear para gestão de tarefas</li></ul></div>
+<!-- ─── LAYOUT ─── -->
+<div class="page-layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-title">Índice</div>
+    <ul class="sidebar-nav">
+      <li><a href="#bemvindo"><span class="sidebar-num">1</span> Bem-vindo</a></li>
+      <li><a href="#missao"><span class="sidebar-num">2</span> Missão e Cultura</a></li>
+      <li><a href="#produtos"><span class="sidebar-num">3</span> Produtos</a></li>
+      <li><a href="#time"><span class="sidebar-num">4</span> Time e Papéis</a></li>
+      <li><a href="#processo"><span class="sidebar-num">5</span> Processo Comercial</a></li>
+      <li><a href="#scripts"><span class="sidebar-num">6</span> Scripts</a></li>
+      <li><a href="#ferramentas"><span class="sidebar-num">7</span> Ferramentas</a></li>
+      <li><a href="#metas"><span class="sidebar-num">8</span> Metas</a></li>
+      <li><a href="#treinamento"><span class="sidebar-num">9</span> Treinamento 30 dias</a></li>
+      <li><a href="#checklist"><span class="sidebar-num">10</span> Checklist</a></li>
+      <li><a href="#contatos"><span class="sidebar-num">11</span> Contatos</a></li>
+    </ul>
+    <div class="sidebar-progress">
+      <div class="progress-label">Progresso de leitura</div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="progress-text" id="progressText">0%</div>
+    </div>
+  </aside>
+
+  <!-- CONTENT -->
+  <main class="content">
+
+    <!-- 1. BEM-VINDO -->
+    <section class="chapter reveal" id="bemvindo">
+      <div class="chapter-eyebrow">01 · Introdução</div>
+      <h2 class="chapter-title">Bem-vindo<br/>à ViDi</h2>
+      <p class="chapter-desc">
+        Você acabou de entrar em um dos ecossistemas de desenvolvimento de liderança e gestão empresarial mais sérios do Brasil. A ViDi foi construída por Luiz Portal e Ibrahim Boufleur — cada um com a sua trajetória, cada um com a sua contribuição. Não é um projeto de moda. É uma construção de vida.
+      </p>
+
+      <h3 style="color:var(--gold);font-size:.7rem;letter-spacing:3px;text-transform:uppercase;font-weight:700;margin-bottom:20px">Antes de qualquer coisa, internalize</h3>
+      <div class="grid-3">
+        <div class="card">
+          <span class="card-icon">🔧</span>
+          <div class="card-title">Você não vende ferramenta</div>
+          <div class="card-text">As ferramentas são o meio. O ser humano é o fim. Nunca reduza o que a ViDi entrega a um método, um curso ou uma técnica isolada. <strong style="color:var(--gold-light)">Você vende solução.</strong></div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🩺</span>
+          <div class="card-title">O cliente já tem uma dor</div>
+          <div class="card-text">Nossa missão é confirmar essa dor, dar nome a ela, amplificar a consciência sobre o que ela custa — e então mostrar o caminho.</div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏮</span>
+          <div class="card-title">Você representa um farol</div>
+          <div class="card-text">A ViDi existe para ser um ponto de referência num mundo que perdeu referências. Quando você atende um lead, você está carregando isso.</div>
+        </div>
       </div>
-    </div>
-    <div>
-      <div class="slide-feature" style="margin-bottom:0"><img src="assets/slides/image14.png" alt="Tecnauta com tablet"><div class="slide-feature-caption">Universo it — Tecnauta em ação</div></div>
-    </div>
-  </div>
-  <div class="grid">
-    <div class="card"><h3>Acesso e Credenciais</h3><ul><li>Credenciais no D+1 via equipe de ti</li><li>VPN obrigatória em produção</li><li>2FA ativado em todas as contas</li></ul></div>
-    <div class="card"><h3>SST em Campo</h3><ul><li>EPIs conforme NR-10 e NR-35</li><li>Checklist diário de segurança</li><li>Incidentes reportados ao SESMT imediatamente</li></ul></div>
-    <div class="card"><h3>Qualidade e Indicadores</h3><ul><li>SLAs de entrega por contrato</li><li>Relatório semanal de progresso</li><li>Revisão técnica com pares antes do fechamento</li></ul></div>
-    <div class="card"><h3>Cultura de Equipe</h3><ul><li>Stand-up diário às 9h com o time</li><li>Retrospectiva quinzenal</li><li>Mentoria para novos Tecnautas (D+30)</li></ul></div>
-  </div>
-  <div class="divider"></div>
 
-  <!-- SEGURANÇA DA INFORMAÇÃO -->
-  <div class="sec-head"><h2>Segurança da Informação (PSI)</h2><div class="sec-line"></div></div>
-  <div class="alert alert-o"><div class="alert-body"><strong>Base normativa</strong>A PSI da Tecno it segue a norma <strong>ABNT NBR ISO/IEC 27002:2013</strong> e a LGPD. Toda violação deve ser comunicada imediatamente à Gerência de Service Desk (GSD).</div></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Princípios Fundamentais</h3>
-      <ul>
-        <li><strong>Confidencialidade</strong> — acesso apenas por autorizados</li>
-        <li><strong>Integridade</strong> — informação preservada e íntegra</li>
-        <li><strong>Disponibilidade</strong> — acesso quando necessário</li>
-        <li>Uso ético dos recursos tecnológicos</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Responsabilidades do Usuário</h3>
-      <ul>
-        <li>Uso de senha segura com troca periódica</li>
-        <li>Cumprimento das normas de segurança</li>
-        <li>Comunicação imediata de incidentes à GSD</li>
-        <li>Zelo pelos ativos de informação da empresa</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Softwares &amp; Licenciamento</h3>
-      <ul>
-        <li>Somente softwares com <strong>licença válida</strong></li>
-        <li>Proibido: cracks, keygens, piratas</li>
-        <li>Instalação não autorizada é <strong>infração grave</strong></li>
-        <li>Base legal: Lei 9.610/98 e Lei 9.609/98</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Proteção de Dados (LGPD)</h3>
-      <ul>
-        <li>Tratamento conforme LGPD (Lei 13.709/2018)</li>
-        <li>Classificação da informação obrigatória</li>
-        <li>Ativos críticos em áreas controladas</li>
-        <li>Ambientes de produção e dev segregados</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Monitoramento</h3>
-      <ul>
-        <li>A empresa monitora estações, e-mail e navegação</li>
-        <li>Auditorias periódicas de conformidade</li>
-        <li>Plano de contingência testado anualmente</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Classificação da Informação</h3>
-      <ul>
-        <li>Definição clara de propriedade e custódia</li>
-        <li>Controles especiais para dados sensíveis</li>
-        <li>Regras específicas para dispositivos móveis</li>
-      </ul>
-    </div>
-  </div>
+      <div class="callout callout-warn" style="margin-top:32px">
+        <span class="callout-icon">🚫</span>
+        <div class="callout-body">
+          <strong>Regra inegociável:</strong> Nunca use o termo <strong>"mentoria"</strong> de forma vendedora. Use sempre <em>"acompanhamento mais próximo e exclusivo da ViDi"</em>.
+        </div>
+      </div>
+    </section>
 
-  <div class="policy-links">
-    <a class="policy-link" href="docs/politica-seguranca-informacao.docx" download>
-      <span class="policy-ico">🔒</span>
-      <span class="policy-txt"><strong>Política de Segurança da Informação</strong><small>DOCX · V.3 — 17/09/2025</small></span>
-    </a>
-  </div>
+    <div class="divider"></div>
 
-  <div class="divider"></div>
-  <div class="sec-head"><h2>Primeiros 30 Dias</h2><div class="sec-line"></div></div>
-  <div class="steps">
-    <div class="step"><div class="step-n">1</div><div class="step-body"><h4>Semana 1 — Ambientação</h4><p>Reuniões de apresentação, configuração de ferramentas e leitura da documentação de projetos em andamento.</p></div></div>
-    <div class="step"><div class="step-n">2</div><div class="step-body"><h4>Semana 2 — Shadowing</h4><p>Acompanhar um sênior em campo ou projeto ativo. Entender padrões de qualidade e comunicação com cliente.</p></div></div>
-    <div class="step"><div class="step-n">3</div><div class="step-body"><h4>Semana 3–4 — Contribuição Guiada</h4><p>Assumir tarefas com supervisão. Primeiro entregável técnico validado pelo líder no D+30.</p></div></div>
-  </div>
-</section>
+    <!-- 2. MISSÃO -->
+    <section class="chapter reveal" id="missao">
+      <div class="chapter-eyebrow">02 · Propósito</div>
+      <h2 class="chapter-title">Missão, Visão<br/>e Cultura</h2>
 
-<!-- =================== COMERCIAL =================== -->
-<section class="panel" id="panel-comercial">
-  <div class="sec-head"><h2>Onboarding · Comercial</h2><div class="sec-line"></div></div>
-  <div class="alert alert-o"><div class="alert-body"><strong>Missão do Time Comercial</strong>Ampliar a atuação da Tecno it no mercado com excelência em relacionamento, proposta de valor e gestão de contratos.</div></div>
-  <div class="slide-feature" style="margin-bottom:2rem">
-    <img src="assets/slides/image28.png" alt="Você + Tecno it + Grandes Marcas">
-    <div class="slide-feature-caption">Nossa proposta de valor — Projeto personalizado à realidade do cliente</div>
-  </div>
-  <div class="grid">
-    <div class="card"><h3>Cartela de Clientes</h3><ul><li>Governo Federal: Ministérios, BNDES, Banco do Brasil</li><li>Judiciário: TJ, TRF, TRT em múltiplos estados</li><li>Privado: Enel, Coca-Cola, Unimed, Anglo American</li></ul></div>
-    <div class="card"><h3>Parceiros Estratégicos</h3><ul><li>Lightera — Software/Plataforma</li><li>SDC — Smart Data Computing</li><li>ISS — Videomonitoramento</li><li>HID — Controle de Acesso</li><li>TP-Link — Redes e Infraestrutura</li></ul></div>
-    <div class="card"><h3>Processos Comerciais</h3><ul><li>Qualificação de leads e oportunidades</li><li>Propostas técnicas e comerciais</li><li>Contratos e compliance</li><li>Gestão pós-venda e renovação</li></ul></div>
-    <div class="card"><h3>Compliance Comercial</h3><ul><li>Anti-suborno e LGPD em contratos</li><li>Aprovação jurídica obrigatória</li><li>Registro de toda tratativa no CRM</li></ul></div>
-  </div>
-  <div class="divider"></div>
-  <div class="sec-head"><h2>Mapa de Presença</h2><div class="sec-line"></div></div>
-  <img class="clients-img" src="assets/slides/image29.png" alt="Projetos Tecno it no Brasil">
-  <div class="divider"></div>
-  <div class="sec-head"><h2>Primeiros 30 Dias</h2><div class="sec-line"></div></div>
-  <div class="steps">
-    <div class="step"><div class="step-n">1</div><div class="step-body"><h4>Semana 1 — Imersão no Portfólio</h4><p>Estudo completo das soluções, cases e cartela de clientes. Reunião com líderes de cada vertical.</p></div></div>
-    <div class="step"><div class="step-n">2</div><div class="step-body"><h4>Semana 2 — Processo e Ferramentas</h4><p>Treinamento no CRM, metodologia de proposta e acompanhamento de pipeline com sênior.</p></div></div>
-    <div class="step"><div class="step-n">3</div><div class="step-body"><h4>Semana 3–4 — Primeira Oportunidade</h4><p>Identificar e qualificar a primeira oportunidade com suporte do time. Apresentar ao gestor no D+30.</p></div></div>
-  </div>
-</section>
+      <!-- O PORQUÊ -->
+      <div class="callout callout-info" style="margin-bottom:40px">
+        <span class="callout-icon">💡</span>
+        <div class="callout-body">
+          <strong>Por que a ViDi existe?</strong> Entender o porquê não é opcional para o time comercial. É o alicerce de tudo. Sem ele, você vende produto. Com ele, você transforma pessoas.
+        </div>
+      </div>
 
-<!-- =================== ADM FINANCEIRO =================== -->
-<section class="panel" id="panel-financeiro">
-  <div class="sec-head"><h2>Onboarding · Administrativo Financeiro</h2><div class="sec-line"></div></div>
-  <div class="alert alert-b"><div class="alert-body"><strong>Estrutura Societária</strong>Tecno it opera como Sociedade Anônima (capital fechado) com balanço auditado anualmente e compliance estruturado.</div></div>
-  <div class="grid">
-    <div class="card"><h3>Governança Financeira</h3><ul><li>Balanço auditado anualmente</li><li>Foco em rentabilidade sobre receita bruta</li><li>DRE e cash flow monitorados mensalmente</li></ul></div>
-    <div class="card"><h3>Processos Administrativos</h3><ul><li>Emissão e controle de NFs</li><li>Gestão de contratos e aditivos</li><li>Controle de despesas e reembolsos</li></ul></div>
-    <div class="card"><h3>Compliance e LGPD</h3><ul><li>Conformidade com LGPD em dados financeiros</li><li>Políticas de controle interno</li><li>Relatórios de integridade para auditoria</li></ul></div>
-    <div class="card"><h3>Sistemas e Ferramentas</h3><ul><li>ERP interno (acesso via ti)</li><li>Plataforma <strong>Caju</strong> — reembolsos e despesas</li><li>Conciliação bancária diária</li></ul></div>
-    <div class="card"><h3>Calendário Financeiro</h3><ul><li>Fechamento contábil: dia 5 do mês seguinte</li><li>Aprovação de despesas: toda sexta-feira</li><li>Reunião de budget: trimestral</li></ul></div>
-    <div class="card"><h3>Documentação Obrigatória</h3><ul><li>Leitura das políticas financeiras internas</li><li>Assinatura de termo de confidencialidade</li><li>Cadastro no sistema de reembolso</li></ul></div>
-  </div>
+      <div class="script-box" style="margin-bottom:40px">
+        <div class="script-box-label">O Contexto — O Mundo Mudou</div>
+        <pre>Antigamente, as grandes revoluções aconteciam em ciclos espaçados.
+A sociedade reagia, se adaptava, encontrava um novo equilíbrio.
 
-  <div class="divider"></div>
+Hoje, elas acontecem ao mesmo tempo.
+Inteligência artificial. Guerras. Colapsos sociais. Instabilidade geracional.
+Crise institucional. Dissolução de valores.
 
-  <!-- POLÍTICA DE VIAGENS -->
-  <div class="sec-head"><h2>Política de Viagens Corporativas</h2><div class="sec-line"></div></div>
-  <div class="alert alert-o"><div class="alert-body"><strong>Fluxo único: Plataforma Caju</strong>Toda solicitação de adiantamento, reembolso e prestação de contas é feita <strong>exclusivamente</strong> pelo aplicativo Caju.<br>Não são aceitas solicitações por e-mail ou forma física.</div></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Diárias de Alimentação</h3>
-      <ul>
-        <li><strong>Gerentes:</strong> R$ 120,00 / dia</li>
-        <li><strong>Coordenadores e Supervisores:</strong> R$ 100,00 / dia</li>
-        <li><strong>Demais cargos:</strong> R$ 80,00 / dia</li>
-        <li>Café da manhã é fornecido pelo hotel</li>
-        <li>Airbnb: até R$ 25,00 com comprovante fiscal</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Hospedagem</h3>
-      <ul>
-        <li>Reserva feita pelo time de Suprimentos</li>
-        <li>Pode haver acomodação compartilhada</li>
-        <li>Emergencial: reembolso máximo de R$ 200,00/diária</li>
-        <li>Multas por atraso de check-out não são reembolsadas</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Transporte</h3>
-      <ul>
-        <li>Uber / 99 digitalizados no Caju</li>
-        <li>Limite de <strong>4 deslocamentos</strong> por dia</li>
-        <li>Corridas fora do roteiro não são reembolsadas</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Quilometragem — Veículo Próprio</h3>
-      <ul>
-        <li><strong>Diretores:</strong> R$ 1,75 / km</li>
-        <li><strong>Demais cargos:</strong> R$ 1,50 / km</li>
-        <li><strong>Motos:</strong> R$ 0,85 / km</li>
-        <li>Até 200 km (ida + volta). Acima disso: locação obrigatória</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Retorno ao Domicílio</h3>
-      <ul>
-        <li>Distância &lt; 500 km: retorno a cada 15 dias</li>
-        <li>Distância ≥ 500 km: retorno a cada 30 dias</li>
-        <li>Limite de 30 dias fora do domicílio (art. 469 §3º CLT)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Prazos de Pagamento</h3>
-      <ul>
-        <li>Prestações até dia <strong>08</strong> → pagamento dia <strong>15</strong></li>
-        <li>Prestações até dia <strong>24</strong> → pagamento dia <strong>30</strong></li>
-        <li>Se cair em fim de semana: último dia útil anterior</li>
-      </ul>
-    </div>
-  </div>
+Tudo. Simultaneamente.
 
-  <div class="divider"></div>
+Nesse cenário, o ser humano precisa de uma âncora.
+Precisa de alguém capaz de tomar decisões certas em meio à tempestade.
 
-  <!-- POLÍTICA DE MOBILIDADE -->
-  <div class="sec-head"><h2>Mobilidade Corporativa &amp; Combustível</h2><div class="sec-line"></div></div>
-  <div class="alert alert-b"><div class="alert-body"><strong>Prestação de Contas Mensal</strong>Período de apuração do dia 1º ao último dia útil. Prestação entregue até o dia <strong>05</strong> do mês seguinte, via Caju.<br>A liberação do próximo adiantamento depende da entrega anterior.</div></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Adiantamento de Combustível</h3>
-      <ul>
-        <li>Limite: <strong>R$ 1.500,00 / mês</strong></li>
-        <li>Creditado no 1º dia útil do mês</li>
-        <li>Complemento possível: até R$ 500,00 (após usar 80%)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Veículos da Frota</h3>
-      <ul>
-        <li>Uso exclusivo corporativo — vedado uso pessoal</li>
-        <li>CNH enviada previamente ao Dep. Logística</li>
-        <li>Checklist obrigatório antes da retirada</li>
-        <li>Proibida transferência da condução sem autorização</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Veículos Locados</h3>
-      <ul>
-        <li>Fundo fixo de <strong>R$ 1.500</strong> por cartão</li>
-        <li>Carro passeio: R$ 70,00 / diária</li>
-        <li>Autorização da Gerência de Engenharia para ajustes</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Multas e Responsabilização</h3>
-      <ul>
-        <li>Condutor responde integralmente por multas</li>
-        <li>Danos por negligência: desconto em folha (art. 462 §1º CLT)</li>
-        <li>Franquia de seguro por culpa: não reembolsável</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Fluxo de Aprovação</h3>
-      <ul>
-        <li>1º Colaborador → preenchimento no Caju</li>
-        <li>2º Coordenador → validação</li>
-        <li>3º Analista de Projetos → conferência</li>
-        <li>4º Gerência → aprovação</li>
-        <li>5º Financeiro → aprovação final e pagamento</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Documentos Obrigatórios</h3>
-      <ul>
-        <li>Cupom fiscal <strong>com CPF</strong> do colaborador</li>
-        <li>Planilha de Controle de Rotas assinada</li>
-        <li>Odômetro inicial e final registrados</li>
-      </ul>
-    </div>
-  </div>
+Esse alguém é o líder.</pre>
+      </div>
 
-  <div class="policy-links">
-    <a class="policy-link" href="docs/politica-viagens.docx" download>
-      <span class="policy-ico">📄</span>
-      <span class="policy-txt"><strong>Política de Viagens</strong><small>Documento oficial · DOCX</small></span>
-    </a>
-    <a class="policy-link" href="docs/politica-mobilidade-corporativa.docx" download>
-      <span class="policy-ico">🚗</span>
-      <span class="policy-txt"><strong>Política de Mobilidade Corporativa</strong><small>Documento oficial · DOCX</small></span>
-    </a>
-  </div>
-</section>
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:20px">A Era do Chefe Acabou</h3>
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="card">
+          <span class="card-icon">👑</span>
+          <div class="card-title">Luiz Portal — A Forja do Líder</div>
+          <div class="card-text">Traz a formação do ser humano como líder — identidade, decisão, presença, gestão de si e dos outros. A psicologia do comando e a transformação pessoal.</div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏭</span>
+          <div class="card-title">Ibrahim Boufleur — A Forja do CEO</div>
+          <div class="card-text">A experiência de quem levou uma empresa de R$80 mil a R$180 milhões de faturamento. Estruturas, decisões difíceis, construção de times e governança real.</div>
+        </div>
+      </div>
 
-<!-- =================== RH =================== -->
-<section class="panel" id="panel-rh">
-  <div class="sec-head"><h2>Onboarding · Recursos Humanos</h2><div class="sec-line"></div></div>
-  <div class="welcome-hero">
-    <img class="welcome-hero-img" src="assets/slides/image44.jpeg" alt="Universo it — Cockpit">
-    <div class="welcome-hero-overlay"></div>
-    <div class="welcome-hero-body">
-      <blockquote>"Você foi admitido por reunir condições e características adequadas às necessidades da Tecno it. Sua missão começa agora. Seu esforço, somado ao de todos, contribuirá para tornar maior o sucesso do nosso empreendimento e o seu em particular."</blockquote>
-      <p class="sig">— Departamento de Recursos Humanos · <span class="hl">tecno it</span></p>
-    </div>
-  </div>
-  <div class="alert alert-b" style="margin-top:2rem"><div class="alert-body"><strong>O RH é o guardião da Cultura Tecnauta</strong>Garantimos que cada colaborador viva os valores INOTEC e contribua para um ambiente de alta performance e pertencimento.</div></div>
-  <div class="grid">
-    <div class="card"><h3>Admissão e Contratos</h3><ul><li>Assinatura digital do contrato de trabalho</li><li>Entrega de documentos admissionais</li><li>Cadastro no sistema de ponto</li><li>Benefícios: VT, VR, plano de saúde</li></ul></div>
-    <div class="card"><h3>Treinamentos Obrigatórios</h3><ul><li>Treinamento SST (NR-10, NR-35 conforme função)</li><li>LGPD e Segurança da Informação</li><li>Código de Conduta e Ética</li><li>Plataforma: itCast</li></ul></div>
-    <div class="card"><h3>Calendário de RH</h3><ul><li>Avaliação de desempenho: semestral</li><li>Pesquisa de clima: trimestral</li><li>1:1 com gestor: quinzenal (mínimo)</li></ul></div>
-    <div class="card"><h3>Desenvolvimento de Carreira</h3><ul><li>Plano de Desenvolvimento Individual (PDI)</li><li>Trilhas de aprendizado por função</li><li>Certificações apoiadas pela empresa</li></ul></div>
-    <div class="card"><h3>Canais de Comunicação</h3><ul><li>Ouvidoria interna (anonimato garantido)</li><li>Canal de sugestões via itCast</li><li>Reuniões All-hands mensais</li></ul></div>
-    <div class="card"><h3>Reconhecimento</h3><ul><li>Programa Tecnauta Destaque</li><li>Reconhecimento por metas atingidas</li><li>Incentivos por certificações</li></ul></div>
-  </div><!-- /grid -->
+      <div class="callout callout-green" style="margin-bottom:40px">
+        <span class="callout-icon">🎯</span>
+        <div class="callout-body">
+          <strong>A ViDi nasce da junção dessas duas coisas:</strong> o líder que se forma por dentro e o CEO que constrói por fora.
+        </div>
+      </div>
 
-  <!-- VÍDEO LGPD -->
-  <div class="video-embed-block">
-    <div class="video-label">▶ Treinamento Obrigatório — LGPD</div>
-    <div class="video-responsive">
-      <iframe src="https://player-vz-9829707e-4bb.tv.pandavideo.com.br/embed/?v=f9303926-b03e-4d59-9414-d234a38b0d31"
-        allow="accelerometer;gyroscope;autoplay;encrypted-media"
-        allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:16px">Missão e Visão</h3>
+      <div class="grid-2" style="margin-bottom:32px">
+        <div class="card">
+          <span class="card-icon">🧭</span>
+          <div class="card-title">Missão</div>
+          <div class="card-text">Transformar chefes em líderes — pessoas capazes de tomar decisões com segurança, gerir com clareza e prosperar em meio ao caos.</div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏮</span>
+          <div class="card-title">Visão</div>
+          <div class="card-text">Ser o principal ecossistema de referência em desenvolvimento de liderança executiva e formação de CEOs no Brasil — um farol para quem lidera em tempos de múltiplas crises.</div>
+        </div>
+      </div>
 
-  <div class="divider"></div>
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:16px">Os 2 Pilares Mestres — Origem de todos os produtos</h3>
+      <div class="grid-2" style="margin-bottom:40px">
+        <div class="card">
+          <span class="card-icon">🌱</span>
+          <div class="card-title">Pilar Liderança</div>
+          <div class="card-text">Formação do ser humano como líder. Identidade, decisão, presença, gestão de si e dos outros. Para empresários, diretores e gestores que precisam liderar com mais consistência.</div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🏗️</span>
+          <div class="card-title">Pilar CEO</div>
+          <div class="card-text">Formação do gestor de empresa. Processos, crescimento, governança, tomada de decisão estratégica, saída do operacional. Para CEOs e fundadores que precisam escalar sem depender deles mesmos.</div>
+        </div>
+      </div>
 
-  <!-- POLÍTICA DE JORNADA -->
-  <div class="sec-head"><h2>Política de Jornada de Trabalho</h2><div class="sec-line"></div></div>
-  <div class="alert alert-o"><div class="alert-body"><strong>Base legal</strong>CLT (Arts. 58, 59, 66, 71 e 74) · Lei 13.467/2017 · Convenção Coletiva 2025–2026 · LGPD</div></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Jornada &amp; Ponto Eletrônico</h3>
-      <ul>
-        <li>Jornada legal: até <strong>44h semanais</strong> / 8h diárias</li>
-        <li>Marcação obrigatória de entrada, saída e intervalos</li>
-        <li>Aplicativo oficial da empresa com <strong>geolocalização</strong></li>
-        <li>Coleta apenas no momento do registro (não há monitoramento contínuo)</li>
-        <li>Marcação pessoal — não pode ser delegada</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Intervalos Legais</h3>
-      <ul>
-        <li><strong>Interjornada:</strong> mínimo 11h consecutivas (art. 66 CLT)</li>
-        <li><strong>Intrajornada:</strong> mínimo 1h para jornadas &gt; 6h (art. 71 CLT)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Horas Extras</h3>
-      <ul>
-        <li>Apenas com autorização prévia do CEO, por e-mail</li>
-        <li><strong>+50%</strong> nas duas primeiras horas diárias</li>
-        <li><strong>+100%</strong> em domingos e feriados</li>
-        <li><strong>+20%</strong> adicional noturno (22h–5h)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Banco de Horas</h3>
-      <ul>
-        <li>Acordo Individual de Compensação (CCT — Cláusula 33ª)</li>
-        <li>Compensação em até <strong>1 ano</strong>, proporção 1x1</li>
-        <li>Fechamento mensal no dia <strong>25</strong></li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Atestados &amp; Declarações</h3>
-      <ul>
-        <li>Entrega em até <strong>48 horas</strong> do retorno</li>
-        <li>Deve conter nome, data, horário e CRM do profissional</li>
-        <li>Declarações abonam só o período do atendimento</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Deslocamentos &amp; Viagens</h3>
-      <ul>
-        <li>Tempo em espera (aeroporto/rodoviária) não é jornada</li>
-        <li>Dirigindo a serviço <strong>é jornada</strong></li>
-        <li>Sempre respeitando intervalos legais de 11h</li>
-      </ul>
-    </div>
-  </div>
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:16px">Cultura — O que a ViDi é (e o que não é)</h3>
+      <div class="table-wrap" style="margin-bottom:24px">
+        <table>
+          <thead><tr><th>Princípio</th><th>O que significa na prática</th></tr></thead>
+          <tbody>
+            <tr><td>Accountability radical</td><td>Cada um é responsável pelo seu número. Sem desculpas.</td></tr>
+            <tr><td>Verdade acima do conforto</td><td>Falar a realidade com clareza — mesmo quando não é o que o lead quer ouvir.</td></tr>
+            <tr><td>Respeito universal</td><td>Qualquer pessoa que chegar até a ViDi é bem atendida, independente de ser ICP ou não.</td></tr>
+            <tr><td>Elegância consultiva</td><td>Nossa abordagem nunca é agressiva, apressada ou manipuladora.</td></tr>
+            <tr><td>Sem vitimismo</td><td>A ViDi reconhece dificuldades mas não se pauta por elas — olha para o que precisa ser feito.</td></tr>
+            <tr><td>Feedback aberto</td><td>Qualquer membro do time pode e deve levantar falhas de processo.</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-  <div class="divider"></div>
+      <div class="callout callout-warn">
+        <span class="callout-icon">⚖️</span>
+        <div class="callout-body">
+          <strong>Sobre posicionamento:</strong> A ViDi se posiciona quando o assunto envolve defesa da dignidade humana, da ética e dos valores universais. <strong>Não há bandeira de partido, grupo ou ideologia.</strong> A ViDi defende a Verdade — com V maiúsculo.
+        </div>
+      </div>
+    </section>
 
-  <!-- POLÍTICA DE GESTÃO DE PESSOAS -->
-  <div class="sec-head"><h2>Gestão de Pessoas &amp; Benefícios</h2><div class="sec-line"></div></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Recrutamento &amp; Seleção</h3>
-      <ul>
-        <li>Condução pelo RH junto à liderança da área</li>
-        <li>Prioridade para recrutamento <strong>interno</strong></li>
-        <li>Vedada contratação com parentesco no mesmo departamento</li>
-        <li>Avaliação técnica e comportamental</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>PCCR — Plano de Cargos e Carreira</h3>
-      <ul>
-        <li>Estrutura baseada em responsabilidade, complexidade e impacto</li>
-        <li>Movimentação vertical (promoção) ou horizontal</li>
-        <li>Remuneração fixa + variável (bonificações e gratificações)</li>
-        <li>Evolução não é automática</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Benefícios Flexíveis (Caju)</h3>
-      <ul>
-        <li>Plataforma <strong>Caju</strong> — gestão unificada de benefícios</li>
-        <li>Descontos em farmácias da rede credenciada</li>
-        <li>Voucher de aniversário</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Saúde &amp; Bem-estar</h3>
-      <ul>
-        <li><strong>Wellhub</strong> — academias e atividades físicas</li>
-        <li><strong>Conexa Saúde</strong> — telemedicina</li>
-        <li>Plano de saúde (conforme regras da operadora)</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Canal de Denúncias</h3>
-      <ul>
-        <li>Manifestação identificada ou <strong>anônima</strong></li>
-        <li>Confidencialidade garantida</li>
-        <li>Não admitida retaliação ao denunciante de boa-fé</li>
-        <li>Conformidade com Lei 14.457/2022</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Princípios de Gestão</h3>
-      <ul>
-        <li>Alinhamento ao negócio</li>
-        <li>Valorização da contribuição</li>
-        <li>Meritocracia aplicada</li>
-        <li>Transparência e responsabilidade</li>
-      </ul>
-    </div>
-  </div><!-- /grid -->
+    <div class="divider"></div>
 
-  <!-- VÍDEO COMPLIANCE -->
-  <div class="video-embed-block">
-    <div class="video-label">▶ Treinamento Obrigatório — Compliance &amp; Ética</div>
-    <div class="video-responsive">
-      <iframe src="https://player-vz-9829707e-4bb.tv.pandavideo.com.br/embed/?v=73e6a432-bd59-43d4-9cfb-eb89900bfa66"
-        allow="accelerometer;gyroscope;autoplay;encrypted-media"
-        allowfullscreen loading="lazy"></iframe>
-    </div>
-  </div>
+    <!-- 3. PRODUTOS -->
+    <section class="chapter reveal" id="produtos">
+      <div class="chapter-eyebrow">03 · Portfólio</div>
+      <h2 class="chapter-title">Portfólio de<br/>Produtos</h2>
+      <div class="callout callout-warn">
+        <span class="callout-icon">🔒</span>
+        <div class="callout-body">
+          <strong>Regra crítica:</strong> NUNCA mencione valores em comunicações públicas, redes sociais ou conversas que possam ser gravadas sem autorização. Valores são compartilhados apenas em reuniões comerciais privadas.
+        </div>
+      </div>
 
+      <!-- Quem vende o quê -->
+      <div class="grid-2" style="margin:32px 0">
+        <div class="card">
+          <span class="card-icon">🤖</span>
+          <div class="card-title">Bot Júlio vende automaticamente</div>
+          <div class="card-text">Cursos online: Formação do Líder + Formação do CEO. Sem envolvimento do time comercial.</div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🤝</span>
+          <div class="card-title">Time Comercial fecha</div>
+          <div class="card-text">Cúpula CEO, Mentorias, Consultoria, Formações Presenciais, Imersões e Diagnóstico Catalyst.</div>
+        </div>
+      </div>
 
-  <div class="divider"></div>
+      <!-- Cursos Online -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:32px 0 16px">Produtos Digitais — Trilha Online</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Produto</th><th>Trilha</th><th>Perfil</th></tr></thead>
+          <tbody>
+            <tr><td>Formação do Líder</td><td>Liderança</td><td>Gestores e empresários em início de jornada</td></tr>
+            <tr><td>Formação do CEO</td><td>CEO</td><td>Fundadores e CEOs que querem estruturar a empresa</td></tr>
+          </tbody>
+        </table>
+      </div>
 
-  <!-- POLÍTICA AMBIENTAL -->
-  <div class="sec-head"><h2>Compromisso Ambiental</h2><div class="sec-line"></div></div>
-  <div class="alert alert-b"><div class="alert-body"><strong>Meta 2030</strong>Reduzir em <strong>5% a emissão de carbono</strong> da operação até 2030, por meio de parcerias com ONGs, eficiência operacional e adoção da política <em>paperless</em>.</div></div>
-  <div class="grid">
-    <div class="card">
-      <h3>Sustentabilidade</h3>
-      <ul>
-        <li>Política <strong>paperless</strong> — redução de impressões</li>
-        <li>Uso racional de água, energia, papel e equipamentos</li>
-        <li>Priorização de fornecedores com compromisso ambiental</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Gerenciamento de Resíduos</h3>
-      <ul>
-        <li>Separação e parceria com cooperativas de reciclagem</li>
-        <li>Descarte correto de resíduos técnicos (cabos, equipamentos)</li>
-        <li>Redução de descartáveis nas operações internas</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Biodiversidade</h3>
-      <ul>
-        <li>Minimizar impactos nas regiões atendidas</li>
-        <li>Ações de conservação e recuperação</li>
-        <li>Sensibilização de colaboradores e parceiros</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="policy-links">
-    <a class="policy-link" href="docs/politica-jornada-trabalho.docx" download>
-      <span class="policy-ico">⏱️</span>
-      <span class="policy-txt"><strong>Política de Jornada</strong><small>DOCX · V01 2026</small></span>
-    </a>
-    <a class="policy-link" href="docs/politica-gestao-pessoas.docx" download>
-      <span class="policy-ico">👥</span>
-      <span class="policy-txt"><strong>Política de Gestão de Pessoas</strong><small>DOCX · 2026</small></span>
-    </a>
-    <a class="policy-link" href="docs/politica-ambiental.docx" download>
-      <span class="policy-ico">🌱</span>
-      <span class="policy-txt"><strong>Política Ambiental</strong><small>DOCX · V.1 2025</small></span>
-    </a>
-    <a class="policy-link" href="docs/politica-privacidade.pdf" download>
-      <span class="policy-ico">🔐</span>
-      <span class="policy-txt"><strong>Política de Privacidade</strong><small>PDF</small></span>
-    </a>
-  </div>
-
-  <div class="divider"></div>
-  <div class="sec-head"><h2>Os 6 Elos da nossa Cultura</h2><div class="sec-line"></div></div>
-  <div class="inotec-section">
-    <div class="inotec-arcs">
-      <div class="arc-ring"><span class="arc-letter">I</span><span class="arc-name">Inovação</span></div>
-      <div class="arc-ring"><span class="arc-letter">N</span><span class="arc-name">Networking</span></div>
-      <div class="arc-ring"><span class="arc-letter">O</span><span class="arc-name">Objetividade</span></div>
-      <div class="arc-ring"><span class="arc-letter">T</span><span class="arc-name">Transformação</span></div>
-      <div class="arc-ring"><span class="arc-letter">E</span><span class="arc-name">Empatia</span></div>
-      <div class="arc-ring"><span class="arc-letter">C</span><span class="arc-name">Comprometimento</span></div>
-    </div>
-    <div class="inotec-details">
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">I</div><div class="inotec-card-title">Inovação</div></div><ul class="inotec-card-bullets"><li>Transformar ideias em soluções</li><li>Uma sugestão simples que ajuda a fazer melhor</li><li>Melhorar a performance da empresa todos os dias</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">N</div><div class="inotec-card-title">Networking</div></div><ul class="inotec-card-bullets"><li>Construir relações de confiança</li><li>Fortalecer conexões com clareza</li><li>Comunicar claramente com os parceiros e colegas</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">O</div><div class="inotec-card-title">Objetividade</div></div><ul class="inotec-card-bullets"><li>Decidir com assertividade e assumir a responsabilidade</li><li>Direto ao ponto sem rodeios</li><li>Admitir erros rapidamente e corrigir com o dobro de rapidez</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">T</div><div class="inotec-card-title">Transformação</div></div><ul class="inotec-card-bullets"><li>Agir com iniciativa e autogestão</li><li>Ser protagonista da própria jornada</li><li>Ver oportunidades de melhoria em cada desafio</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">E</div><div class="inotec-card-title">Empatia</div></div><ul class="inotec-card-bullets"><li>Tratar pessoas com respeito</li><li>Colaborar para construir resultados juntos</li><li>Pensar no coletivo antes do individual</li></ul></div>
-      <div class="inotec-card"><div class="inotec-card-head"><div class="inotec-card-letter">C</div><div class="inotec-card-title">Comprometimento</div></div><ul class="inotec-card-bullets"><li>Pensar e agir como dono</li><li>Garantir resultados para o cliente</li><li>Ter compromisso com as entregas</li></ul></div>
-    </div>
-  </div>
-</section>
-
-</div><!-- /panels -->
-</div><!-- /container -->
-
-<!-- =============================================
-     CANAIS DE COMUNICAÇÃO — SEMPRE VISÍVEL
-============================================= -->
-<section class="channels-section" id="canais">
-  <div class="container">
-    <div class="sec-head-center">
-      <span class="eyebrow">Canais de Comunicação e Suporte</span>
-      <h2>Precisa de ajuda? Fale com a gente.</h2>
-    </div>
-    <p class="section-lead channels-lead">Para facilitar a comunicação, esclarecer dúvidas e apoiar o início das suas atividades, você pode acessar os principais canais institucionais da Tecno it.</p>
-
-    <div class="channels-grid">
-      <div class="channel-card">
-        <div class="channel-head">
-          <div class="channel-ico">🛡️</div>
-          <div>
-            <h3>Segurança do Trabalho</h3>
-            <span class="channel-tag">SESMT</span>
+      <!-- Evento -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:32px 0 16px">Evento Presencial</h3>
+      <div class="table-wrap" style="margin-bottom:24px">
+        <table>
+          <thead><tr><th>Produto</th><th>Perfil Ideal</th><th>Canal de Entrada</th><th>Ticket</th></tr></thead>
+          <tbody>
+            <tr><td>Cúpula CEO</td><td>CEO/Sócio, fat. R$1M–R$30M</td><td>Google Ads, Lives, Indicação</td><td><span class="badge badge-gold">Ingresso único</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3 style="color:var(--gold-light);font-size:.9rem;font-weight:700;margin-bottom:12px">⬆️ Upsells do Evento</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Upsell</th><th>Quando</th></tr></thead>
+              <tbody>
+                <tr><td>VIP Pass</td><td>Na compra ou no check-in</td></tr>
+                <tr><td>Cúpula Dinner</td><td>Para Cat-A via Bot Júlio</td></tr>
+                <tr><td>Pacote Sócio</td><td>2+ sócios juntos</td></tr>
+                <tr><td>Diagnóstico Catalyst</td><td>Dor identificada no evento</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="channel-body">
-          <strong class="channel-name">Thiago Maulaz</strong>
-          <a class="channel-phone" href="tel:+5562981630048">📞 +55 62 98163-0048</a>
-        </div>
-      </div>
-
-      <div class="channel-card">
-        <div class="channel-head">
-          <div class="channel-ico">👥</div>
-          <div>
-            <h3>Departamento Pessoal</h3>
-            <span class="channel-tag">RH</span>
+        <div>
+          <h3 style="color:var(--red);font-size:.9rem;font-weight:700;margin-bottom:12px">⬇️ Downsells</h3>
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th>Downsell</th><th>Quando</th></tr></thead>
+              <tbody>
+                <tr><td>Virtual Pass</td><td>Não pode comparecer</td></tr>
+                <tr><td>CEO Toolkit</td><td>Não pronto para o evento</td></tr>
+              </tbody>
+            </table>
           </div>
         </div>
-        <div class="channel-body">
-          <strong class="channel-name">Camila Peleja</strong>
-          <a class="channel-phone" href="tel:+5562995131458">📞 +55 62 99513-1458</a>
+      </div>
+
+      <!-- Mentorias -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:32px 0 16px">Mentorias — Alto Ticket</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Produto</th><th>Mentor</th><th>Status</th><th>Ticket</th></tr></thead>
+          <tbody>
+            <tr><td><strong>O Código da Nova Liderança</strong></td><td>Luiz Portal</td><td><span class="badge badge-green">✅ Estruturada</span></td><td><span class="badge badge-green">Alto ticket / grupo</span></td></tr>
+            <tr><td><strong>Mentoria CEO</strong></td><td>Ibrahim Boufleur</td><td><span class="badge badge-gold">⚠️ Em definição</span></td><td><span class="badge badge-green">Alto ticket / individual</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info" style="margin-top:16px">
+        <span class="callout-icon">⚖️</span>
+        <div class="callout-body">
+          <strong>Equilíbrio entre os fundadores:</strong> Não há "mentor principal". Luiz e Ibrahim têm contribuições equivalentes e complementares. A consultoria envolve os dois. Comunique isso com equilíbrio ao lead.
         </div>
       </div>
 
-      <div class="channel-card">
-        <div class="channel-head">
-          <div class="channel-ico">✉️</div>
-          <div>
-            <h3>Assinatura de E-mail</h3>
-            <span class="channel-tag">Suporte Corporativo</span>
+      <!-- Consultoria -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:32px 0 16px">Consultoria</h3>
+      <div class="card" style="margin-bottom:24px">
+        <span class="card-icon">🔬</span>
+        <div class="card-title">Consultoria ViDi</div>
+        <div class="card-text">Não é consultoria tradicional. A ViDi <strong style="color:var(--gold-light)">não vende método — vende mentalidade, ferramental e resultado</strong>. Diagnóstico real + entrega do que precisa ser feito, sem meios-termos ou atalhos. Envolve Luiz e Ibrahim conforme a natureza do projeto.</div>
+      </div>
+
+      <!-- Presenciais e Imersões -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:32px 0 16px">Formações Presenciais e Imersões</h3>
+      <div class="grid-2">
+        <div class="card"><span class="card-icon">🎓</span><div class="card-title">Formações Presenciais</div><div class="card-text">Formação de Líderes · Formação de CEOs · Oficinas Técnicas. Resultado direto, sem enrolação — o participante sai com ações claras.</div></div>
+        <div class="card"><span class="card-icon">🌊</span><div class="card-title">Imersões Estruturadas</div><div class="card-text">Jornada intensiva de 1 a 3 dias. O participante mergulha e sai com clareza de problemas, prioridades e próximos passos.</div></div>
+        <div class="card"><span class="card-icon">🍽️</span><div class="card-title">Experiências Exclusivas</div><div class="card-text">Almoços/Jantares com o CEO · Imersões em empresas · Imersões temáticas com especialistas. Para Cat-A e mentorados de alto engajamento.</div></div>
+        <div class="card"><span class="card-icon">📋</span><div class="card-title">Diagnóstico Catalyst</div><div class="card-text">Sessão 30-45 min. Mapeamento de dor — médio ticket, também usado como upsell no evento.</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 4. TIME -->
+    <section class="chapter reveal" id="time">
+      <div class="chapter-eyebrow">04 · Estrutura</div>
+      <h2 class="chapter-title">Time e<br/>Papéis</h2>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:20px">Fundadores</h3>
+      <div class="grid-2" style="margin-bottom:24px">
+        <div class="card">
+          <span class="card-icon">👑</span>
+          <div class="card-title">Luiz Portal</div>
+          <div class="card-text"><strong style="color:var(--gold)">Toca a operação da ViDi no dia a dia</strong><br/>Fundador · Head Comercial e de Produto<br/><span style="color:var(--muted);font-size:.8rem">luizeduardoportal@gmail.com</span></div>
+        </div>
+        <div class="card">
+          <span class="card-icon">🎙️</span>
+          <div class="card-title">Ibrahim Boufleur</div>
+          <div class="card-text"><strong style="color:var(--gold)">Consultor e recurso da empresa</strong><br/>Fundador · Não toca o dia a dia<br/><span style="color:var(--muted);font-size:.8rem">iboufleur@gmail.com</span></div>
+        </div>
+      </div>
+
+      <div class="callout callout-warn" style="margin-bottom:32px">
+        <span class="callout-icon">⚠️</span>
+        <div class="callout-body">
+          <strong>Regra absoluta:</strong> Nenhum lead agenda diretamente com Ibrahim. Todo contato com Ibrahim passa por Luiz Portal.
+        </div>
+      </div>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:20px">Time Comercial — Closers</h3>
+      <div class="grid-2" style="margin-bottom:24px">
+        <div class="card"><span class="card-icon">💼</span><div class="card-title">Mariana</div><div class="card-text">Consultora Comercial · Closer<br/><span style="color:var(--muted);font-size:.8rem">Conduz todo o processo comercial de ponta a ponta</span></div></div>
+        <div class="card"><span class="card-icon">💼</span><div class="card-title">George</div><div class="card-text">Consultor Comercial · Closer<br/><span style="color:var(--muted);font-size:.8rem">Conduz todo o processo comercial de ponta a ponta</span></div></div>
+      </div>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:20px">Time de Suporte — Recursos de Apoio</h3>
+      <div class="grid-3" style="margin-bottom:32px">
+        <div class="card"><span class="card-icon">💻</span><div class="card-title">Cléber Donato</div><div class="card-text">Tech Lead · Gestor de Projeto<br/><span style="color:var(--muted);font-size:.8rem">Acionado para dúvidas técnicas de IA/plataforma<br/>cleber.ihs@gmail.com</span></div></div>
+        <div class="card"><span class="card-icon">📣</span><div class="card-title">João Victor</div><div class="card-text">Marketing e Conteúdo<br/><span style="color:var(--muted);font-size:.8rem">joaaovictorlr@gmail.com</span></div></div>
+        <div class="card"><span class="card-icon">📋</span><div class="card-title">Ana Dias</div><div class="card-text">Gestão Administrativa e Financeira<br/><span style="color:var(--muted);font-size:.8rem">Contratos, pagamentos, acessos<br/>contato@catalysteducacao.onmicrosoft.com</span></div></div>
+      </div>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:16px">Quando acionar cada recurso</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Situação</th><th>Acionar</th></tr></thead>
+          <tbody>
+            <tr><td>Lead com dúvida logística (como vir ao evento, hospedagem)</td><td>Ana Dias</td></tr>
+            <tr><td>Lead com dúvida técnica sobre IA ou plataforma</td><td>Cléber Donato</td></tr>
+            <tr><td>Lead Cat-A muito aquecido, mentoria iminente, decisão na mesa</td><td>Luiz Portal <span style="color:var(--muted);font-size:.8rem">(só se o consultor avaliar que a presença do Luiz vai garantir o fechamento)</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="callout callout-info" style="margin-top:20px">
+        <span class="callout-icon">📞</span>
+        <div class="callout-body">
+          <strong>A call é SEMPRE do consultor comercial.</strong> Luiz, Ibrahim, Cléber e Ana são recursos de apoio — não substitutos do consultor.
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 5. PROCESSO -->
+    <section class="chapter reveal" id="processo">
+      <div class="chapter-eyebrow">05 · Funil</div>
+      <h2 class="chapter-title">Processo Comercial</h2>
+      <p class="chapter-desc">Do primeiro contato até o fechamento — entenda cada etapa do funil ViDi.</p>
+
+      <!-- FUNIL -->
+      <div class="funnel">
+        <div class="funnel-stage funnel-topo">
+          <div class="funnel-num">T</div>
+          <div class="funnel-info">
+            <div class="funnel-label">Topo do funil</div>
+            <div class="funnel-title">Atração</div>
+            <div class="funnel-desc">Google Ads Regional · Lives de Aquecimento (Luiz Portal) · Conteúdo Orgânico · Indicações de mentorados</div>
           </div>
+          <span class="badge badge-gold">Alcance</span>
         </div>
-        <div class="channel-body">
-          <strong class="channel-name">Ana Dias</strong>
-          <a class="channel-phone" href="tel:+5562994604902">📞 +55 62 99460-4902</a>
+        <div class="funnel-stage funnel-meio" style="margin-top:20px">
+          <div class="funnel-num">M</div>
+          <div class="funnel-info">
+            <div class="funnel-label">Meio do funil — 2 entradas</div>
+            <div class="funnel-title">Qualificação</div>
+            <div class="funnel-desc">① Formulário da página de vendas (pré-classifica Cat-A/B/C) · ② Bot Júlio (qualifica e aciona alerta Cat-A · vende cursos online automaticamente)</div>
+          </div>
+          <span class="badge badge-green">Pipeline</span>
+        </div>
+        <div class="funnel-stage funnel-fundo" style="margin-top:20px">
+          <div class="funnel-num">F</div>
+          <div class="funnel-info">
+            <div class="funnel-label">Fundo do funil — Consultor é o Closer</div>
+            <div class="funnel-title">Fechamento</div>
+            <div class="funnel-desc">Call consultiva (30-45 min) · Apresentação de solução · Proposta e negociação · Fechamento · Videochamada triangulada pós-contrato</div>
+          </div>
+          <span class="badge" style="background:rgba(15,28,46,1);color:var(--gold-light);border-color:var(--gold-border)">Receita</span>
         </div>
       </div>
-    </div>
 
-    <div class="channels-official">
-      <h3 class="channels-subhead">Canais Oficiais da Empresa</h3>
-      <div class="official-links">
-        <a class="official-link" href="https://tecnoit.com.br/" target="_blank" rel="noopener">
-          <span class="official-ico">🌐</span>
-          <span class="official-txt"><strong>Site institucional</strong><small>tecnoit.com.br</small></span>
-        </a>
-        <a class="official-link" href="https://www.instagram.com/tecnoitbr/" target="_blank" rel="noopener">
-          <span class="official-ico">📱</span>
-          <span class="official-txt"><strong>Instagram</strong><small>@tecnoitbr</small></span>
-        </a>
+      <!-- CATEGORIAS -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:40px 0 16px">Classificação de Leads</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Categoria</th><th>Perfil</th><th>Faturamento</th><th>SLA</th><th>Abordagem</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><span class="badge badge-red">Cat-A</span></td>
+              <td>CEO/Fundador com poder de decisão</td>
+              <td>&gt; R$2,5M/ano</td>
+              <td>⚡ Até 1h</td>
+              <td>Consultor faz a call. Pode acionar Luiz se lead estiver muito aquecido.</td>
+            </tr>
+            <tr>
+              <td><span class="badge badge-gold">Cat-B</span></td>
+              <td>Diretor, Sócio ou Empresário estabelecido</td>
+              <td>R$600K – R$2M</td>
+              <td>🕐 Ágil</td>
+              <td>Contato personalizado, nurturing ativo, tratamento consultivo.</td>
+            </tr>
+            <tr>
+              <td><span class="badge" style="background:rgba(255,255,255,.05);color:var(--muted);border:1px solid var(--border)">Cat-C</span></td>
+              <td>Critério parcial (fat. &lt; R$500K ou sem tempo/disponibilidade)</td>
+              <td>—</td>
+              <td>📅 Avaliar</td>
+              <td>Consultor avalia fit. Produtos menores disponíveis. Sem call imediata.</td>
+            </tr>
+            <tr>
+              <td><span class="badge" style="background:rgba(255,255,255,.03);color:rgba(154,159,170,.6);border:1px solid rgba(255,255,255,.05)">Fora ICP</span></td>
+              <td>Não é empresário, sem funcionários</td>
+              <td>—</td>
+              <td>🤖 Bot</td>
+              <td>Nurturing + Bot Júlio. Sem dedicação do time comercial.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>
 
-    <div class="channels-directive">
-      <h4>Diretriz de utilização</h4>
-      <p>Os canais institucionais devem ser utilizados para:</p>
-      <ul>
-        <li>Esclarecimento de dúvidas</li>
-        <li>Solicitação de suporte</li>
-        <li>Acompanhamento de demandas relacionadas às atividades profissionais</li>
+      <!-- PÓS-FECHAMENTO -->
+      <div class="callout callout-green" style="margin-top:32px">
+        <span class="callout-icon">🎬</span>
+        <div class="callout-body">
+          <strong>Pós-fechamento — Videochamada Triangulada:</strong> Após fechar mentoria ou consultoria, o consultor organiza uma call breve para conectar o novo mentorado ao mentor. A apresentação do método, condições e cronograma é feita pelo <strong>consultor</strong> — não pelo mentor.
+        </div>
+      </div>
+
+      <!-- SLA -->
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:40px 0 16px">SLA de Resposta</h3>
+      <div class="sla-grid">
+        <div class="sla-item"><div class="sla-time">1h</div><div class="sla-desc">Lead Cat-A (formulário ou Bot Júlio)</div></div>
+        <div class="sla-item"><div class="sla-time">2h</div><div class="sla-desc">DM de interesse / Cat-B</div></div>
+        <div class="sla-item"><div class="sla-time">48h</div><div class="sla-desc">Follow-up de proposta sem resposta</div></div>
+        <div class="sla-item"><div class="sla-time">24h</div><div class="sla-desc">Follow-up após reunião sem resposta</div></div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 6. SCRIPTS -->
+    <section class="chapter reveal" id="scripts">
+      <div class="chapter-eyebrow">06 · Comunicação</div>
+      <h2 class="chapter-title">Scripts e<br/>Objeções</h2>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin-bottom:20px">Primeiro Contato — DM</h3>
+      <div class="script-box">
+        <div class="script-box-label">💬 Script — Primeiro contato via DM</div>
+        <pre>Olá, [Nome]! Aqui é [Seu Nome], do time da ViDi.
+
+Vi seu interesse e queria entender melhor o momento da sua empresa.
+Você está buscando resolver algum desafio específico agora, ou ainda está explorando?
+
+[Se responder positivamente:]
+Perfeito. Me conta rapidamente: qual é o principal travamento que você sente
+hoje na liderança ou operação da empresa?</pre>
+      </div>
+      <div class="callout callout-green" style="margin-top:16px">
+        <span class="callout-icon">✅</span>
+        <div class="callout-body">Nunca começar com pitch. Sempre começa com pergunta. Nunca mencionar valores nesse primeiro contato.</div>
+      </div>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:40px 0 20px">Call de Diagnóstico (30–45 min)</h3>
+      <div class="timeline">
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">0–5 min</div><div class="timeline-title">Rapport</div><div class="timeline-body">"Me conta um pouco sobre a empresa, quanto tempo de mercado, qual setor…"</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">5–15 min</div><div class="timeline-title">Diagnóstico da Dor</div><div class="timeline-body">"O que te trouxe até aqui hoje?" · "Se eu te perguntar: o que impede sua empresa de crescer 2x sem você trabalhar mais horas — o que vem à mente?"</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">15–25 min</div><div class="timeline-title">Amplificação</div><div class="timeline-body">"Isso já afetou alguma decisão estratégica? Você já tentou resolver isso antes? O que aconteceu?"</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">25–35 min</div><div class="timeline-title">Apresentação da Solução</div><div class="timeline-body">"O que você descreveu é exatamente o que chamamos de [Rótulo ViDi]. Existe um caminho para isso…"</div></div>
+        <div class="timeline-item"><div class="timeline-dot"></div><div class="timeline-label">35–45 min</div><div class="timeline-title">Próximo Passo</div><div class="timeline-body">"Com base no que conversamos, acredito que o [Produto X] é o mais adequado. Posso te enviar mais detalhes?"</div></div>
+      </div>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:40px 0 20px">Objeções Comuns</h3>
+      <div class="obj-card"><div class="obj-head">💬 "Não tenho tempo agora"</div><div class="obj-body">"Entendo. Justamente por isso que vale a pena conversar — o objetivo é você ter <em>mais</em> tempo, não menos. Me diz: se você continuasse assim por mais 12 meses, o que muda?"</div></div>
+      <div class="obj-card"><div class="obj-head">💬 "É muito caro"</div><div class="obj-body">"Faz sentido essa preocupação. Me ajuda a entender: o valor que você enxerga hoje está alinhado com o que espera como resultado? O que seria um resultado mínimo aceitável para você?"</div></div>
+      <div class="obj-card"><div class="obj-head">💬 "Já fiz mentoria antes e não funcionou"</div><div class="obj-body">"Entendo. Me conta o que aconteceu — porque o que a ViDi faz é diferente justamente por [diferencial específico]. O que funcionou na sua experiência anterior e o que faltou?"</div></div>
+      <div class="obj-card"><div class="obj-head">💬 "Preciso pensar"</div><div class="obj-body">"Claro. Para você tomar a melhor decisão, o que falta esclarecer? O que está pesando?"</div></div>
+      <div class="obj-card"><div class="obj-head">💬 "Vou falar com meu sócio"</div><div class="obj-body">"Ótimo. Quer que eu marque uma call com os dois juntos? Assim respondo as dúvidas de vocês ao mesmo tempo."</div></div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 7. FERRAMENTAS -->
+    <section class="chapter reveal" id="ferramentas">
+      <div class="chapter-eyebrow">07 · Stack</div>
+      <h2 class="chapter-title">Ferramentas<br/>e Acessos</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Ferramenta</th><th>Para que serve</th><th>Solicitar acesso a</th></tr></thead>
+          <tbody>
+            <tr><td>ClickUp</td><td>Gestão de tarefas e projetos</td><td>Ana Dias</td></tr>
+            <tr><td>WhatsApp Business</td><td>Atendimento e follow-up</td><td>Cléber Donato</td></tr>
+            <tr><td>Google Workspace</td><td>E-mail, Drive, Calendar</td><td>Ana Dias</td></tr>
+            <tr><td>Bot Júlio (Telegram)</td><td>Diagnóstico de leads no evento</td><td>Cléber Donato</td></tr>
+            <tr><td>Instagram / LinkedIn</td><td>Geração de leads e conteúdo</td><td>João Victor</td></tr>
+            <tr><td>NotebookLM</td><td>Base de conhecimento dos mentores</td><td>Cléber Donato</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="color:var(--gold-light);font-size:1rem;font-weight:700;margin:32px 0 16px">Checklist de Acesso — Primeiro Dia</h3>
+      <ul class="checklist" id="accessChecklist">
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> E-mail corporativo (@catalysteducacao ou @ecossistemalive)</li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> Acesso ao ClickUp — workspace "Projeto ViDi"</li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> Grupo WhatsApp do time interno</li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> Acesso ao Google Drive compartilhado</li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> Acesso ao calendário compartilhado da ViDi</li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> Leitura das restrições absolutas de negócio</li>
+        <li><div class="check-box" onclick="toggleCheck(this)"></div> Reunião de alinhamento com Luiz Portal (30 min)</li>
       </ul>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- =============================================
-     FAQ — SEMPRE VISÍVEL
-============================================= -->
-<div class="container" id="faq-section" style="padding:4rem 1rem 6rem">
-  <div class="divider"></div>
-  <div class="sec-head">
-    <h2>Perguntas Frequentes — FAQ</h2>
-    <div class="sec-line"></div>
-  </div>
+    <div class="divider"></div>
 
-  <div class="faq-note" style="margin-bottom:2.5rem; background:rgba(238,114,3,.05); border-left:4px solid var(--o); padding:1rem 1.5rem; border-radius:0 8px 8px 0; font-size:.9rem; color:var(--text2); display:flex; align-items:center; gap:1rem;">
-    <span>Dúvidas comuns para novos Tecnautas.</span>
-  </div>
+    <!-- 8. METAS -->
+    <section class="chapter reveal" id="metas">
+      <div class="chapter-eyebrow">08 · Performance</div>
+      <h2 class="chapter-title">Metas e<br/>Incentivos</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Período</th><th>O que é medido</th></tr></thead>
+          <tbody>
+            <tr><td>Semanal</td><td>Número de leads qualificados, calls agendadas</td></tr>
+            <tr><td>Mensal</td><td>Fechamentos, receita gerada, churn de follow-ups</td></tr>
+            <tr><td>Trimestral</td><td>Revisão de metas e evolução do time</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="grid-3" style="margin-top:28px">
+        <div class="card"><span class="card-icon">🏆</span><div class="card-title">Bônus por Superação</div><div class="card-text">Acordado individualmente no contrato. Percentual sobre meta excedida.</div></div>
+        <div class="card"><span class="card-icon">⚡</span><div class="card-title">Acelerador Cat-A</div><div class="card-text">Incentivo adicional por cada fechamento de alto ticket.</div></div>
+        <div class="card"><span class="card-icon">🤝</span><div class="card-title">Indicação de Lead</div><div class="card-text">Reconhecimento formal se lead indicado por você fechar com outro membro.</div></div>
+      </div>
+      <div class="callout callout-info" style="margin-top:28px">
+        <span class="callout-icon">📊</span>
+        <div class="callout-body">
+          <strong>Relatórios:</strong> Diário — atualizar ClickUp ao fim do dia. Semanal — reunião de pipeline (segunda-feira). Mensal — relatório escrito enviado ao Luiz Portal.
+        </div>
+      </div>
+    </section>
 
-  <div class="faq-list">
-    <div class="faq-item">
-      <div class="faq-q">Quando recebo meu crachá e uniforme? (RH)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">No primeiro dia de integração o RH entrega crachá de identificação e orienta a retirada do uniforme. Em caso de perda, dano ou extravio, fale imediatamente com Camila Peleja (RH) para reposição.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Como solicito meu acesso aos sistemas? (ti)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">Seu gestor formaliza a solicitação à área de ti assim que a admissão é concluída. Cada colaborador recebe credenciais pessoais e intransferíveis, conforme a Política de Segurança da Informação. Nunca compartilhe senha — ela é sua responsabilidade.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Como configurar a VPN para trabalho externo? (ti)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">O acesso remoto é concedido mediante justificativa e aprovação do gestor. A ti configura a VPN no seu equipamento corporativo. Uso em redes públicas exige cuidado extra — siga as diretrizes da Política de Segurança da Informação.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Como posso dar sugestões ou feedbacks?<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">Fale diretamente com seu gestor em reuniões de 1:1 ou utilize o Canal de Denúncias (anônimo, garantido pela Lei 14.457/2022) para reportar assédio, discriminação ou violação de políticas. A Tecno it valoriza cada contribuição.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Como é a política de home office? (RH)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">A jornada padrão é de 44h semanais com registro eletrônico de ponto (inclusive por geolocalização). Modalidades presencial, híbrida ou remota variam por área e função — combine com seu gestor. Consulte a Política de Jornada de Trabalho para detalhes.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Como funcionam as diárias e reembolsos de viagem? (Adm. Financeiro)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">Diárias variam por cargo (R$ 120 / R$ 100 / R$ 80). Prestação de contas via plataforma Caju em até 2 dias úteis após o retorno. Prazos: até dia 08 → pgto dia 15 · até dia 24 → pgto dia 30. Guarde sempre os comprovantes originais.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">Quais benefícios a Tecno it oferece? (RH)<div class="faq-chevron">▾</div></div>
-      <div class="faq-a">Vale-refeição e vale-alimentação via Caju, Wellhub (atividade física), Conexa Saúde (telemedicina 24/7), plano de saúde e odontológico, além de PCCR (Plano de Cargos, Carreira e Remuneração) com crescimento por mérito.</div>
-    </div>
-  </div>
+    <div class="divider"></div>
+
+    <!-- 9. TREINAMENTO -->
+    <section class="chapter reveal" id="treinamento">
+      <div class="chapter-eyebrow">09 · Onboarding</div>
+      <h2 class="chapter-title">Cronograma<br/>30 Dias</h2>
+
+      <div class="week-card">
+        <div class="week-head">
+          <div class="week-num">1</div>
+          <div><div class="week-title">Semana 1 — Imersão</div><div class="week-subtitle">Conhecer a empresa, o método e as ferramentas</div></div>
+        </div>
+        <div class="week-body">
+          <div class="week-row"><div class="week-day">Dia 1</div><div class="week-task">Leitura completa deste playbook</div><div class="week-who">Você</div></div>
+          <div class="week-row"><div class="week-day">Dia 1</div><div class="week-task">Acesso a todas as ferramentas</div><div class="week-who">Ana Dias</div></div>
+          <div class="week-row"><div class="week-day">Dia 2</div><div class="week-task">Reunião de alinhamento com Luiz Portal (1h)</div><div class="week-who">Luiz Portal</div></div>
+          <div class="week-row"><div class="week-day">Dia 2</div><div class="week-task">Conteúdos dos mentores no NotebookLM</div><div class="week-who">Você</div></div>
+          <div class="week-row"><div class="week-day">Dia 3</div><div class="week-task">Sombra em call de diagnóstico real (observar)</div><div class="week-who">Luiz Portal</div></div>
+          <div class="week-row"><div class="week-day">Dia 4</div><div class="week-task">Sombra em call de fechamento (observar)</div><div class="week-who">Luiz Portal</div></div>
+          <div class="week-row"><div class="week-day">Dia 5</div><div class="week-task">Roleplay de call de diagnóstico</div><div class="week-who">Cléber / Luiz</div></div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-head">
+          <div class="week-num">2</div>
+          <div><div class="week-title">Semana 2 — Prática Assistida</div><div class="week-subtitle">Primeiros contatos reais com supervisão</div></div>
+        </div>
+        <div class="week-body">
+          <div class="week-row"><div class="week-day">Dias 6–10</div><div class="week-task">Fazer primeiros contatos com leads Cat-B (supervisionado)</div><div class="week-who">Você</div></div>
+          <div class="week-row"><div class="week-day">Mid-week</div><div class="week-task">Agendar e conduzir 2 calls de diagnóstico com feedback</div><div class="week-who">Luiz Portal</div></div>
+          <div class="week-row"><div class="week-day">Sexta</div><div class="week-task">Revisão de objeções com Luiz Portal</div><div class="week-who">Luiz Portal</div></div>
+        </div>
+      </div>
+
+      <div class="week-card">
+        <div class="week-head">
+          <div class="week-num">3–4</div>
+          <div><div class="week-title">Semanas 3–4 — Autonomia Crescente</div><div class="week-subtitle">Conduzir calls independentes e apresentar propostas</div></div>
+        </div>
+        <div class="week-body">
+          <div class="week-row"><div class="week-day">Semana 3</div><div class="week-task">Calls de diagnóstico de forma independente</div><div class="week-who">Você</div></div>
+          <div class="week-row"><div class="week-day">Semana 3</div><div class="week-task">Apresentar proposta para Cat-B (aprovação prévia)</div><div class="week-who">Luiz Portal</div></div>
+          <div class="week-row"><div class="week-day">Semana 4</div><div class="week-task">Primeira revisão de desempenho com Luiz Portal</div><div class="week-who">Luiz Portal</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 10. CHECKLIST -->
+    <section class="chapter reveal" id="checklist">
+      <div class="chapter-eyebrow">10 · Validação</div>
+      <h2 class="chapter-title">Checklist<br/>Primeiro Mês</h2>
+
+      <div class="grid-2">
+        <div>
+          <h3 style="color:var(--gold-light);font-size:.9rem;font-weight:700;margin-bottom:16px">📋 Semana 1</h3>
+          <ul class="checklist">
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Leu este playbook completo</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Configurou todos os acessos</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Reuniu-se com Luiz Portal</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Assistiu 2 calls como observador</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Conhece os 3 pilares do Método ViDi</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Responde 5 objeções sem consultar script</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="color:var(--gold-light);font-size:.9rem;font-weight:700;margin-bottom:16px">📋 Semanas 2–4</h3>
+          <ul class="checklist">
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Contactou ao menos 10 leads Cat-B</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Conduziu 2+ calls de diagnóstico</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Recebeu feedback formal de Luiz</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Conduziu 5 calls de forma autônoma</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Submeteu ao menos 1 proposta</li>
+            <li><div class="check-box" onclick="toggleCheck(this)"></div> Revisão de desempenho do 1º mês</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- 11. CONTATOS -->
+    <section class="chapter reveal" id="contatos">
+      <div class="chapter-eyebrow">11 · Suporte</div>
+      <h2 class="chapter-title">Contatos<br/>e Escalada</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Situação</th><th>Contato</th><th>Canal</th></tr></thead>
+          <tbody>
+            <tr><td>Dúvida de produto ou pitch</td><td>Luiz Portal</td><td>WhatsApp direto</td></tr>
+            <tr><td>Dúvida de contrato/pagamento</td><td>Ana Dias</td><td>WhatsApp ou e-mail</td></tr>
+            <tr><td>Problema técnico (bot, ferramentas)</td><td>Cléber Donato</td><td>WhatsApp direto</td></tr>
+            <tr><td><strong style="color:var(--red)">Lead Cat-A quente</strong></td><td>Luiz Portal</td><td><strong style="color:var(--red)">WhatsApp — imediato</strong></td></tr>
+            <tr><td>Reunião com Ibrahim</td><td>Luiz Portal</td><td>Sempre intermediar</td></tr>
+            <tr><td>Emergência do evento</td><td>João Victor</td><td>WhatsApp</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
 </div>
-</main>
 
-<!-- Dark Mode Toggle -->
-<button class="dm-toggle" id="dm-toggle" aria-label="Alternar modo escuro" title="Modo escuro">🌙</button>
-
-<footer class="footer" style="background:#000; color:#fff; padding:4rem 1rem; text-align:center;">
-  <div class="container">
-    <img src="assets/slides/image4.png" alt="Tecno it logo" style="height:32px; filter:brightness(0) invert(1); opacity:.5; margin-bottom:1.5rem">
-    <p style="color:rgba(255,255,255,.4); font-size:.75rem; letter-spacing:.05em;">&copy; 2026 Tecno it · Universo it · Portal de Onboarding · Todos os direitos reservados</p>
-  </div>
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-brand">ViDi</div>
+  <p>Ecossistema Live · Playbook Comercial v1.1</p>
+  <p class="footer-line" style="margin-top:8px;color:rgba(154,159,170,.5)">Confidencial · Uso interno · Março 2026</p>
 </footer>
 
 <script>
-(function () {
-  /* ---- Tab switching ---- */
-  const btns   = document.querySelectorAll('.tab-btn');
-  const panels = document.querySelectorAll('.panel');
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const t = btn.dataset.tab;
-      btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
-      panels.forEach(p => p.classList.remove('active'));
-      btn.classList.add('active'); btn.setAttribute('aria-selected','true');
-      
-      // Map 'geral' tab back to its panel if needed, but I renamed it to 'geral' in the HTML mostly
-      const targetId = 'panel-' + t;
-      const targetPanel = document.getElementById(targetId);
-      if(targetPanel) targetPanel.classList.add('active');
-
-      document.getElementById('tabs-anchor').scrollIntoView({ behavior:'smooth', block:'start' });
-    });
-  });
-
-
-
-  /* ---- FAQ accordion ---- */
-  document.querySelectorAll('.faq-item').forEach(item => {
-    const q = item.querySelector('.faq-q');
-    q.addEventListener('click', () => {
-      const isOpen = item.classList.contains('open');
-      item.closest('.faq-list').querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-    });
-  });
-
-  /* ---- Dark Mode Toggle ---- */
-  const dmBtn = document.getElementById('dm-toggle');
-  const root  = document.documentElement;
-
-  function applyTheme(dark) {
-    root.setAttribute('data-theme', dark ? 'dark' : 'light');
-    dmBtn.textContent = dark ? '☀️' : '🌙';
-    dmBtn.setAttribute('title', dark ? 'Modo claro' : 'Modo escuro');
-    dmBtn.setAttribute('aria-label', dark ? 'Ativar modo claro' : 'Ativar modo escuro');
-    try { localStorage.setItem('it-theme', dark ? 'dark' : 'light'); } catch(e){}
+  // Progress bar
+  function updateProgress() {
+    const s = document.documentElement.scrollTop;
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = Math.round((s / h) * 100);
+    document.getElementById('progressFill').style.width = pct + '%';
+    document.getElementById('progressText').textContent = pct + '%';
   }
+  window.addEventListener('scroll', updateProgress, { passive: true });
 
-  // Load saved preference or system preference
-  let saved;
-  try { saved = localStorage.getItem('it-theme'); } catch(e){}
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  applyTheme(saved ? saved === 'dark' : prefersDark);
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => io.observe(el));
 
-  dmBtn.addEventListener('click', () => {
-    applyTheme(root.getAttribute('data-theme') !== 'dark');
-  });
-})();
+  // Active sidebar link
+  const sections = document.querySelectorAll('.chapter[id]');
+  const navLinks = document.querySelectorAll('.sidebar-nav a');
+  const navIO = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const link = document.querySelector(`.sidebar-nav a[href="#${e.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(s => navIO.observe(s));
+
+  // Checkbox toggle
+  function toggleCheck(el) {
+    el.classList.toggle('checked');
+    el.textContent = el.classList.contains('checked') ? '✓' : '';
+  }
 </script>
 </body>
 </html>
